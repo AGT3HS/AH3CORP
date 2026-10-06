@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Space+Mono:wght@400;700&display=swap');
+@page { size: A4 portrait; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #FFFFFF;
+    color: #000000;
+    padding: 36px;
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+}
+.header { border-bottom: 2px solid #000000; padding-bottom: 16px; display: flex; justify-content: space-between; align-items: flex-end; }
+.logo-mono { font-family: 'Space Mono', monospace; font-size: 14px; font-weight: 700; letter-spacing: -0.05em; }
+h1 { font-size: 32px; font-weight: 900; letter-spacing: -0.04em; text-transform: uppercase; margin-top: 16px; }
+.sub { font-size: 12px; font-family: 'Space Mono', monospace; margin-top: 4px; color: #555555; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 24px 0; }
+.box-mono { border: 1px solid #000000; padding: 18px; }
+.box-mono-title { font-family: 'Space Mono', monospace; font-size: 11px; text-transform: uppercase; border-bottom: 1px solid #000000; padding-bottom: 6px; margin-bottom: 12px; }
+.big-stat { font-size: 38px; font-weight: 900; letter-spacing: -0.05em; margin: 6px 0; }
+.mono-table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 12px; }
+.mono-table th { border-bottom: 1px solid #000000; text-align: left; padding: 8px 4px; font-family: 'Space Mono', monospace; font-size: 10px; }
+.mono-table td { border-bottom: 1px solid #E5E5E5; padding: 10px 4px; }
+.footer { border-top: 1px solid #000000; margin-top: 36px; padding-top: 12px; display: flex; justify-content: space-between; font-family: 'Space Mono', monospace; font-size: 10px; }
+</style>
+</head>
+<body>
+<div class="header">
+    <div>
+        <div class="logo-mono">[ AH3 / SWISS LAB ]</div>
+        <h1>Auditoria Estrutural</h1>
+        <div class="sub">RELATÓRIO DE PERFORMANCE DE INFRAESTRUTURA DIGITAL</div>
+    </div>
+    <div style="font-family:'Space Mono'; font-size:11px; text-align:right;">
+        DOC: SW-04<br>REV: 2026.10
+    </div>
+</div>
+
+<div class="grid-2">
+    <div class="box-mono">
+        <div class="box-mono-title">Índice de Acessibilidade Web</div>
+        <div class="big-stat">98/100</div>
+        <p style="font-size:12px; color:#444;">Arquitetura sem JavaScript obstrutivo. Alta velocidade em qualquer rede móvel.</p>
+    </div>
+    <div class="box-mono">
+        <div class="box-mono-title">Taxa de Conversão Mobile</div>
+        <div class="big-stat">+34.8%</div>
+        <p style="font-size:12px; color:#444;">Eliminação de formulários extensos em favor de checkout/reserva via 1-clique.</p>
+    </div>
+</div>
+
+<table class="mono-table">
+    <thead>
+        <tr>
+            <th>COMPONENTE</th>
+            <th>MÉTRICA ATUAL</th>
+            <th>PADRÃO SUÍÇO</th>
+            <th>STATUS</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Tempo de Resposta do Servidor</td>
+            <td>1.450 ms</td>
+            <td>&lt; 200 ms</td>
+            <td><strong>FALHA</strong></td>
+        </tr>
+        <tr>
+            <td>Layout Shift Cumulativo (CLS)</td>
+            <td>0.28</td>
+            <td>&lt; 0.05</td>
+            <td><strong>FALHA</strong></td>
+        </tr>
+        <tr>
+            <td>Indexação de Itens do Cardápio</td>
+            <td>0 itens no Google</td>
+            <td>100% dos pratos</td>
+            <td><strong>CRÍTICO</strong></td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="footer">
+    <div>AH3 ARCHITECTURE & SYSTEMS</div>
+    <div>PAGINA 01 / 01</div>
+</div>
+</body>
+</html>

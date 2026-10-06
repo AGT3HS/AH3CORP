@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@500&display=swap');
+@page { size: A4 portrait; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: 'Lora', serif;
+    background-color: #FDFBF7;
+    color: #1A1A1A;
+    padding: 32px;
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+}
+.gazette-header { text-align: center; border-bottom: 3px double #1A1A1A; padding-bottom: 12px; margin-bottom: 18px; }
+.gazette-name { font-family: 'Playfair Display', serif; font-size: 34px; font-weight: 900; letter-spacing: 0.05em; text-transform: uppercase; }
+.gazette-meta { display: flex; justify-content: space-between; font-size: 10px; font-family: 'JetBrains Mono', monospace; border-top: 1px solid #1A1A1A; border-bottom: 1px solid #1A1A1A; padding: 4px 0; margin-top: 6px; }
+.gazette-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 16px; }
+.headline { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; line-height: 1.2; margin-bottom: 8px; }
+.gazette-p { font-size: 12px; line-height: 1.6; text-align: justify; color: #2B2B2B; margin-bottom: 12px; }
+.gazette-p::first-letter { font-size: 32px; font-family: 'Playfair Display'; float: left; line-height: 0.8; padding-right: 6px; font-weight: 700; }
+.footer { border-top: 1px solid #1A1A1A; margin-top: 24px; padding-top: 8px; display: flex; justify-content: space-between; font-size: 10px; font-family: 'JetBrains Mono'; }
+</style>
+</head>
+<body>
+<div class="gazette-header">
+    <div class="gazette-name">The AH3 Hospitality Gazette</div>
+    <div class="gazette-meta">
+        <span>EDIÇÃO DE AUDITORIA Nº 48</span>
+        <span>FLORIANÓPOLIS, SANTA CATARINA</span>
+        <span>02 DE OUTUBRO DE 2026</span>
+    </div>
+</div>
+
+<div class="gazette-cols">
+    <div>
+        <div class="headline">O Impacto Oculto das Avaliações Sem Resposta na Ilha</div>
+        <p class="gazette-p">
+            Estabelecimentos gastronômicos e hoteleiros que negligenciam o feedback em plataformas abertas sofrem uma penalização direta em seus algoritmos de recomendação local. A falta de postura institucional reduz a confiança do turista de alto poder aquisitivo.
+        </p>
+    </div>
+    <div>
+        <div class="headline">Cardápios em PDF: A Maior Barreira de Entrada no Mobile</div>
+        <p class="gazette-p">
+            Mais de 70% dos consumidores em trânsito abandonam links de cardápio quando obrigados a baixar arquivos pesados. A experiência digital simplificada converte curiosos em clientes de mesa com velocidade recorde.
+        </p>
+    </div>
+</div>
+
+<div class="footer">
+    <div>AH3 EDITORIAL INTELLIGENCE</div>
+    <div>PÁGINA 01</div>
+</div>
+</body>
+</html>

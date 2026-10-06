@@ -1,0 +1,233 @@
+{
+  "main": {
+    "id": "12e14ce464c0e3a9",
+    "type": "split",
+    "children": [
+      {
+        "id": "c7a974e34fd45272",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7f176a57f317498a",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Visualização em gráfico"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "81ae27dc5db6ccb8",
+    "type": "split",
+    "children": [
+      {
+        "id": "bbf86a7907cefef2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "eafcbc2b40ec2214",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Explorador de arquivos"
+            }
+          },
+          {
+            "id": "83538c4726f80121",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Procurar"
+            }
+          },
+          {
+            "id": "bf7d305ef8392126",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "Marcadores"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "85364e682ee2c513",
+    "type": "split",
+    "children": [
+      {
+        "id": "ebd21bb1e83b9812",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7ddaff079767edb3",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Links inversos"
+            }
+          },
+          {
+            "id": "6a242799fa918720",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Links de saída"
+            }
+          },
+          {
+            "id": "afbb589d9c670b83",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Etiquetas"
+            }
+          },
+          {
+            "id": "02cbc6f2626fa949",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Todas as propriedades"
+            }
+          },
+          {
+            "id": "d69b6e6778332c46",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Sumário"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Abrir a troca rápida": false,
+      "graph:Abrir visualização em gráfico": false,
+      "canvas:Criar novo canvas": false,
+      "daily-notes:Abrir a nota de hoje": false,
+      "templates:Inserir modelo": false,
+      "command-palette:Abrir paleta de comandos": false,
+      "bases:Criar nova base": false
+    }
+  },
+  "active": "7f176a57f317498a",
+  "lastOpenFiles": [
+    "BigBrain/handoff/placas_hoteis_layout02/40_40_ingleses_acquamar_hotel/04_modelo_monocromatico_autoridade.svg",
+    "BigBrain/handoff/placas_hoteis_layout02/40_40_ingleses_acquamar_hotel/03_modelo_secundario_acento.svg",
+    "BigBrain/handoff/placas_hoteis_layout02/40_40_ingleses_acquamar_hotel/02_modelo_noturno_luxo.svg",
+    "BigBrain/handoff/placas_hoteis_layout02/40_40_ingleses_acquamar_hotel/01_modelo_classico_cor_mae.svg",
+    "BigBrain/handoff/placas_hoteis_layout02/40_40_ingleses_acquamar_hotel",
+    "BigBrain/handoff/placas_hoteis_layout02/39_39_hotel_deville_express/04_modelo_monocromatico_autoridade.svg",
+    "BigBrain/handoff/placas_hoteis_layout02/39_39_hotel_deville_express/03_modelo_secundario_acento.svg",
+    "BigBrain/handoff/placas_hoteis_layout02/39_39_hotel_deville_express/02_modelo_noturno_luxo.svg",
+    "BigBrain/handoff/placas_hoteis_layout02/39_39_hotel_deville_express/01_modelo_classico_cor_mae.svg",
+    "BigBrain/handoff/placas_hoteis_layout02/39_39_hotel_deville_express",
+    "BigBrain/handoff/placas_hoteis_layout02/38_38_canasvieiras_hotel_eventos/04_modelo_monocromatico_autoridade.svg",
+    "BigBrain/handoff/placas_hoteis_layout02/38_38_canasvieiras_hotel_eventos/03_modelo_secundario_acento.svg",
+    "BigBrain/handoff/placas_hoteis_layout02/38_38_canasvieiras_hotel_eventos/02_modelo_noturno_luxo.svg",
+    "BigBrain/handoff/placas_hoteis_layout02/38_38_canasvieiras_hotel_eventos",
+    "BigBrain/handoff/placas_hoteis_layout02/37_37_kennedy_executive_hotel",
+    "BigBrain/handoff/placas_hoteis_layout02/36_36_hotel_valerim_center",
+    "BigBrain/handoff/placas_hoteis_layout02/35_35_hotel_valerim_plaza",
+    "BigBrain/handoff/placas_hoteis_layout02/34_34_hotel_costa_norte_ingleses_vil",
+    "BigBrain/handoff/placas_hoteis_layout02/33_33_palace_praia_hotel",
+    "BigBrain/handoff/placas_hoteis_layout02/32_32_hotel_porto_sol_quality",
+    "BigBrain/handoff/placas_hoteis_layout02/31_31_bewiki",
+    "repos_tools/composio/skills/composio/references/platform.md",
+    "repos_tools/composio/skills/composio/references/errors.md",
+    "repos_tools/composio/skills/composio/references/for-you.md",
+    "repos_tools/composio/skills/composio/SKILL.md",
+    "repos_tools/caveman/plugins/caveman/skills/ultracave/SKILL.md",
+    "repos_tools/caveman/plugins/caveman/skills/megacave/SKILL.md",
+    "repos_tools/caveman/plugins/caveman/skills/caveman-stats/SKILL.md",
+    "repos_tools/caveman/plugins/caveman/skills/caveman-compress/SKILL.md",
+    "repos_tools/caveman/plugins/caveman/skills/caveman/SKILL.md",
+    "repos_tools/caveman/plugins/caveman/skills/cavecrew/SKILL.md",
+    "repos_tools/caveman/plugins/caveman/agents/cavecrew-reviewer.md",
+    "repos_tools/caveman/plugins/caveman/agents/cavecrew-investigator.md",
+    "repos_tools/caveman/plugins/caveman/agents/cavecrew-builder.md",
+    "repos_tools/caveman/shrink/README.md",
+    "repos_tools/caveman/shrink/CLAUDE.md",
+    "repos_tools/caveman/shrink/BINARY_LICENSE.md",
+    "repos_tools/caveman/shrink/AGENTS.md",
+    "repos_tools/caveman/integrations/CLAUDE.md",
+    "repos_tools/caveman/evals/README.md",
+    "repos_tools/browser-use/browser_use/skills/browser-use/SKILL.md",
+    "repos_tools/browser-use/browser_use/skills/README.md",
+    "repos_tools/browser-use/browser_use/llm/oci_raw/README.md",
+    "repos_tools/browser-use/browser_use/llm/README.md",
+    "repos_tools/superpowers/tests/claude-code/README.md",
+    "repos_tools/composio/docs/decisions/toolkits.md"
+  ]
+}

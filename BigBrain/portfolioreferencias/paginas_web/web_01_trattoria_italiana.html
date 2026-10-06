@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nonna Mia Trattoria · Florianópolis</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; background: #FAF8F5; color: #2D2421; }
+nav { display: flex; justify-content: space-between; align-items: center; padding: 24px 48px; border-bottom: 1px solid #EBE4DD; background: #FFFFFF; }
+.logo { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: #7A2E1E; }
+.btn-reserva { background: #7A2E1E; color: #FFF; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px; }
+.hero { text-align: center; padding: 80px 24px 60px; max-width: 800px; margin: 0 auto; }
+.hero-tag { font-size: 12px; text-transform: uppercase; letter-spacing: 0.2em; color: #C06B3E; font-weight: 700; margin-bottom: 12px; }
+.hero h1 { font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 700; color: #1E1614; line-height: 1.15; margin-bottom: 20px; }
+.hero p { font-size: 18px; color: #6E5F5A; line-height: 1.6; margin-bottom: 32px; }
+.menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; max-width: 1100px; margin: 0 auto 80px; padding: 0 24px; }
+.dish-card { background: #FFFFFF; border: 1px solid #EBE4DD; border-radius: 12px; padding: 24px; }
+.dish-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+.dish-name { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: #1E1614; }
+.dish-price { font-weight: 700; color: #7A2E1E; }
+.dish-desc { font-size: 14px; color: #6E5F5A; line-height: 1.5; }
+</style>
+</head>
+<body>
+<nav>
+    <div class="logo">Nonna Mia · Trattoria</div>
+    <a href="#reservar" class="btn-reserva">Reservar Mesa</a>
+</nav>
+<div class="hero">
+    <div class="hero-tag">Massas Frescas & Forno a Lenha</div>
+    <h1>A verdadeira tradição italiana na Beira-Mar.</h1>
+    <p>Massas artesanais produzidas diariamente com ingredientes importados e carta de vinhos selecionada.</p>
+</div>
+<div class="menu-grid">
+    <div class="dish-card">
+        <div class="dish-head">
+            <div class="dish-name">Tagliolini al Tartufo</div>
+            <div class="dish-price">R$ 88</div>
+        </div>
+        <div class="dish-desc">Massa fresca artesanal com emulsão de manteiga de trufas negras e queijo Parmigiano Reggiano 24 meses.</div>
+    </div>
+    <div class="dish-card">
+        <div class="dish-head">
+            <div class="dish-name">Ossobuco Tradizionale</div>
+            <div class="dish-price">R$ 112</div>
+        </div>
+        <div class="dish-desc">Cozimento lento por 8 horas ao molho de vinho tinto, acompanhado de polenta cremosa bramata.</div>
+    </div>
+    <div class="dish-card">
+        <div class="dish-head">
+            <div class="dish-name">Tiramisù della Nonna</div>
+            <div class="dish-price">R$ 38</div>
+        </div>
+        <div class="dish-desc">Biscoitos savoiardi embebidos em café espresso, creme de mascarpone e cacau amargo 100%.</div>
+    </div>
+</div>
+</body>
+</html>

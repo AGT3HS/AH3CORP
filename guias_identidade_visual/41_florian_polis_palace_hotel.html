@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Identidade Visual · Florianópolis Palace Hotel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --c-primary: #CA9E67;
+            --c-gold: #1A1A1A;
+            --c-bg: #090D0E;
+            --c-card: #12181A;
+            --c-card-border: #1E282C;
+            --c-text: #E5EAE8;
+            --c-muted: #8E9E98;
+            --c-accent: #FFFFFF;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--c-bg);
+            color: var(--c-text);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .header {
+            background: linear-gradient(145deg, #131B1E, #0D1315);
+            border: 1px solid var(--c-card-border);
+            border-radius: 16px;
+            padding: 36px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            gap: 20px;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--c-gold), transparent);
+        }
+        .badge-rank {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--c-gold);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .hotel-title {
+            font-family: 'Cinzel', serif;
+            font-size: 30px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 6px;
+        }
+        .hotel-meta {
+            color: var(--c-muted);
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        .site-link-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            color: var(--c-gold);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .site-link-header:hover {
+            background: var(--c-gold);
+            color: #000000;
+            transform: translateY(-1px);
+        }
+        .logo-box {
+            background: #FFFFFF;
+            padding: 16px 24px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            min-width: 240px;
+            min-height: 100px;
+        }
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background-color: var(--c-card);
+            border: 1px solid var(--c-card-border);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--c-gold);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .palette-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .swatch {
+            flex: 1;
+            height: 64px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 6px;
+            font-size: 10px;
+            font-weight: 600;
+            color: #FFFFFF;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .data-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 13px;
+        }
+        .data-label { color: var(--c-muted); }
+        .data-val { font-weight: 600; color: #FFF; }
+        .btn-site-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 8px;
+            padding: 10px 18px;
+            background: linear-gradient(135deg, var(--c-gold), #b89020);
+            color: #090D0E;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 13px;
+            transition: all 0.2s ease;
+        }
+        .btn-site-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(212, 175, 55, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <span class="badge-rank">RANKING OFICIAL #41</span>
+                <h1 class="hotel-title">Florianópolis Palace Hotel</h1>
+                <p class="hotel-meta">Centro · Centro · Hotel Tradicional</p>
+                <a href="https://www.florianopolispalacehotel.com.br" target="_blank" rel="noopener noreferrer" class="site-link-header">
+                    🌐 Visitar Website Oficial: https://www.florianopolispalacehotel.com.br ↗
+                </a>
+            </div>
+            <div class="logo-box">
+                <img src="data:image/png;base64,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" alt="Logo Oficial - Florianópolis Palace Hotel" style="max-height: 85px; max-width: 260px; object-fit: contain;">
+            </div>
+        </div>
+
+        <div class="grid-cards">
+            <div class="card">
+                <div class="card-title">🎨 Identidade Visual & Cores</div>
+                <p style="font-size: 13px; color: var(--c-muted); margin-bottom: 12px;">Paleta institucional extraída dos ativos oficiais via Brandfetch.</p>
+                <div class="palette-row">
+                    <div class="swatch" style="background: #CA9E67;">#CA9E67</div>
+                    <div class="swatch" style="background: #1A1A1A; color: #000; text-shadow: none;">#1A1A1A</div>
+                    <div class="swatch" style="background: #FFFFFF;">#FFFFFF</div>
+                    <div class="swatch" style="background: #12181A;">#12181A</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">🔤 Tipografia & Fontes Homologadas</div>
+                <div class="data-row">
+                    <span class="data-label">Títulos & Destaque</span>
+                    <span class="data-val">Poppins</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Corpo & Interface</span>
+                    <span class="data-val">Merriweather</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Arquitetura de Marca</span>
+                    <span class="data-val">Hotel Tradicional</span>
+                </div>
+            </div>
+
+            <div class="card" style="grid-column: 1 / -1;">
+                <div class="card-title">📊 Métricas Operacionais & Acesso Oficial</div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; align-items: center;">
+                    <div>
+                        <div class="data-label">Capacidade Declarada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">84 Apartamentos</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Diária Média Estimada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px; color: var(--c-gold);">R$ 280.00</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Ativos de Marca</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">2 arquivo(s) homologado(s)</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Canal Digital Direto</div>
+                        <a href="https://www.florianopolispalacehotel.com.br" target="_blank" rel="noopener noreferrer" class="btn-site-action">
+                            Acessar Website do Hotel ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Identidade Visual · Hotel Sonho Meu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --c-primary: #7FA0CC;
+            --c-gold: #1C0221;
+            --c-bg: #090D0E;
+            --c-card: #12181A;
+            --c-card-border: #1E282C;
+            --c-text: #E5EAE8;
+            --c-muted: #8E9E98;
+            --c-accent: #FFFFFF;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--c-bg);
+            color: var(--c-text);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .header {
+            background: linear-gradient(145deg, #131B1E, #0D1315);
+            border: 1px solid var(--c-card-border);
+            border-radius: 16px;
+            padding: 36px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            gap: 20px;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--c-gold), transparent);
+        }
+        .badge-rank {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--c-gold);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .hotel-title {
+            font-family: 'Cinzel', serif;
+            font-size: 30px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 6px;
+        }
+        .hotel-meta {
+            color: var(--c-muted);
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        .site-link-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            color: var(--c-gold);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .site-link-header:hover {
+            background: var(--c-gold);
+            color: #000000;
+            transform: translateY(-1px);
+        }
+        .logo-box {
+            background: #FFFFFF;
+            padding: 16px 24px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            min-width: 240px;
+            min-height: 100px;
+        }
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background-color: var(--c-card);
+            border: 1px solid var(--c-card-border);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--c-gold);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .palette-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .swatch {
+            flex: 1;
+            height: 64px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 6px;
+            font-size: 10px;
+            font-weight: 600;
+            color: #FFFFFF;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .data-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 13px;
+        }
+        .data-label { color: var(--c-muted); }
+        .data-val { font-weight: 600; color: #FFF; }
+        .btn-site-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 8px;
+            padding: 10px 18px;
+            background: linear-gradient(135deg, var(--c-gold), #b89020);
+            color: #090D0E;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 13px;
+            transition: all 0.2s ease;
+        }
+        .btn-site-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(212, 175, 55, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <span class="badge-rank">RANKING OFICIAL #60</span>
+                <h1 class="hotel-title">Hotel Sonho Meu</h1>
+                <p class="hotel-meta">Canasvieiras · Canasvieiras · Hotel Familiar</p>
+                <a href="https://www.hotelsonhomeu.com.br" target="_blank" rel="noopener noreferrer" class="site-link-header">
+                    🌐 Visitar Website Oficial: https://www.hotelsonhomeu.com.br ↗
+                </a>
+            </div>
+            <div class="logo-box">
+                <img src="data:image/png;base64,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" alt="Logo Oficial - Hotel Sonho Meu" style="max-height: 85px; max-width: 260px; object-fit: contain;">
+            </div>
+        </div>
+
+        <div class="grid-cards">
+            <div class="card">
+                <div class="card-title">🎨 Identidade Visual & Cores</div>
+                <p style="font-size: 13px; color: var(--c-muted); margin-bottom: 12px;">Paleta institucional extraída dos ativos oficiais via Brandfetch.</p>
+                <div class="palette-row">
+                    <div class="swatch" style="background: #7FA0CC;">#7FA0CC</div>
+                    <div class="swatch" style="background: #1C0221; color: #000; text-shadow: none;">#1C0221</div>
+                    <div class="swatch" style="background: #FFFFFF;">#FFFFFF</div>
+                    <div class="swatch" style="background: #12181A;">#12181A</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">🔤 Tipografia & Fontes Homologadas</div>
+                <div class="data-row">
+                    <span class="data-label">Títulos & Destaque</span>
+                    <span class="data-val">var(--font-alte-haas)</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Corpo & Interface</span>
+                    <span class="data-val">var(--font-alte-haas)</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Arquitetura de Marca</span>
+                    <span class="data-val">Hotel Familiar</span>
+                </div>
+            </div>
+
+            <div class="card" style="grid-column: 1 / -1;">
+                <div class="card-title">📊 Métricas Operacionais & Acesso Oficial</div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; align-items: center;">
+                    <div>
+                        <div class="data-label">Capacidade Declarada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">66 Apartamentos</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Diária Média Estimada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px; color: var(--c-gold);">R$ 290.00</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Ativos de Marca</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">3 arquivo(s) homologado(s)</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Canal Digital Direto</div>
+                        <a href="https://www.hotelsonhomeu.com.br" target="_blank" rel="noopener noreferrer" class="btn-site-action">
+                            Acessar Website do Hotel ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

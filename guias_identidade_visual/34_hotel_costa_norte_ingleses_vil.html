@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Identidade Visual · Hotel Costa Norte Ingleses Village</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --c-primary: #4C87C6;
+            --c-gold: #8AA512;
+            --c-bg: #090D0E;
+            --c-card: #12181A;
+            --c-card-border: #1E282C;
+            --c-text: #E5EAE8;
+            --c-muted: #8E9E98;
+            --c-accent: #D0B270;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--c-bg);
+            color: var(--c-text);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .header {
+            background: linear-gradient(145deg, #131B1E, #0D1315);
+            border: 1px solid var(--c-card-border);
+            border-radius: 16px;
+            padding: 36px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            gap: 20px;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--c-gold), transparent);
+        }
+        .badge-rank {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--c-gold);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .hotel-title {
+            font-family: 'Cinzel', serif;
+            font-size: 30px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 6px;
+        }
+        .hotel-meta {
+            color: var(--c-muted);
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        .site-link-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            color: var(--c-gold);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .site-link-header:hover {
+            background: var(--c-gold);
+            color: #000000;
+            transform: translateY(-1px);
+        }
+        .logo-box {
+            background: #FFFFFF;
+            padding: 16px 24px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            min-width: 240px;
+            min-height: 100px;
+        }
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background-color: var(--c-card);
+            border: 1px solid var(--c-card-border);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--c-gold);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .palette-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .swatch {
+            flex: 1;
+            height: 64px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 6px;
+            font-size: 10px;
+            font-weight: 600;
+            color: #FFFFFF;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .data-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 13px;
+        }
+        .data-label { color: var(--c-muted); }
+        .data-val { font-weight: 600; color: #FFF; }
+        .btn-site-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 8px;
+            padding: 10px 18px;
+            background: linear-gradient(135deg, var(--c-gold), #b89020);
+            color: #090D0E;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 13px;
+            transition: all 0.2s ease;
+        }
+        .btn-site-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(212, 175, 55, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <span class="badge-rank">RANKING OFICIAL #34</span>
+                <h1 class="hotel-title">Hotel Costa Norte Ingleses Village</h1>
+                <p class="hotel-meta">Praia dos Ingleses (Norte) · Praia dos Ingleses · Hotel Resort</p>
+                <a href="https://www.hoteiscostanorte.com.br" target="_blank" rel="noopener noreferrer" class="site-link-header">
+                    🌐 Visitar Website Oficial: https://www.hoteiscostanorte.com.br ↗
+                </a>
+            </div>
+            <div class="logo-box">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZ0AAABHCAMAAADr02ptAAAAtFBMVEVMaXH////////NuaP//////////f3////////////////////////////////////////0uAhPdbP1uQD1uQBPdbPx1tVOdbT1uQBOdbRPdbNPdbP1uABPdbP1uQD1uQBPdbP2uQD1uQDKZWC+XVn2vA3BSEPdmpe/RD7////////ekU7EUk3SfHjjrKmne42TkrFajsz///9PdbP1uQCzGxa4LylOg8X9zRdIc7T5wQWgfJGIN8M0AAAAMnRSTlMA8dAIMOAPgMFAUaCwYCGRbxw43FauHVh4jBnk/cvwOPKyyKX9m9hR9bZ5+8xqiM+H/Ow8230AAADGZVhJZklJKgAIAAAABwASAQMAAQAAAAEAAAAaAQUAAQAAAGIAAAAbAQUAAQAAAGoAAAAoAQMAAQAAAAIAAAAxAQIABgAAAHIAAAATAgMAAQAAAAEAAABphwQAAQAAAHgAAAAAAAAALxkBAOgDAAAvGQEA6AMAAGJmQHYxAAYAAJAHAAQAAAAwMjEwAZEHAAQAAAABAgMAAKAHAAQAAAAwMTAwAaADAAEAAAD//wAAAqAEAAEAAACdAQAAA6AEAAEAAABHAAAAAAAAAO6aQM0AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAjkSURBVHic7Vxpd7I6EJYtEJCl1mpt7aZVu94loH1v7///X/ckbAkkIVjpfc9pnk+tOiSTh8w8M0FHozYmc4vzqsbvgaubi4nm57fFIk0vJv/3JDQEmKep5ue3xeQa03O9uOphc3c34IQ0KFg3mJ00vZmrL8vd+eZML+K3YPHx8fHxT5req28fa5XdXmp+vgHWX/8+Pj7+i/m5UVYHl1mm+RkO1mw2I0J6tj7s9/v9I2YnvVeNbtNllmXZ+XTAGf5g7Nbb7dt6/f6+ftrv94dDwU6aLtTsz86XGNmDlgcnB8j3y/5wOBwIN+XewdparTR9+Pz169fnMju/PP30fjasPx63b29v25wiTE2Rd3rQs3l9fXx8/cyy5YNWB6cFsDDAbr19Ohyetn/+/fHxUXAjpQdYFiiSFQ6I+9dfOPusdHQbBsDe7Xaj+T9puXFyegSf3q23b2/r990Oc4ODYs5OdqvFwYCY39PciKRBIe72da4q2ckynXyGw6TJTsoR1uCPx+32bftUJqvD09MTzjuanoFx1WLnfsItkDDe109Y6m1fsWYrydG7ZzhckT4ogxuxcAOz3fv7Dmw+PylysqUObt/HTndVekm6BRS0NBi2S03jeqLUy6Fwq4X1MOCwI5TVQnaylT4A/zZ2OMKAwV2LnWwzzOx+OnjsdHV07m5b7CyHTj2+69qjHwcuO6l885y12clWA7fcDDQe/TxccNmRy7az8zY7A/cMQuSA0c8Df+9cX/Vm53zQzWMaPzCuidjh9XM62PnS5rEhPGprAAgh/532G60xxMbf50D/eqcztPHZUdk8CLnlny5CxV9wjDDMpHydBrZh/h2NPOTlhqFJXhu31tj3yBtBVL3CjtEybg2KkaB2rkPIAB0O0DP2EjWXevQKOto5InZUOgY8dmKEkOPh9TTtXuwE2H0PL3J1UQKAF8vzHISqcNgYo2XMZcdBCNX8VgsfdDjAztgcgh1pySNg5+EodgKExsSpxKhXk7oxaZscBTth8UY0RojZPR5CLr7BoYGMSDAG15gaFJsjY9wcmqwr7HKgmrE9RihRcUm5R62QeATs3J4dwY5f34y2Qe40VXacMsABh4lALkJhcUGUf4QzBteYZSdAsY+clgOoVI9iB6gZO2ouKZ/vKCQeXr2jpgva7FTLlDsaqrNTvx4zq2pUq4Vv64g/BteYYQcgZI8M5DcdcBCKOxzgZtdj2Gmdjar02kTsdIe21rxtRPtf38cK7BjUslDwqVAV+ZFgDK4xw06C903Q1AUIuV4xgNgBasbx19gRkCOVBZw+m6Jqa7HDBpO4+k+BnbiM9yzYK44EY3CNmQ86OGPYTV2AkGsXsU3sQD1jQdxUZWchYkdWj7Z71KoHCQh5bgGPTHZcx+X8vrc5rgSwBKDYAVhwOUHYkFUec8WRYAyuMb3SsAyK7DridXUrnSe4eLX4sNxnXS71auR0HPJM+eQoHJK2hGtVuxDAliBq2JB3SxvgGrloLZMVAXvFkWgMnjHNTpAbuQ1dQBbeJBzkn+ZdnJqwUV9e5lK/YlQuqfFz7lxseu8dJXYcrwTZWZSNH+OiBJmgNzs8Y2pQYOQCJWosH2HHJmWMAjtmQk1M5pLs61V92dmI2HnonXfGjHOCyMbPOwWixMlrvgJsqBlJxmgZU4OGCMXkJqIUYD0ZEtvEDuQfimJ65xyTd4SiQMrOg4id1RdVgdtDFdiwWuSA1k3MFclHOGPwjakP5m2eHHRmyCcDHIRssQPljJl5HcHO4hh2LH4xikWb9TVFbfZQ1F6dEQD9EeaKRhGImmPwjetBbYSCIgJT1X49GYhDtNCB6opm2azocqmnKJCxIyp3FCT1CatRtxa7DDtU0YTjU8gdg29cDxrU7FF/UpOJSVkqcKDu5NB91N7siLpscs02PSU78NhOTlR7ntCppKQkD0AOfwy+cTUoMIp+QKO6rSeDY5vQAaYRAY9mR5x2ZPVO63G2r7BD6kJyH4c9u6AxQrngSYp2WqsL6pRRpz0G17gaNKSLUIfWBXUpU7WX2xenqlGjPtPtzc7iKHaEouAodkZu1YB37K7igJjTJwhF554p6UilSU4Q6EDZGINnXA1q0rovpnVB7QC+gODilJdlL7zDJR6uhNVOmt4cIQqOY2dkB0arqFRhpzxkc1r+lSdrNdvtMTjG5aA2owSY/5htIXKAXnGv2oZ92ZmIyZF0QTnPSymzc/KDXwhh84BMdCrdHkNk/HucXEsCm+QEQdgp0I+EnhISxSY7fROnne5qVEMZEsUmKXcEB6ME+nnd00FcisqOd0QNagz9RZ6TQaYJxGnHkgS2wR+m/kGQbR1x2hG3cfTXeE6I6nmP+5vFYj6ZTCbz+eLiuqsWlSi2gR/W/VHI5fT1xZwh4mpOCBJ+RcRaSdhReKBNQwn43O2+QU3xzuJaHNhkmkCLgpPhIk0vRBxMxL+lJ9EE2VJ/e/REmB/3Y7rVs1K3q83llOBys1oqnr1pqGFy0+uXWhtb53YzvTurqTi7uyTZSFc7J8JEsnEsEMEweXHj2H0JfTv/GcT63G25mlLMlDZ3D8tMB7aBAaLQfTbzJ73KJ7LMILFn+dur7PZBVHFO9U/tfgGgs8MdQddjiEHIcBzTNB0v8LH1ZbbS3YBhEL28SI4gAAwD+ikhw/HGceJDO5oBAGY2nOFfotaZZTDYgWGO3UYmwcEMhu6YimaGGbghjFpMWlNZYrEi6IcJRujDSKu33rDI9xtxsPKegyCO4zgYP3umUxPjPMcJjFj2anPhkke+OzYdo7qO4ZjPLomFGj1g2S90+GIi2XMc2jOgzEgJgJNVI1shZBiG48VQb6G+sJOAus/xMuJ4Z/PvdNv12yGuAoj8mE1Wjhe4iQ+jaAZmEUlWGr0xs8sc0UpDDfie4cUhtKP8B3ULWCCyYRJTCs8wvTjxBRxrDAUrMQsJFwSx6764bhwEY49OVl7w4pcVkcY3A8CAPJbKAVEResP8z4jgCxZlVNJ3sOy2JTlJ4zthAdt3nzFDDk5EbB7SGH0N/wFT3PD/BYcQ0AAAAABJRU5ErkJggg==" alt="Logo Oficial - Hotel Costa Norte Ingleses Village" style="max-height: 85px; max-width: 260px; object-fit: contain;">
+            </div>
+        </div>
+
+        <div class="grid-cards">
+            <div class="card">
+                <div class="card-title">🎨 Identidade Visual & Cores</div>
+                <p style="font-size: 13px; color: var(--c-muted); margin-bottom: 12px;">Paleta institucional extraída dos ativos oficiais via Brandfetch.</p>
+                <div class="palette-row">
+                    <div class="swatch" style="background: #4C87C6;">#4C87C6</div>
+                    <div class="swatch" style="background: #8AA512; color: #000; text-shadow: none;">#8AA512</div>
+                    <div class="swatch" style="background: #D0B270;">#D0B270</div>
+                    <div class="swatch" style="background: #12181A;">#12181A</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">🔤 Tipografia & Fontes Homologadas</div>
+                <div class="data-row">
+                    <span class="data-label">Títulos & Destaque</span>
+                    <span class="data-val">font-highlite</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Corpo & Interface</span>
+                    <span class="data-val">font-body</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Arquitetura de Marca</span>
+                    <span class="data-val">Hotel Resort</span>
+                </div>
+            </div>
+
+            <div class="card" style="grid-column: 1 / -1;">
+                <div class="card-title">📊 Métricas Operacionais & Acesso Oficial</div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; align-items: center;">
+                    <div>
+                        <div class="data-label">Capacidade Declarada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">95 Apartamentos</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Diária Média Estimada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px; color: var(--c-gold);">R$ 520.00</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Ativos de Marca</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">2 arquivo(s) homologado(s)</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Canal Digital Direto</div>
+                        <a href="https://www.hoteiscostanorte.com.br" target="_blank" rel="noopener noreferrer" class="btn-site-action">
+                            Acessar Website do Hotel ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

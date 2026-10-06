@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Identidade Visual · Hotel Boutique Jurerê Beach</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --c-primary: #1B3B2B;
+            --c-gold: #D4AF37;
+            --c-bg: #090D0E;
+            --c-card: #12181A;
+            --c-card-border: #1E282C;
+            --c-text: #E5EAE8;
+            --c-muted: #8E9E98;
+            --c-accent: #E8A825;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--c-bg);
+            color: var(--c-text);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .header {
+            background: linear-gradient(145deg, #131B1E, #0D1315);
+            border: 1px solid var(--c-card-border);
+            border-radius: 16px;
+            padding: 36px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            gap: 20px;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--c-gold), transparent);
+        }
+        .badge-rank {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--c-gold);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .hotel-title {
+            font-family: 'Cinzel', serif;
+            font-size: 30px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 6px;
+        }
+        .hotel-meta {
+            color: var(--c-muted);
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        .site-link-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            color: var(--c-gold);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .site-link-header:hover {
+            background: var(--c-gold);
+            color: #000000;
+            transform: translateY(-1px);
+        }
+        .logo-box {
+            background: #FFFFFF;
+            padding: 16px 24px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            min-width: 240px;
+            min-height: 100px;
+        }
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background-color: var(--c-card);
+            border: 1px solid var(--c-card-border);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--c-gold);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .palette-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .swatch {
+            flex: 1;
+            height: 64px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 6px;
+            font-size: 10px;
+            font-weight: 600;
+            color: #FFFFFF;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .data-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 13px;
+        }
+        .data-label { color: var(--c-muted); }
+        .data-val { font-weight: 600; color: #FFF; }
+        .btn-site-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 8px;
+            padding: 10px 18px;
+            background: linear-gradient(135deg, var(--c-gold), #b89020);
+            color: #090D0E;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 13px;
+            transition: all 0.2s ease;
+        }
+        .btn-site-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(212, 175, 55, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <span class="badge-rank">RANKING OFICIAL #69</span>
+                <h1 class="hotel-title">Hotel Boutique Jurerê Beach</h1>
+                <p class="hotel-meta">Jurerê Internacional · Jurerê Internacional · Hotel Boutique</p>
+                <a href="https://www.boutiquejurere.com.br" target="_blank" rel="noopener noreferrer" class="site-link-header">
+                    🌐 Visitar Website Oficial: https://www.boutiquejurere.com.br ↗
+                </a>
+            </div>
+            <div class="logo-box">
+                <img src="data:image/webp;base64,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" alt="Logo Oficial - Hotel Boutique Jurerê Beach" style="max-height: 85px; max-width: 260px; object-fit: contain;">
+            </div>
+        </div>
+
+        <div class="grid-cards">
+            <div class="card">
+                <div class="card-title">🎨 Identidade Visual & Cores</div>
+                <p style="font-size: 13px; color: var(--c-muted); margin-bottom: 12px;">Paleta institucional extraída dos ativos oficiais via Brandfetch.</p>
+                <div class="palette-row">
+                    <div class="swatch" style="background: #1B3B2B;">#1B3B2B</div>
+                    <div class="swatch" style="background: #D4AF37; color: #000; text-shadow: none;">#D4AF37</div>
+                    <div class="swatch" style="background: #E8A825;">#E8A825</div>
+                    <div class="swatch" style="background: #12181A;">#12181A</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">🔤 Tipografia & Fontes Homologadas</div>
+                <div class="data-row">
+                    <span class="data-label">Títulos & Destaque</span>
+                    <span class="data-val">Cinzel / Playfair Display (Institucional)</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Corpo & Interface</span>
+                    <span class="data-val">Plus Jakarta Sans (Corpo)</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Arquitetura de Marca</span>
+                    <span class="data-val">Hotel Boutique</span>
+                </div>
+            </div>
+
+            <div class="card" style="grid-column: 1 / -1;">
+                <div class="card-title">📊 Métricas Operacionais & Acesso Oficial</div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; align-items: center;">
+                    <div>
+                        <div class="data-label">Capacidade Declarada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">60 Apartamentos</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Diária Média Estimada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px; color: var(--c-gold);">R$ 850.00</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Ativos de Marca</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">1 arquivo(s) homologado(s)</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Canal Digital Direto</div>
+                        <a href="https://www.boutiquejurere.com.br" target="_blank" rel="noopener noreferrer" class="btn-site-action">
+                            Acessar Website do Hotel ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

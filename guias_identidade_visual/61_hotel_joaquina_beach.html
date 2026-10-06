@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Identidade Visual · Hotel Joaquina Beach</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --c-primary: #005CA8;
+            --c-gold: #0B3A66;
+            --c-bg: #090D0E;
+            --c-card: #12181A;
+            --c-card-border: #1E282C;
+            --c-text: #E5EAE8;
+            --c-muted: #8E9E98;
+            --c-accent: #66BCD4;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--c-bg);
+            color: var(--c-text);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .header {
+            background: linear-gradient(145deg, #131B1E, #0D1315);
+            border: 1px solid var(--c-card-border);
+            border-radius: 16px;
+            padding: 36px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            gap: 20px;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--c-gold), transparent);
+        }
+        .badge-rank {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--c-gold);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .hotel-title {
+            font-family: 'Cinzel', serif;
+            font-size: 30px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 6px;
+        }
+        .hotel-meta {
+            color: var(--c-muted);
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        .site-link-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            color: var(--c-gold);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .site-link-header:hover {
+            background: var(--c-gold);
+            color: #000000;
+            transform: translateY(-1px);
+        }
+        .logo-box {
+            background: #FFFFFF;
+            padding: 16px 24px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            min-width: 240px;
+            min-height: 100px;
+        }
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background-color: var(--c-card);
+            border: 1px solid var(--c-card-border);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--c-gold);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .palette-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .swatch {
+            flex: 1;
+            height: 64px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 6px;
+            font-size: 10px;
+            font-weight: 600;
+            color: #FFFFFF;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .data-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 13px;
+        }
+        .data-label { color: var(--c-muted); }
+        .data-val { font-weight: 600; color: #FFF; }
+        .btn-site-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 8px;
+            padding: 10px 18px;
+            background: linear-gradient(135deg, var(--c-gold), #b89020);
+            color: #090D0E;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 13px;
+            transition: all 0.2s ease;
+        }
+        .btn-site-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(212, 175, 55, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <span class="badge-rank">RANKING OFICIAL #61</span>
+                <h1 class="hotel-title">Hotel Joaquina Beach</h1>
+                <p class="hotel-meta">Praia da Joaquina · Praia da Joaquina · Hotel Pé na Areia / Surf</p>
+                <a href="https://www.hoteljoaquinabeach.com.br" target="_blank" rel="noopener noreferrer" class="site-link-header">
+                    🌐 Visitar Website Oficial: https://www.hoteljoaquinabeach.com.br ↗
+                </a>
+            </div>
+            <div class="logo-box">
+                <img src="data:image/png;base64,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" alt="Logo Oficial - Hotel Joaquina Beach" style="max-height: 85px; max-width: 260px; object-fit: contain;">
+            </div>
+        </div>
+
+        <div class="grid-cards">
+            <div class="card">
+                <div class="card-title">🎨 Identidade Visual & Cores</div>
+                <p style="font-size: 13px; color: var(--c-muted); margin-bottom: 12px;">Paleta institucional extraída dos ativos oficiais via Brandfetch.</p>
+                <div class="palette-row">
+                    <div class="swatch" style="background: #005CA8;">#005CA8</div>
+                    <div class="swatch" style="background: #0B3A66; color: #000; text-shadow: none;">#0B3A66</div>
+                    <div class="swatch" style="background: #66BCD4;">#66BCD4</div>
+                    <div class="swatch" style="background: #12181A;">#12181A</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">🔤 Tipografia & Fontes Homologadas</div>
+                <div class="data-row">
+                    <span class="data-label">Títulos & Destaque</span>
+                    <span class="data-val">Georgia</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Corpo & Interface</span>
+                    <span class="data-val">Droid Serif</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Arquitetura de Marca</span>
+                    <span class="data-val">Hotel Pé na Areia / Surf</span>
+                </div>
+            </div>
+
+            <div class="card" style="grid-column: 1 / -1;">
+                <div class="card-title">📊 Métricas Operacionais & Acesso Oficial</div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; align-items: center;">
+                    <div>
+                        <div class="data-label">Capacidade Declarada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">65 Apartamentos</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Diária Média Estimada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px; color: var(--c-gold);">R$ 460.00</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Ativos de Marca</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">2 arquivo(s) homologado(s)</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Canal Digital Direto</div>
+                        <a href="https://www.hoteljoaquinabeach.com.br" target="_blank" rel="noopener noreferrer" class="btn-site-action">
+                            Acessar Website do Hotel ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

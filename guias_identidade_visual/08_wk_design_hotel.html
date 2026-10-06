@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Identidade Visual · WK Design Hotel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --c-primary: #8A6041;
+            --c-gold: #582E08;
+            --c-bg: #090D0E;
+            --c-card: #12181A;
+            --c-card-border: #1E282C;
+            --c-text: #E5EAE8;
+            --c-muted: #8E9E98;
+            --c-accent: #BABFC5;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--c-bg);
+            color: var(--c-text);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .header {
+            background: linear-gradient(145deg, #131B1E, #0D1315);
+            border: 1px solid var(--c-card-border);
+            border-radius: 16px;
+            padding: 36px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            gap: 20px;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--c-gold), transparent);
+        }
+        .badge-rank {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--c-gold);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .hotel-title {
+            font-family: 'Cinzel', serif;
+            font-size: 30px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 6px;
+        }
+        .hotel-meta {
+            color: var(--c-muted);
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        .site-link-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            color: var(--c-gold);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .site-link-header:hover {
+            background: var(--c-gold);
+            color: #000000;
+            transform: translateY(-1px);
+        }
+        .logo-box {
+            background: #FFFFFF;
+            padding: 16px 24px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            min-width: 240px;
+            min-height: 100px;
+        }
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background-color: var(--c-card);
+            border: 1px solid var(--c-card-border);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--c-gold);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .palette-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .swatch {
+            flex: 1;
+            height: 64px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 6px;
+            font-size: 10px;
+            font-weight: 600;
+            color: #FFFFFF;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .data-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 13px;
+        }
+        .data-label { color: var(--c-muted); }
+        .data-val { font-weight: 600; color: #FFF; }
+        .btn-site-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 8px;
+            padding: 10px 18px;
+            background: linear-gradient(135deg, var(--c-gold), #b89020);
+            color: #090D0E;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 13px;
+            transition: all 0.2s ease;
+        }
+        .btn-site-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(212, 175, 55, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <span class="badge-rank">RANKING OFICIAL #08</span>
+                <h1 class="hotel-title">WK Design Hotel</h1>
+                <p class="hotel-meta">Beira-Mar Norte · Beira-Mar Norte · Hotel Boutique / 5 Estrelas</p>
+                <a href="https://wkdesignhotel.com.br" target="_blank" rel="noopener noreferrer" class="site-link-header">
+                    🌐 Visitar Website Oficial: https://wkdesignhotel.com.br ↗
+                </a>
+            </div>
+            <div class="logo-box">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAzQAAADMCAMAAACShRasAAAAKlBMVEVMaXH////////////////////////////////////////////////////m1kuZAAAADXRSTlMABPoO367IH+91jlU6/u4QEQAAAMZlWElmSUkqAAgAAAAHABIBAwABAAAAAQAAABoBBQABAAAAYgAAABsBBQABAAAAagAAACgBAwABAAAAAgAAADEBAgAGAAAAcgAAABMCAwABAAAAAQAAAGmHBAABAAAAeAAAAAAAAABIAAAAAQAAAEgAAAABAAAAYmZAdjEABgAAkAcABAAAADAyMTABkQcABAAAAAECAwAAoAcABAAAADAxMDABoAMAAQAAAP//AAACoAQAAQAAADQDAAADoAQAAQAAAMwAAAAAAAAAAvY2xQAAAAlwSFlzAAALEwAACxMBAJqcGAAAGw5JREFUeJztneuahKgORQ2oqOj7v25/3NSu8pIgoFhk/syZ02VR6HLDBpKqquAjqsfFY1r42ZBndleUeMAvhR/r8hIbEQW/La4vgr58wKOVEOSnfVwjxDX9OsJ9ZjDR2xirpwWXrm23thAq0X+H5AG/4YFvUdMiLsZxFFz/OyRuo+0UEKOUspdSjkL3+a2dxSY2R8e6oXpaiGbqVjEN1T29xRu2bodpjPS+HGjolleWDPEsiGZomuHsH/Q3qLaIvmlrG+0ghX5/YIP3zTA0g/qQV+jOgLEfVBNsn6t2NP2oesu7r0BrBe31y81bUv87m/7FA6Fpp1Ub2dTcAg1Uzf+O0m0Z/IWGd/O7Sr221MPQDlLdxwvYjOuu2osa22ioQDZ1t/5sVzcS8C0UzcTY1I5+t0x9DZdN+78Jpuvruum5d19BVU+M1SRquL5Xrf73/73MngYNPAMaXvVfjyObGu9XqIJm43nu6na4wk1IaAAq2W40smt7jr0FV6BRmjsOdbf7ixTA3K+rFDSqJyjUcN2QLWiK0ux0svx6fNhUX2BmGxp9J1s1nPHDJiA0UInGNVFr4eqXtyOyff7QKGRksyJmmUSsmmIABl9oSNRkBM0jlAaq0XTyP2jYJUvCQrP1KLC6GSkzhy9o2FFglWasbYvmpi2N7Aac2HhD8yFz/5hdN2TqarzufUNDoSYjaJ4xp+HtNzNTf+2SGwP15dHwxCag0lhp1U1iddu2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" alt="Logo Oficial - WK Design Hotel" style="max-height: 85px; max-width: 260px; object-fit: contain;">
+            </div>
+        </div>
+
+        <div class="grid-cards">
+            <div class="card">
+                <div class="card-title">🎨 Identidade Visual & Cores</div>
+                <p style="font-size: 13px; color: var(--c-muted); margin-bottom: 12px;">Paleta institucional extraída dos ativos oficiais via Brandfetch.</p>
+                <div class="palette-row">
+                    <div class="swatch" style="background: #8A6041;">#8A6041</div>
+                    <div class="swatch" style="background: #582E08; color: #000; text-shadow: none;">#582E08</div>
+                    <div class="swatch" style="background: #BABFC5;">#BABFC5</div>
+                    <div class="swatch" style="background: #12181A;">#12181A</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">🔤 Tipografia & Fontes Homologadas</div>
+                <div class="data-row">
+                    <span class="data-label">Títulos & Destaque</span>
+                    <span class="data-val">sans-serif</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Corpo & Interface</span>
+                    <span class="data-val">Plus Jakarta Sans</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Arquitetura de Marca</span>
+                    <span class="data-val">Hotel Boutique / 5 Estrelas</span>
+                </div>
+            </div>
+
+            <div class="card" style="grid-column: 1 / -1;">
+                <div class="card-title">📊 Métricas Operacionais & Acesso Oficial</div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; align-items: center;">
+                    <div>
+                        <div class="data-label">Capacidade Declarada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">170 Apartamentos</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Diária Média Estimada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px; color: var(--c-gold);">R$ 890.00</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Ativos de Marca</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">3 arquivo(s) homologado(s)</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Canal Digital Direto</div>
+                        <a href="https://wkdesignhotel.com.br" target="_blank" rel="noopener noreferrer" class="btn-site-action">
+                            Acessar Website do Hotel ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

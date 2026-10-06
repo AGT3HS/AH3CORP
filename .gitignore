@@ -1,0 +1,33 @@
+# Ambiente e Credenciais (Travas de Seguranca AGENTS.md)
+.env
+.env.*
+*.env
+credentials.json
+token.json
+
+# Caches e Ambientes Virtuais
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+env/
+
+# Repositórios externos clonados / ferramentas de terceiros
+repos_tools/
+saida/
+fonts/
+
+# Temporarios e Logs
+*.log
+temp_slides_designmd/
+tmp/
+temp/
+.tmp/
+
+# Caches do Sistema Operacional / IDEs
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

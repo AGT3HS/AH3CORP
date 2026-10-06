@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Identidade Visual · Canasvieiras Hotel & Eventos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --c-primary: #EDA773;
+            --c-gold: #1357B0;
+            --c-bg: #090D0E;
+            --c-card: #12181A;
+            --c-card-border: #1E282C;
+            --c-text: #E5EAE8;
+            --c-muted: #8E9E98;
+            --c-accent: #61E2FF;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--c-bg);
+            color: var(--c-text);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .header {
+            background: linear-gradient(145deg, #131B1E, #0D1315);
+            border: 1px solid var(--c-card-border);
+            border-radius: 16px;
+            padding: 36px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            gap: 20px;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--c-gold), transparent);
+        }
+        .badge-rank {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--c-gold);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .hotel-title {
+            font-family: 'Cinzel', serif;
+            font-size: 30px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 6px;
+        }
+        .hotel-meta {
+            color: var(--c-muted);
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        .site-link-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            color: var(--c-gold);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .site-link-header:hover {
+            background: var(--c-gold);
+            color: #000000;
+            transform: translateY(-1px);
+        }
+        .logo-box {
+            background: #FFFFFF;
+            padding: 16px 24px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            min-width: 240px;
+            min-height: 100px;
+        }
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background-color: var(--c-card);
+            border: 1px solid var(--c-card-border);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--c-gold);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .palette-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .swatch {
+            flex: 1;
+            height: 64px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 6px;
+            font-size: 10px;
+            font-weight: 600;
+            color: #FFFFFF;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .data-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 13px;
+        }
+        .data-label { color: var(--c-muted); }
+        .data-val { font-weight: 600; color: #FFF; }
+        .btn-site-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 8px;
+            padding: 10px 18px;
+            background: linear-gradient(135deg, var(--c-gold), #b89020);
+            color: #090D0E;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 13px;
+            transition: all 0.2s ease;
+        }
+        .btn-site-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(212, 175, 55, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <span class="badge-rank">RANKING OFICIAL #38</span>
+                <h1 class="hotel-title">Canasvieiras Hotel & Eventos</h1>
+                <p class="hotel-meta">Canasvieiras · Canasvieiras · Hotel Tradicional</p>
+                <a href="https://www.canasvieirashotel.com.br" target="_blank" rel="noopener noreferrer" class="site-link-header">
+                    🌐 Visitar Website Oficial: https://www.canasvieirashotel.com.br ↗
+                </a>
+            </div>
+            <div class="logo-box">
+                <img src="data:image/jpg;base64,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" alt="Logo Oficial - Canasvieiras Hotel & Eventos" style="max-height: 85px; max-width: 260px; object-fit: contain;">
+            </div>
+        </div>
+
+        <div class="grid-cards">
+            <div class="card">
+                <div class="card-title">🎨 Identidade Visual & Cores</div>
+                <p style="font-size: 13px; color: var(--c-muted); margin-bottom: 12px;">Paleta institucional extraída dos ativos oficiais via Brandfetch.</p>
+                <div class="palette-row">
+                    <div class="swatch" style="background: #EDA773;">#EDA773</div>
+                    <div class="swatch" style="background: #1357B0; color: #000; text-shadow: none;">#1357B0</div>
+                    <div class="swatch" style="background: #61E2FF;">#61E2FF</div>
+                    <div class="swatch" style="background: #12181A;">#12181A</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">🔤 Tipografia & Fontes Homologadas</div>
+                <div class="data-row">
+                    <span class="data-label">Títulos & Destaque</span>
+                    <span class="data-val">Cinzel / Playfair Display (Institucional)</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Corpo & Interface</span>
+                    <span class="data-val">Plus Jakarta Sans (Corpo)</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Arquitetura de Marca</span>
+                    <span class="data-val">Hotel Tradicional</span>
+                </div>
+            </div>
+
+            <div class="card" style="grid-column: 1 / -1;">
+                <div class="card-title">📊 Métricas Operacionais & Acesso Oficial</div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; align-items: center;">
+                    <div>
+                        <div class="data-label">Capacidade Declarada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">88 Apartamentos</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Diária Média Estimada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px; color: var(--c-gold);">R$ 330.00</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Ativos de Marca</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">2 arquivo(s) homologado(s)</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Canal Digital Direto</div>
+                        <a href="https://www.canasvieirashotel.com.br" target="_blank" rel="noopener noreferrer" class="btn-site-action">
+                            Acessar Website do Hotel ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

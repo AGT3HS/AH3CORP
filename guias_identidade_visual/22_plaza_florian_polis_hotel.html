@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Identidade Visual · Plaza Florianópolis Hotel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --c-primary: #0F0F0F;
+            --c-gold: #D9A845;
+            --c-bg: #090D0E;
+            --c-card: #12181A;
+            --c-card-border: #1E282C;
+            --c-text: #E5EAE8;
+            --c-muted: #8E9E98;
+            --c-accent: #FFFFFF;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--c-bg);
+            color: var(--c-text);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .header {
+            background: linear-gradient(145deg, #131B1E, #0D1315);
+            border: 1px solid var(--c-card-border);
+            border-radius: 16px;
+            padding: 36px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            gap: 20px;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--c-gold), transparent);
+        }
+        .badge-rank {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--c-gold);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .hotel-title {
+            font-family: 'Cinzel', serif;
+            font-size: 30px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 6px;
+        }
+        .hotel-meta {
+            color: var(--c-muted);
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        .site-link-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            color: var(--c-gold);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .site-link-header:hover {
+            background: var(--c-gold);
+            color: #000000;
+            transform: translateY(-1px);
+        }
+        .logo-box {
+            background: #FFFFFF;
+            padding: 16px 24px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            min-width: 240px;
+            min-height: 100px;
+        }
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background-color: var(--c-card);
+            border: 1px solid var(--c-card-border);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--c-gold);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .palette-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .swatch {
+            flex: 1;
+            height: 64px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 6px;
+            font-size: 10px;
+            font-weight: 600;
+            color: #FFFFFF;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .data-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 13px;
+        }
+        .data-label { color: var(--c-muted); }
+        .data-val { font-weight: 600; color: #FFF; }
+        .btn-site-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 8px;
+            padding: 10px 18px;
+            background: linear-gradient(135deg, var(--c-gold), #b89020);
+            color: #090D0E;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 13px;
+            transition: all 0.2s ease;
+        }
+        .btn-site-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(212, 175, 55, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <span class="badge-rank">RANKING OFICIAL #22</span>
+                <h1 class="hotel-title">Plaza Florianópolis Hotel</h1>
+                <p class="hotel-meta">Centro · Centro · Hotel Executivo</p>
+                <a href="https://www.plazahoteis.com.br" target="_blank" rel="noopener noreferrer" class="site-link-header">
+                    🌐 Visitar Website Oficial: https://www.plazahoteis.com.br ↗
+                </a>
+            </div>
+            <div class="logo-box">
+                <img src="data:image/png;base64,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" alt="Logo Oficial - Plaza Florianópolis Hotel" style="max-height: 85px; max-width: 260px; object-fit: contain;">
+            </div>
+        </div>
+
+        <div class="grid-cards">
+            <div class="card">
+                <div class="card-title">🎨 Identidade Visual & Cores</div>
+                <p style="font-size: 13px; color: var(--c-muted); margin-bottom: 12px;">Paleta institucional extraída dos ativos oficiais via Brandfetch.</p>
+                <div class="palette-row">
+                    <div class="swatch" style="background: #0F0F0F;">#0F0F0F</div>
+                    <div class="swatch" style="background: #D9A845; color: #000; text-shadow: none;">#D9A845</div>
+                    <div class="swatch" style="background: #FFFFFF;">#FFFFFF</div>
+                    <div class="swatch" style="background: #12181A;">#12181A</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">🔤 Tipografia & Fontes Homologadas</div>
+                <div class="data-row">
+                    <span class="data-label">Títulos & Destaque</span>
+                    <span class="data-val">Lato</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Corpo & Interface</span>
+                    <span class="data-val">serif</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Arquitetura de Marca</span>
+                    <span class="data-val">Hotel Executivo</span>
+                </div>
+            </div>
+
+            <div class="card" style="grid-column: 1 / -1;">
+                <div class="card-title">📊 Métricas Operacionais & Acesso Oficial</div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; align-items: center;">
+                    <div>
+                        <div class="data-label">Capacidade Declarada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">125 Apartamentos</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Diária Média Estimada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px; color: var(--c-gold);">R$ 370.00</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Ativos de Marca</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">2 arquivo(s) homologado(s)</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Canal Digital Direto</div>
+                        <a href="https://www.plazahoteis.com.br" target="_blank" rel="noopener noreferrer" class="btn-site-action">
+                            Acessar Website do Hotel ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
