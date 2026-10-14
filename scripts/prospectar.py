@@ -34,12 +34,12 @@ def criar_rascunho_whatsapp(dados_local, caminho_pdf):
         pontos.append(f"o volume de avaliações medido na região indica potencial de crescimento de autoridade local")
         
     texto_whatsapp = (
-        f"Olá! Tudo bem? Meu nome é [Nome], da Agência AH3.\n\n"
-        f"Estávamos analisando a presença digital de estabelecimentos na sua região e fizemos um diagnóstico preliminar do perfil da *{nome}* no Google Maps.\n\n"
-        f"Notamos alguns pontos de destaque:\n"
+        f"Olá! Tudo bem? Meu nome é Augusto, da Agência AH3 aqui de Florianópolis.\n\n"
+        f"Estávamos analisando a presença digital na sua região e fizemos um diagnóstico preliminar do perfil da *{nome}* no Google Maps.\n\n"
+        f"Notamos alguns pontos estratégicos:\n"
         f"• {pontos[0].capitalize()};\n"
         f"• {pontos[1].capitalize()};\n"
-        f"• Há um potencial esperado de aumento na visibilidade e atração de novos clientes aplicando ajustes de SEO local.\n\n"
+        f"• O líder da sua microrregião chega a receber até 3.8× mais clientes avaliando por mês, capturando a maior fatia das buscas locais.\n\n"
         f"Preparamos um relatório em PDF com o diagnóstico completo medido pelo Google. Se fizer sentido, posso te encaminhar por aqui sem compromisso para você dar uma olhada?"
     )
     

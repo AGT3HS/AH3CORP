@@ -1,0 +1,1 @@
+O iFood é a maior vitrine de delivery do Brasil, mas deixar 20% a 27% de comissão em toda venda mata o seu lucro. A nossa estratégia usa o iFood apenas como isca para atrair novos clientes. Assim que o cliente faz o primeiro pedido, nós entregamos uma experiência que o faz pedir sempre direto pelo seu WhatsApp, garantindo que você fique com 100% do lucro.
