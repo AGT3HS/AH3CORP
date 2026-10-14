@@ -1,0 +1,13 @@
+{
+  "nome": "Hotel Oceano",
+  "unidade": "Coqueiros / Estreito",
+  "categoria": "Hotel Econômico",
+  "regiao": "Continente",
+  "quartos": 48,
+  "diaria_media": 230,
+  "site": "https://www.hoteloceano.com.br",
+  "ranking": 100,
+  "telefone": "",
+  "phone_clean": "",
+  "telefone_fixo": ""
+}

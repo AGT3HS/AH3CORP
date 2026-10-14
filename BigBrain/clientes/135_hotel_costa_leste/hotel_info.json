@@ -1,0 +1,13 @@
+{
+  "nome": "Hotel Costa Leste",
+  "unidade": "Rio Vermelho",
+  "categoria": "Hotel Familiar",
+  "regiao": "São João do Rio Vermelho",
+  "quartos": 35,
+  "diaria_media": 250,
+  "site": "https://www.hotelcostaleste.com.br",
+  "ranking": 135,
+  "telefone": "",
+  "phone_clean": "",
+  "telefone_fixo": ""
+}

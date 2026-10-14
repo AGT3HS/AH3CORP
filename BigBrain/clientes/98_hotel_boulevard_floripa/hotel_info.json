@@ -1,0 +1,13 @@
+{
+  "nome": "Hotel Boulevard Floripa",
+  "unidade": "Centro",
+  "categoria": "Hotel Executivo",
+  "regiao": "Centro",
+  "quartos": 48,
+  "diaria_media": 270,
+  "site": "https://www.boulevardfloripa.com.br",
+  "ranking": 98,
+  "telefone": "",
+  "phone_clean": "",
+  "telefone_fixo": ""
+}

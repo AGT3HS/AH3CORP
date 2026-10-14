@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Identidade Visual · Hotel Morro das Pedras</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --c-primary: #004DFD;
+            --c-gold: #141A3D;
+            --c-bg: #090D0E;
+            --c-card: #12181A;
+            --c-card-border: #1E282C;
+            --c-text: #E5EAE8;
+            --c-muted: #8E9E98;
+            --c-accent: #5F9AD5;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--c-bg);
+            color: var(--c-text);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .header {
+            background: linear-gradient(145deg, #131B1E, #0D1315);
+            border: 1px solid var(--c-card-border);
+            border-radius: 16px;
+            padding: 36px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            gap: 20px;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--c-gold), transparent);
+        }
+        .badge-rank {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--c-gold);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .hotel-title {
+            font-family: 'Cinzel', serif;
+            font-size: 30px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 6px;
+        }
+        .hotel-meta {
+            color: var(--c-muted);
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        .site-link-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            color: var(--c-gold);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .site-link-header:hover {
+            background: var(--c-gold);
+            color: #000000;
+            transform: translateY(-1px);
+        }
+        .logo-box {
+            background: #FFFFFF;
+            padding: 16px 24px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            min-width: 240px;
+            min-height: 100px;
+        }
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background-color: var(--c-card);
+            border: 1px solid var(--c-card-border);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--c-gold);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .palette-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .swatch {
+            flex: 1;
+            height: 64px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 6px;
+            font-size: 10px;
+            font-weight: 600;
+            color: #FFFFFF;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .data-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 13px;
+        }
+        .data-label { color: var(--c-muted); }
+        .data-val { font-weight: 600; color: #FFF; }
+        .btn-site-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 8px;
+            padding: 10px 18px;
+            background: linear-gradient(135deg, var(--c-gold), #b89020);
+            color: #090D0E;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 13px;
+            transition: all 0.2s ease;
+        }
+        .btn-site-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(212, 175, 55, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <span class="badge-rank">RANKING OFICIAL #21</span>
+                <h1 class="hotel-title">Hotel Morro das Pedras</h1>
+                <p class="hotel-meta">Morro das Pedras · Morro das Pedras · Hotel de Praia & Lazer</p>
+                <a href="https://www.morrodaspedras.com.br" target="_blank" rel="noopener noreferrer" class="site-link-header">
+                    🌐 Visitar Website Oficial: https://www.morrodaspedras.com.br ↗
+                </a>
+            </div>
+            <div class="logo-box">
+                <img src="data:image/png;base64,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" alt="Logo Oficial - Hotel Morro das Pedras" style="max-height: 85px; max-width: 260px; object-fit: contain;">
+            </div>
+        </div>
+
+        <div class="grid-cards">
+            <div class="card">
+                <div class="card-title">🎨 Identidade Visual & Cores</div>
+                <p style="font-size: 13px; color: var(--c-muted); margin-bottom: 12px;">Paleta institucional extraída dos ativos oficiais via Brandfetch.</p>
+                <div class="palette-row">
+                    <div class="swatch" style="background: #004DFD;">#004DFD</div>
+                    <div class="swatch" style="background: #141A3D; color: #000; text-shadow: none;">#141A3D</div>
+                    <div class="swatch" style="background: #5F9AD5;">#5F9AD5</div>
+                    <div class="swatch" style="background: #12181A;">#12181A</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">🔤 Tipografia & Fontes Homologadas</div>
+                <div class="data-row">
+                    <span class="data-label">Títulos & Destaque</span>
+                    <span class="data-val">var(--font-sans)</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Corpo & Interface</span>
+                    <span class="data-val">var(--font-sans)</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Arquitetura de Marca</span>
+                    <span class="data-val">Hotel de Praia & Lazer</span>
+                </div>
+            </div>
+
+            <div class="card" style="grid-column: 1 / -1;">
+                <div class="card-title">📊 Métricas Operacionais & Acesso Oficial</div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; align-items: center;">
+                    <div>
+                        <div class="data-label">Capacidade Declarada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">126 Apartamentos</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Diária Média Estimada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px; color: var(--c-gold);">R$ 420.00</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Ativos de Marca</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">1 arquivo(s) homologado(s)</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Canal Digital Direto</div>
+                        <a href="https://www.morrodaspedras.com.br" target="_blank" rel="noopener noreferrer" class="btn-site-action">
+                            Acessar Website do Hotel ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

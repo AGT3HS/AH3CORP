@@ -1,0 +1,13 @@
+{
+  "nome": "Hotel Sol Canasvieiras",
+  "unidade": "Canasvieiras",
+  "categoria": "Hotel de Praia",
+  "regiao": "Canasvieiras",
+  "quartos": 60,
+  "diaria_media": 290,
+  "site": "https://www.hotelsolcanasvieiras.com.br",
+  "ranking": 70,
+  "telefone": "",
+  "phone_clean": "",
+  "telefone_fixo": ""
+}

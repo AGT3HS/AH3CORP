@@ -1,0 +1,13 @@
+{
+  "nome": "Hotel Dom Marujo",
+  "unidade": "Canasvieiras",
+  "categoria": "Hotel de Lazer",
+  "regiao": "Canasvieiras",
+  "quartos": 70,
+  "diaria_media": 290,
+  "site": "https://www.hoteldommarujo.com.br",
+  "ranking": 55,
+  "telefone": "(48) 3284-5155",
+  "phone_clean": "554832845155",
+  "telefone_fixo": "+55 48 3284-5155"
+}

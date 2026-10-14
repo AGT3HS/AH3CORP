@@ -1,0 +1,13 @@
+{
+  "nome": "Hotel Samuka",
+  "unidade": "Barra da Lagoa",
+  "categoria": "Hotel de Lazer",
+  "regiao": "Barra da Lagoa",
+  "quartos": 55,
+  "diaria_media": 290,
+  "site": "https://www.hotelsamuka.com.br",
+  "ranking": 81,
+  "telefone": "(48) 3232-5024",
+  "phone_clean": "554832325024",
+  "telefone_fixo": "+55 48 3232-5024"
+}

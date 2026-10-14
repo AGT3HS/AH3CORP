@@ -1,0 +1,13 @@
+{
+  "nome": "Hotel Moçambique",
+  "unidade": "Canasvieiras",
+  "categoria": "Hotel de Praia",
+  "regiao": "Canasvieiras",
+  "quartos": 75,
+  "diaria_media": 310,
+  "site": "https://www.hotelmocambique.com.br",
+  "ranking": 48,
+  "telefone": "(48) 3331-0700",
+  "phone_clean": "554833310700",
+  "telefone_fixo": "+55 48 3331-0700"
+}

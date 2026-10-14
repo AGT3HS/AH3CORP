@@ -1,0 +1,13 @@
+{
+  "nome": "Hotel Campeche Beach",
+  "unidade": "Praia do Campeche",
+  "categoria": "Hotel de Praia",
+  "regiao": "Praia do Campeche",
+  "quartos": 60,
+  "diaria_media": 420,
+  "site": "https://www.hotelcampechebeach.com.br",
+  "ranking": 69,
+  "telefone": "",
+  "phone_clean": "",
+  "telefone_fixo": ""
+}

@@ -17,10 +17,10 @@ Violou qualquer uma: PARE, registre no ledger e avise o Augusto.
 novo → auditado → abordado → respondeu → proposta_enviada → fechado | perdido
 
 Quem muda:
-- Radar: só `novo → auditado`.
+- Comercial: só `novo → auditado`.
 - Maestro: os demais, e só depois do OK do Augusto.
 - Nenhum outro valor de status é aceito em `leads.csv`.
 
 # VALOR MÍNIMO
-R$ [DEFINIR ANTES DO PRIMEIRO CLIENTE] por mês.
-Enquanto estiver com [DEFINIR], @Propostas não gera proposta.
+R$ 1.850,00 por mês (Plano Essencial).
+O @Comercial utiliza este valor como âncora de entrada e não gera propostas com mensalidade abaixo deste piso.

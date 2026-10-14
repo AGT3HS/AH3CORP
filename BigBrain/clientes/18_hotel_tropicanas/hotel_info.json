@@ -1,0 +1,13 @@
+{
+  "nome": "Hotel Tropicanas",
+  "unidade": "Canasvieiras",
+  "categoria": "Hotel de Lazer Familiar",
+  "regiao": "Canasvieiras",
+  "quartos": 135,
+  "diaria_media": 380,
+  "site": "https://www.hoteltropicanas.com.br",
+  "ranking": 18,
+  "telefone": "(48) 98831-4088",
+  "telefone_fixo": "+55 48 3232-1666",
+  "phone_clean": "5548988314088"
+}

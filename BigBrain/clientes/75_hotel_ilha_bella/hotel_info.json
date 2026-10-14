@@ -1,0 +1,13 @@
+{
+  "nome": "Hotel Ilha Bella",
+  "unidade": "Canasvieiras",
+  "categoria": "Hotel de Praia",
+  "regiao": "Canasvieiras",
+  "quartos": 58,
+  "diaria_media": 280,
+  "site": "https://www.hotelilhabella.com.br",
+  "ranking": 75,
+  "telefone": "(48) 3232-3236",
+  "phone_clean": "554832323236",
+  "telefone_fixo": "+55 48 3232-3236"
+}

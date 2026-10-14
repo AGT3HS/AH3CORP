@@ -1,0 +1,225 @@
+{
+  "agencia": "AH3 Marketing & Presença Local",
+  "cidade_uf": "Florianópolis - SC",
+  "data": "06/10/2026",
+  "data_coleta": "06/10/2026",
+  "ponto_referencia": "Ponta das Canas / Cachoeira (raio 3km)",
+  "manchete": "Você é a 3ª Academia no Google Maps da região.",
+  "manchete_apoio": "Nota 4,4★ com 45 avaliações. Ocupa posição no Top 3, mas está vulnerável à Fox Academia (176) e Shape Fitness (364) pela falta de novos reviews.",
+  "estabelecimento": {
+    "nome": "Academia Corpo em Ação",
+    "categoria": "Academia / Centro de Treinamento",
+    "verificado": true,
+    "endereco": "Av. Luiz Boiteux Piazza, 6192 - Ponta das Canas, Florianópolis - SC",
+    "telefone": "(48) 98878-1837",
+    "gps": "-27.39691, -48.42704",
+    "microrregiao": "Ponta das Canas"
+  },
+  "kpis": [
+    {
+      "label": "Score de Presença",
+      "valor": "48",
+      "sufixo": "/100",
+      "nota": "Faltam 32 pts p/ meta 80",
+      "cor": "bad"
+    },
+    {
+      "label": "Total Avaliações",
+      "valor": "45",
+      "sufixo": "",
+      "nota": "Líder regional: 364",
+      "cor": "dark"
+    },
+    {
+      "label": "Nota Média",
+      "valor": "4,4",
+      "sufixo": "★",
+      "nota": "Reputação positiva",
+      "cor": "warn"
+    },
+    {
+      "label": "Gap p/ o Líder",
+      "valor": "8,1",
+      "sufixo": "×",
+      "nota": "Menos avaliações que o líder",
+      "cor": "brand"
+    }
+  ],
+  "pilares": [
+    {
+      "label": "Dados cadastrais (NAP)",
+      "desc": "Endereço e celular corretos",
+      "valor": 85
+    },
+    {
+      "label": "Volume de avaliações",
+      "desc": "45 avaliações (muito abaixo do polo)",
+      "valor": 25
+    },
+    {
+      "label": "Recência das avaliações",
+      "desc": "Poucas notas nos últimos 60 dias",
+      "valor": 35
+    },
+    {
+      "label": "Taxa de resposta",
+      "desc": "Comentários sem resposta oficial",
+      "valor": 30
+    },
+    {
+      "label": "Fotos da Estrutura",
+      "desc": "Poucas fotos de aparelhos e aulas",
+      "valor": 45
+    },
+    {
+      "label": "Site / Página de Planos",
+      "desc": "Sem site próprio nem link de matrícula",
+      "valor": 20
+    }
+  ],
+  "diagnostico": "Excelente localização e boa nota, mas perfil vulnerável no Google por falta de reviews recentes e site próprio.",
+  "ranking": {
+    "linhas": [
+      {
+        "pos": "1º",
+        "nome": "Shape Fitness Academy",
+        "sub": "Academia · Cachoeira do Bom Jesus",
+        "nota": "4,1",
+        "avaliacoes": 364,
+        "site": "ok",
+        "wpp": "ok",
+        "alvo": false
+      },
+      {
+        "pos": "2º",
+        "nome": "Fox Academia",
+        "sub": "Academia · Ponta das Canas",
+        "nota": "4,7",
+        "avaliacoes": 176,
+        "site": "warn",
+        "wpp": "ok",
+        "alvo": false
+      },
+      {
+        "pos": "3º",
+        "nome": "Academia Corpo em Ação",
+        "sub": "Alvo auditado (Academia)",
+        "nota": "4,4",
+        "avaliacoes": 45,
+        "site": "bad",
+        "wpp": "ok",
+        "alvo": true
+      },
+      {
+        "pos": "4º",
+        "nome": "Espaço Saúde & Treino",
+        "sub": "Estúdio Funcional",
+        "nota": "4,8",
+        "avaliacoes": 32,
+        "site": "bad",
+        "wpp": "warn",
+        "alvo": false
+      },
+      {
+        "pos": "5º",
+        "nome": "Academia Cross Floripa",
+        "sub": "Centro de Treinamento",
+        "nota": "4,6",
+        "avaliacoes": 28,
+        "site": "bad",
+        "wpp": "bad",
+        "alvo": false
+      }
+    ]
+  },
+  "acoes": [
+    {
+      "tag": "Impacto Imediato",
+      "titulo": "Totem NFC na Recepção",
+      "descricao": "Instalação de display NFC na catraca/balcão para coleta de avaliações diárias dos alunos ativos.",
+      "prazo": "7 dias",
+      "meta": "+40 avaliações no mês"
+    },
+    {
+      "tag": "Aceleração de Reviews",
+      "titulo": "Campanha de Matrículas",
+      "descricao": "Automação pós-treino experimental para solicitar avaliação com 5 estrelas no Maps.",
+      "prazo": "Imediato",
+      "meta": "Alcançar 100 avaliações"
+    },
+    {
+      "tag": "Presença Digital",
+      "titulo": "Página de Planos & Grade",
+      "descricao": "Site de alta conversão integrado com WhatsApp para fechar planos e matrículas online.",
+      "prazo": "Contínuo",
+      "meta": "Canal 100% ativo"
+    }
+  ],
+  "resumo": {
+    "conforme": {
+      "qtd": 3
+    },
+    "atencao": {
+      "qtd": 4
+    },
+    "critico": {
+      "qtd": 3
+    }
+  },
+  "checklist": [
+    {
+      "status": "ok",
+      "titulo": "Nome comercial consistente",
+      "detalhe": "Identificação clara como Academia Corpo em Ação."
+    },
+    {
+      "status": "ok",
+      "titulo": "Localização e Marcador GPS",
+      "detalhe": "Endereço exato na Av. Luiz Boiteux Piazza."
+    },
+    {
+      "status": "ok",
+      "titulo": "Telefone com WhatsApp",
+      "detalhe": "Celular comercial vinculado."
+    },
+    {
+      "status": "warn",
+      "titulo": "Horários de atendimento",
+      "detalhe": "Horários de feriados não especificados."
+    },
+    {
+      "status": "warn",
+      "titulo": "Fotos das instalações e modalidades",
+      "detalhe": "Faltam fotos de vestiários, esteiras e musculação."
+    },
+    {
+      "status": "warn",
+      "titulo": "Recência de avaliações",
+      "detalhe": "Sem avaliações novas nas últimas semanas."
+    },
+    {
+      "status": "warn",
+      "titulo": "Taxa de resposta",
+      "detalhe": "Avaliações de alunos sem interação da gerência."
+    },
+    {
+      "status": "bad",
+      "titulo": "Volume de avaliações",
+      "detalhe": "Apenas 45 avaliações vs 364 da concorrente líder."
+    },
+    {
+      "status": "bad",
+      "titulo": "Site ou página de matrícula",
+      "detalhe": "Sem página própria para exibição de grade e preços."
+    },
+    {
+      "status": "bad",
+      "titulo": "Ativação de palavras-chave locais",
+      "detalhe": "Perfil não indexa para termos como musculação e pilates."
+    }
+  ],
+  "proximo_passo": {
+    "texto": "Instalar display NFC na recepção e criar página de conversão para captar matrículas de novos moradores da região.",
+    "contato": "Fale com Augusto (AH3): (48) 99908-8162 · contato@ah3.com.br"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "nome": "Hotel Praia dos Ingleses",
+  "unidade": "Praia dos Ingleses",
+  "categoria": "Hotel Tradicional",
+  "regiao": "Praia dos Ingleses",
+  "quartos": 42,
+  "diaria_media": 260,
+  "site": "https://www.hotelpraiadosingleses.com.br",
+  "ranking": 115,
+  "telefone": "",
+  "phone_clean": "",
+  "telefone_fixo": ""
+}

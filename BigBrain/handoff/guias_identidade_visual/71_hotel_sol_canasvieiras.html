@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Identidade Visual · Hotel Sol Canasvieiras</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --c-primary: #1B3B2B;
+            --c-gold: #D4AF37;
+            --c-bg: #090D0E;
+            --c-card: #12181A;
+            --c-card-border: #1E282C;
+            --c-text: #E5EAE8;
+            --c-muted: #8E9E98;
+            --c-accent: #E8A825;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--c-bg);
+            color: var(--c-text);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .header {
+            background: linear-gradient(145deg, #131B1E, #0D1315);
+            border: 1px solid var(--c-card-border);
+            border-radius: 16px;
+            padding: 36px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            gap: 20px;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--c-gold), transparent);
+        }
+        .badge-rank {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--c-gold);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .hotel-title {
+            font-family: 'Cinzel', serif;
+            font-size: 30px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 6px;
+        }
+        .hotel-meta {
+            color: var(--c-muted);
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        .site-link-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            color: var(--c-gold);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .site-link-header:hover {
+            background: var(--c-gold);
+            color: #000000;
+            transform: translateY(-1px);
+        }
+        .logo-box {
+            background: #FFFFFF;
+            padding: 16px 24px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            min-width: 240px;
+            min-height: 100px;
+        }
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background-color: var(--c-card);
+            border: 1px solid var(--c-card-border);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--c-gold);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .palette-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .swatch {
+            flex: 1;
+            height: 64px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 6px;
+            font-size: 10px;
+            font-weight: 600;
+            color: #FFFFFF;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .data-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 13px;
+        }
+        .data-label { color: var(--c-muted); }
+        .data-val { font-weight: 600; color: #FFF; }
+        .btn-site-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 8px;
+            padding: 10px 18px;
+            background: linear-gradient(135deg, var(--c-gold), #b89020);
+            color: #090D0E;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 13px;
+            transition: all 0.2s ease;
+        }
+        .btn-site-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(212, 175, 55, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <span class="badge-rank">RANKING OFICIAL #71</span>
+                <h1 class="hotel-title">Hotel Sol Canasvieiras</h1>
+                <p class="hotel-meta">Canasvieiras · Canasvieiras · Hotel de Praia</p>
+                <a href="https://www.hotelsolcanasvieiras.com.br" target="_blank" rel="noopener noreferrer" class="site-link-header">
+                    🌐 Visitar Website Oficial: https://www.hotelsolcanasvieiras.com.br ↗
+                </a>
+            </div>
+            <div class="logo-box">
+                <img src="data:image/webp;base64,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" alt="Logo Oficial - Hotel Sol Canasvieiras" style="max-height: 85px; max-width: 260px; object-fit: contain;">
+            </div>
+        </div>
+
+        <div class="grid-cards">
+            <div class="card">
+                <div class="card-title">🎨 Identidade Visual & Cores</div>
+                <p style="font-size: 13px; color: var(--c-muted); margin-bottom: 12px;">Paleta institucional extraída dos ativos oficiais via Brandfetch.</p>
+                <div class="palette-row">
+                    <div class="swatch" style="background: #1B3B2B;">#1B3B2B</div>
+                    <div class="swatch" style="background: #D4AF37; color: #000; text-shadow: none;">#D4AF37</div>
+                    <div class="swatch" style="background: #E8A825;">#E8A825</div>
+                    <div class="swatch" style="background: #12181A;">#12181A</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">🔤 Tipografia & Fontes Homologadas</div>
+                <div class="data-row">
+                    <span class="data-label">Títulos & Destaque</span>
+                    <span class="data-val">Cinzel / Playfair Display (Institucional)</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Corpo & Interface</span>
+                    <span class="data-val">Plus Jakarta Sans (Corpo)</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Arquitetura de Marca</span>
+                    <span class="data-val">Hotel de Praia</span>
+                </div>
+            </div>
+
+            <div class="card" style="grid-column: 1 / -1;">
+                <div class="card-title">📊 Métricas Operacionais & Acesso Oficial</div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; align-items: center;">
+                    <div>
+                        <div class="data-label">Capacidade Declarada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">60 Apartamentos</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Diária Média Estimada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px; color: var(--c-gold);">R$ 290.00</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Ativos de Marca</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">1 arquivo(s) homologado(s)</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Canal Digital Direto</div>
+                        <a href="https://www.hotelsolcanasvieiras.com.br" target="_blank" rel="noopener noreferrer" class="btn-site-action">
+                            Acessar Website do Hotel ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

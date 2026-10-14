@@ -1,0 +1,13 @@
+{
+  "nome": "Daifa Hotel",
+  "unidade": "José Mendes",
+  "categoria": "Hotel Tradicional",
+  "regiao": "José Mendes",
+  "quartos": 45,
+  "diaria_media": 250,
+  "site": "https://www.daifahotel.com.br",
+  "ranking": 107,
+  "telefone": "(48) 3225-7125",
+  "phone_clean": "554832257125",
+  "telefone_fixo": "+55 48 3225-7125"
+}

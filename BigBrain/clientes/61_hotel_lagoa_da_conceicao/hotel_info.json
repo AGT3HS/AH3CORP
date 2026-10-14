@@ -1,0 +1,13 @@
+{
+  "nome": "Hotel Lagoa da Conceição",
+  "unidade": "Lagoa da Conceição",
+  "categoria": "Hotel Tradicional",
+  "regiao": "Lagoa da Conceição",
+  "quartos": 65,
+  "diaria_media": 380,
+  "site": "https://www.hotellagoadaconceicao.com.br",
+  "ranking": 61,
+  "telefone": "(48) 3232-5555",
+  "phone_clean": "554832325555",
+  "telefone_fixo": "+55 48 3232-5555"
+}

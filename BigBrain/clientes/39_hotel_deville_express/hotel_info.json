@@ -1,0 +1,13 @@
+{
+  "nome": "Hotel Deville Express",
+  "unidade": "Centro",
+  "categoria": "Hotel Executivo",
+  "regiao": "Centro",
+  "quartos": 86,
+  "diaria_media": 350,
+  "site": "https://www.deville.com.br",
+  "ranking": 39,
+  "telefone": "(41) 3219-4004",
+  "telefone_fixo": "+55 48 3271-8080",
+  "phone_clean": "554132194004"
+}

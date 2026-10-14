@@ -1,0 +1,13 @@
+{
+  "nome": "Hotel Solar de Ilhéus",
+  "unidade": "Canasvieiras",
+  "categoria": "Hotel de Lazer",
+  "regiao": "Canasvieiras",
+  "quartos": 48,
+  "diaria_media": 250,
+  "site": "https://www.solardeilheus.com.br",
+  "ranking": 99,
+  "telefone": "",
+  "phone_clean": "",
+  "telefone_fixo": ""
+}

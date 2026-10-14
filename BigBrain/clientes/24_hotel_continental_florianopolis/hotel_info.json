@@ -1,0 +1,13 @@
+{
+  "nome": "Hotel Continental Florianópolis",
+  "unidade": "Continente (Estreito)",
+  "categoria": "Hotel Executivo & Eventos",
+  "regiao": "Continente",
+  "quartos": 120,
+  "diaria_media": 350,
+  "site": "https://www.hotelcontinentalfloripa.com.br",
+  "ranking": 24,
+  "telefone": "(48) 99162-9807",
+  "phone_clean": "5548991629807",
+  "telefone_fixo": "+55 48 3251-1700"
+}

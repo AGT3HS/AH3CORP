@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Identidade Visual · Hotel Deville Express</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --c-primary: #26A899;
+            --c-gold: #004F59;
+            --c-bg: #090D0E;
+            --c-card: #12181A;
+            --c-card-border: #1E282C;
+            --c-text: #E5EAE8;
+            --c-muted: #8E9E98;
+            --c-accent: #8CDFFF;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--c-bg);
+            color: var(--c-text);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .header {
+            background: linear-gradient(145deg, #131B1E, #0D1315);
+            border: 1px solid var(--c-card-border);
+            border-radius: 16px;
+            padding: 36px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            gap: 20px;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--c-gold), transparent);
+        }
+        .badge-rank {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--c-gold);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .hotel-title {
+            font-family: 'Cinzel', serif;
+            font-size: 30px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 6px;
+        }
+        .hotel-meta {
+            color: var(--c-muted);
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        .site-link-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            color: var(--c-gold);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .site-link-header:hover {
+            background: var(--c-gold);
+            color: #000000;
+            transform: translateY(-1px);
+        }
+        .logo-box {
+            background: #FFFFFF;
+            padding: 16px 24px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            min-width: 240px;
+            min-height: 100px;
+        }
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background-color: var(--c-card);
+            border: 1px solid var(--c-card-border);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--c-gold);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .palette-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .swatch {
+            flex: 1;
+            height: 64px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 6px;
+            font-size: 10px;
+            font-weight: 600;
+            color: #FFFFFF;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .data-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 13px;
+        }
+        .data-label { color: var(--c-muted); }
+        .data-val { font-weight: 600; color: #FFF; }
+        .btn-site-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 8px;
+            padding: 10px 18px;
+            background: linear-gradient(135deg, var(--c-gold), #b89020);
+            color: #090D0E;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 13px;
+            transition: all 0.2s ease;
+        }
+        .btn-site-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(212, 175, 55, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <span class="badge-rank">RANKING OFICIAL #39</span>
+                <h1 class="hotel-title">Hotel Deville Express</h1>
+                <p class="hotel-meta">Centro · Centro · Hotel Executivo</p>
+                <a href="https://www.deville.com.br" target="_blank" rel="noopener noreferrer" class="site-link-header">
+                    🌐 Visitar Website Oficial: https://www.deville.com.br ↗
+                </a>
+            </div>
+            <div class="logo-box">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAzQAAAFsCAMAAAAt7gz2AAAAPFBMVEVMaXEARlMPaGwARlMARlQAR1QJWGEARlQARlQARlMkppclqJklqJklqJklp5glqJklp5gAR1QmqJkTeHeqGxw6AAAAEXRSTlMA6RDQZk4hM7KH14FdQLif7RQOeqMAAADGZVhJZklJKgAIAAAABwASAQMAAQAAAAEAAAAaAQUAAQAAAGIAAAAbAQUAAQAAAGoAAAAoAQMAAQAAAAIAAAAxAQIABgAAAHIAAAATAgMAAQAAAAEAAABphwQAAQAAAHgAAAAAAAAASAAAAAEAAABIAAAAAQAAAGJmQHYxAAYAAJAHAAQAAAAwMjEwAZEHAAQAAAABAgMAAKAHAAQAAAAwMTAwAaADAAEAAAD//wAAAqAEAAEAAAA0AwAAA6AEAAEAAABsAQAAAAAAAA7M2v0AAAAJcEhZcwAACxMAAAsTAQCanBgAABu5SURBVHic7Z1ru20sG4YJ0dib6///13VQqHRTZDOM63w/vM+aDJt0qu5KSQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPCzcHb0FQDwZWRpcfQlAPBV5HVdl0dfBABfBE/rOkMFDQB/KhQ0AARR1nUtkGYA+JPVdYb0AsAfRAEACIOlqJwBEESFyhkAYWR1zZFmAATARI70AleEcX7c+LBSTJdFDB2jYAvKqqoqx99FVVUzr/pSVGndkFZiarBLntE4+mGqMa4BaEykU2NsuMjkpeUwB2wQ2K0d+arJctXkD9tM2ZPRhkmz3DikcezlcqOgNjSwZjBBR4Xha+AM0hSmMq02xIDkNndTOPLzeCdnF+eUNKXlKYZKg+OlEUOG1PKnmNvXS4fxXkWgNM1AT+PaEIYDR0vTVX5SUTTZkZWy/VDX1Vz7QeZ01uPap9Vv2IXYa0oaeXlNO4sVYq6aCcAO0ihn0nxcXZsbyD/ZEFE0u3hEm+lDtVvSbhMX/X8CcJQ0lbNUkbWw6gTStNeHZgw4kTQ50X6Rf8+Pl4aMHQBwjDTNQEp3m789VMqPlobRMQkADpGmrYa5y6BqNrvuIQ2HNOBc0rTvcSrU225jZyhpUD0D55EmnypNxFyG36VN0wbyEAgAp5Gmmsr2fC6Atos0Mo6HMdLgLNI0YYCUPFo2Uz/bRRoZqiCH9QCwrzQzZYmYkWIXafrRbunk4GsAZnGPR5Fx4jGEHOV0gKyVplgvjUEVfKiiHxA35Q01QAdcjXYwFuecPxUPxV3yVrwabpLP5/P5a3gkRJekm4rIqnQ5kM8UE4ukcUfCpqcGNJNtursgdmJ/PZ/P56PSqk23LhFVmnZJ3CV5k/zkmDiwFYzO9Ua2v9nZfh33X5EmSZg230fMSbMYzTZDtzutG1SLXm70Co0cMsqO1qJwjR7fUj1LZ2Z3eh1KTd4khzYs9+TjEmWsSu9KXzbBmDPQSedn3eM3AgEDpZrE4PTOkd3vyO/gJ0POrkmcmIYGzty5OTWCZX9p1DROdHWCeFxwGI3rijF5Exw9YNNd25Fd8fxk0syO7QHguKkB4hRTA5wHhDTgQGn42Seh2aCkASeZ7pwTI75OMN3ZtSNmcoITfFjDzobn+bBGIipuh8ExchMc+wkn9bkmvee/PNEnnMzloFrFMZETHP2xQDU8JRNl+8v+Y4Gz65f7SiO4Dgs7VHtLWfvh824EGqbWgKM/S8uGT82qYWqybjY7tGrRgE33CISZ6c7tALbu0hA7A2f4APp4KYDU43W+TJrAVQO4vmQAnAGnWWpDH3o/VIe8zhYujQidhKZrY3w+F4D15E3ThMh3M7WaUqj6T5r5zitul5CasatZTsrCle15s4HsFOqaWVjUCcSnJPM7zz1e0ZyXp51WxcsSg5sBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+HHefxH5/KsqkRdYGAVcms9fbP61q4PlWLweXJVXdGmkN82qlb7r6gHwVTy2kKbTBqs+gkty+9tUm7quvJY+BuB7eG4kjaZNXRVH3yUAp2/VWNbUGdazBxeCxw+gubRJBWpp4DJsFAuwrYE24EJE7eCc1AaVNHAR2G0va+oMIQFwDbZs1ljW1BWaNuASbBd3bjGsQR0NXIPHjtbUFUZ0gitw39OaFC0bcAV2taYWR98uAF9nDeIB4Arsa02Ghg24ANtGA8zIc12nmG0DLsDzdkZrWJFHpjT7ikr3TnHT1nkTjpnho7stpju2eLHtdbPA6wlndAdr2Xm+PbvflvL5BFtTewXRirSOTqbnLEHsFDNYwTLiJHYWz8e7TMYaHRcfteKbB15POFTyr6FKvgbGn4/3a0Ke0c15JD/fwJm6zrTXJZWfRxl6i5xhjcYrXfukLOy4EbNM6byeja2MwNdFZ593UpwF1myTqLoQZIaOl/kYeR1W/nNfCz3O1S18vEwtAq8nHPKVtYos+T7Y4+VXQZtv12xRepvP3TtHL8fbyyrwvbl1EVkFXk84m1Qk6jr5Stjj5mUNP1waImfEzBxkzrBLWkgTieRbcWkz2bo4SBpO7TTRmAgi965FQJpIJN/L8zVb1My1HHaQhi5q8o3r7aMmHaSJRHKprp/QStAe0jhjRA1plDQo/JurkCYSyXdzt0JpdVgIbQ9p6KImSpdEQEEGaSKRfDn8NVNBm2w67CJNQFmw4P6pgzvuG9JEIvl6HkZhUwc1a3aRZtMOTt+OzQZIE4nkUNjjvr67gt8mi5qpWtA+0hTbdXCS3UCuAhbSRCI5Ovz1Wn8cplfR1g8UWY/9lieLmtVvDPIGXAEQSBOJ5OiI8S3ybJ1/IRG0jaTxGCg5d2VrOzZdOkKaLx9Gw7qPCN5iz9YJeaFvI82o1sXIvL2ygzPMRkgTh+LwUHEcaTRr/gW0HTaRxjHZOqgWFUBYvQ/SxOCor4TpTfdb7K+r/QsIU7kzc8XX4Co8yKJmXQdnYIQB0kjyVc83OcH3AmJJM1hT+xc1hDSxLmnuRGvH0pAdm+6XBKSRfOE3voxYV0Rp+hpaQFGzmzR8i0YlOUCHuAFI863SPK2BL7f4JVjtnY12k4YuaordChpI863SmP33caXplvVwFTX8YGnIoqaK37FJlV4oab5TmvHnz27xl/X45x2m2k8auljguxVekOYrpXGs8BRTmoST9bP0aGnK2FFnMiJHNpMgzTdK41oV7bZBSfbPN6V2lIYualjkjk0yIAdpvlAa56dpbxssJ/3P14Q9pSkiFzVZcNcPpPk+adyLO0WWRlbQas9hm3tKQ+dyFtVBuucH0nyfNO89pJHFWe2ZVLtKsyCbL6jtTSgIab5Pmtcu0rBPQPxsV2nIoibbKa4AaSSQxlnU/POs6+8rDdl0L/YJK0AaCaRxFzW1X4fIvtKQs1+qeH2lU1EFSCOBNO6ipvZrOuwsjYj2sQCxpKsU0kggzRhGSCMOl4bsjxSxDjR56ZBGAmkcvNyNmuxwaZYVECGto8kiC9JIII2Dh1ua+nhpyDGWIk4cbvrKIY0E0riyJiENP1wasqgJ6+AslrWNII0E0rh4uaUpjpeGR+ngXNjhA2kkkMbF3S1Nfrw0ZP9KFqNjcyY3QBoJpHHxdEsjTiDN0gwfQzxII4E0LphbmuoE0pA5vtq+igdpJJDGyee80ixsxM9etMfnoCCNBNIESJOdQZqF4WKPjs3ZWAKkkUAaJ7cTS1Os7ODMF0etIY0E0nydNGRRI7b+OaSRQBont3qNNFm+iGLzomKqoPL4NaSRiIXPN7nsJLQI0mz9aezFjZKV5RSkWUd2wHecLy+NbwQsX9HBSfbzeDxQSLOSjevtB0uTHSSNWBf/Krbt5oE0a+G/J41vP83mryKx+Od8TRkHadYSYWXh80qTnlsatvihLNcN0kTgytIQmdJ37Nn2ld6leZ+s2Hk9TZQ0a7myNOXZpeELK835qvNCmrVcWRoib/lODdghvFItiySsiCBAmghcWRrhe8uHSVMu6qIs1k3GQUmzlitLQ7yQfac77xHIr5Z0cFIdm5591ZBmLReWpvQeOn+cNGRRE/k3OpBmLReWRnjn6OOkWVJqLCqdZn9PN6O2zjhV4PWEQ7UBl3JhaYj86P2xwOUEPPAi2Du+9ks2kGYt15Wm9H+Hx5Ym5JsyWeiDEWtNhTRrWbho3RdIU/nfcWRpgr5eFtrnQnVs+p8U0qwkZs3xXNKwgLhsXGkqHqXCzTcqaCDNOtIDnNlLmpDMRczc5IsILbupokZEccwBShpJvuz5JhdeCS1keNYh052X1bcCFXMBaSSY7rzqA0eHSkNeah4lbjAG0kggzaq1KI+VhixqokSox0AaCaTxyhjUG/lYaciipvC/r5CeA0gjgTSeqx25h5ocLA33DvRRewZdKqSRQBq/yhnRXj5YGv/yI6BMCj3b7w2jKZLvYfvoGcsC+3KPlsa3AKFaPyELdECaDkgznysmPDhaGvKK+QYFDUoaBaTxyFp0neJwaaj6pFVHCQizTYDqmQTSeAQBaA0Ol4bqfjE7OPMYaw5Cmg5IM5uzphqvx0tT+PjgZdY8KGkkkMbHGdKC46UhhfAQKzTOBGkkkMbDGXpM4wmkoS68mI0WhBY0kEYBaTzG+NNv5BNIk8xGk6m4dHCHBkoaCaRpsxXdPzP9Rj6DNPlcO4x6IQSPVYc0V5Hms/7A5fT3EybS6AzSUB2X1cykuvCec0gjgTQJm5l+OaXAGaSZK0miFTSQ5guleTtLmr+VRy0nq2YzzeVTSEMVNaoomSmIAkBJcxlpVn3hg9MjZ3zGF55CGqoskbrPNnn8gTSXkYZvVzObrfmfQxo+1cFJFKRLrhHSfJ8098jScI9vyczkrXNIQ3bETHRsLnnwkOYy0jyXHa2YrZg1nR3sK6ShipqC9ClsToAC0nyfNA+3NI8FhyqF11d607lS7CTS0GoEfC106VkwCe3MPN3S3AMPwwo/Y5YvYbm/NJQbZcyCBtJ8YUnD3NK8/Y/Ay7yaiTCHJc5ZpCGLmjhzAiZPgpLm1Nyc0nyEEPnM/4QQVYguns6cRxqqvR9pqKYE0nxfSUOMo/mrt8EnaU4jDfktwIgFDaT5RmmISEC9CV4pcx5piu0LGkjzjdJwtzT/6vikfh3mbmmyYg3l5kXN0o8cxameiVWpw2avp1p1fDNemm5wB/wUjZoNiprM885iL+oUdPKAWXQm/FBpViLmrmclFdtw+cAWcYruzW0TbndplgWEydUO4j20U0hT59tKY1SuN5FmaZMybtA5dv3MP1dtI82yj1B6Xwv/bmmymetZDdtammW9ZLHHbEa9pTSgnbeRNPmWRc3yMMU5pElnrifmK2sbaerkaqGAoDX8ziSN78Us/5YypIlEcq2iJg3Lr6eShhq2GS0eDmkikewL+2xa1AQuFXsuafyuZsVH+yFNJJJzjNqMYk0W3Gt1Lmn4xo1QSBOJZG82CzsH1sxOKI1Py3hNbzakiUSyO9s0a1KxZGzJyaSh16SKEu2ENJFITmPNmhpami8bjnUyaeaLmlX9apAmEskB3CNbky3OSmeTZm7YZuCCNBaQJhLJETxv8bRJxYp40tmkmRu2me8qzTZdg+nM9azmap2bHezuDj3//Qv0pjKGzW45SjKE5RoXm8wJmHxF0KGF0Fl/fmQz17MaLZGqKwyjGWBvQht/cVKxzpigUZJ7JWq24fhanoaJuM0rpZi+ntWIxRNizzlg04A9iJmcypwG8rqzKo8yr2Huo7Z79LB6X9DqyXFFGjaPIY+fq9N8+npWY0ZRN7iDI51pYI/3jSxwbIGUQmkl8tUljAYvI8O2uqAYN20ffM7v2IlT+t7sUkaJFPsEK1rQEeHPx/3+1nm9biNeVSVEXjwj6gIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADYCn5/3fEx0cgUQghx8JeYwWY8my9cf2BNVMr1q5aemyx1E/jh/HLJj06AXPTqffRlXIssyiI/J4ZacCJUmiU/Oh4mV0u4HX0dl0I0OUGsX+XnvPy2NIlcf+R1zMnvLcnF4M1iPKxdG+2qFbQfl0YugP04sm54tUpMVtdpKde+u2oF7celYY01R73sLylN3pUwZXrZClqVKZQs3T/Fb0iTJOy45asuKQ3v1zAb/uuyZKuWfv1eaQ7kktL8FJBmdyDNFaVpe3aHVXytfyYsr9I6zUTpKml4XmXt1unFblkhd6vyqd1YczB5Jt5ehIrLCLPrObd7otvfqUt08mwDWFz772eSJM2yvp9+pMDj9fkb/qX9ht9vn8/t9bCvnD9et8/f5/Z+6pfS/qoJOTzvr1d7EBm6606qjt38tDkdsbIt625fS5LR82F5lXWRK5aLrGmTZ12ambRJph9EnkD0py+Eej7jC2o3NQsam5uaJx9vWfCvk6YJG9Y1N/9ZjtfZrpgtDWvi9IrUXDw7oVbSpncjz2Rdc7tbql3EcPTKrc1di549ZB5OHrIE+Pv7tAJ99H8Nv3m2MQS5xYi+8f7vxhaugtusWZ/+pg7SoXpXjbXr35wK6Da3ryXJ6PnkzTapCNeeQ92LpCHst13TkB8SUV9L3VqBXn901fDoeOXzRH9VGvNxmGnfRE70zcQ7h5uxuyZS6YI+06Q01tFzT2n0PM8T81/6bzq1rCEF7cCcgRczpZGbndK0Ov2Nz2cmmbz93JVslXw+8v9aQfTd3Gkgjzc8Y3UQGQdimgD9MRPXpv4adMvoJ/qr0pjPIzWkkRlb3+x+a5pqUb1hE2eakmZ09NxLGiPPvzRnejXkb0w3emvkQTRuTJemqXsR0rAP9VMjzbRE6JOE6c8nG5JSf9tQCZyZaaNLxEb9Ef1uo03qCduWXtyaQGlU4ppUlAxNF/GI8TNxylVOnGlCmu7oadXUsLUrn5Fmgo/+GwtVd3uOt7x0aTodXCWNEvSmxHJ3IE2le2XroZIu7TsUHNHR3Py7Xl2zypnuqM5N0o7uWWV9orse/M9K06VaVZRF33RQD6/LrqIo824/R7+PcBzCEbSeOtOENPLoaa61sDI/aT73x1M10ps8fH8+un/JDHDX9nu8TTVUne1zfz77BsrDkubzer+Tx/v9VmN43u93u0tT1MioAlMnvE1IU+XFkBzmM2kzbfunqkmB9vkVGfXiSI2/Z+O6XZUPCa8KNW2TfMTqbacykRRIr+hdlDBp1LNLuyiWnpULo3GomjfjERXNOIuhAO8aIKP6w9SZJqRR1ZguL+RE5cQhjWyFPI16l9rEdWnezGjDPLX9zE0fQ5rXkww53/tYQ3f68WtaJYfMl33LwigZ0iEQyYe2uCp5x3lY6H+XRYVMQvV8CuNM8iVkbEqKrtGqSq3ulO1PrjqUZoE06lXT58J89Oz6pCuJFoXK/l22Vg9iVNRMnWlCGiMrdLdXeUjTDd58GW2Vz0iau5W/74MGN2vTQ5NGD7TZ0jCtcipPr8esE/1lwM3HJu/ZSvgGrWDJCWnUEeU/tNKhsBJeyyD2pq5XQe5Smke+8mS0MGnkfw6ZUA8Ep9Zb3d7X+LMgYp1kTNQz5Cxvh5tHT71Czq6hnK+RNEN+fvWyqZkG9qa3HnKe6dxkTD89Jc2QHCr/lkOKjipg6pDkoA0t2qbeXJxO+HYb8US5nYWqqw8TCZPGirnoT0Qv4bXnOsqwZkGTJMz+g35deaA08mBp3iPcGSqGNCrq1v+X1hLR/uAjzbNt5nyaJo6vNPorqhrfIxdt+mWC09JoQXy9GLcTXvuD1vDRUb8eEl3Wz5LrEiaN2Xo0srLVZdPbYNVt1V9HV2A/CqvI95TGGWRyPOcY0qiKV38ErdOGD42aeWm0fprb01uaasjb1UgaLQIs6OGBQ/GiFTraX0dnkptGjZVxhNt+xFdjiTRDimpPxGh0uJN/VJXWDm9XgSfONCGNM07tqF/HkEZVyli3RZNm2DQvDdN7S/9uYdKI4T9HzRhFRkojM3tuPZPaNmNoJhIyENJceDRNNGlGJc04+bWyYHQ2uzCYKNPCpREbSpPQ0iQ+0vSRbK2jZl1JU/a+NGPEalKavi1iRE9GrzpbGt+SBtIYbZqClkYrQtSzs5N4lKK2HpKJM822aWphsUn17Gm1aTQxhk3z0qiumea4rBuj4yFNRksjVCKwodfE3SzvfmhET+x4jnYm95PqIs52okMaI1AjXFl51KC3+pwdT1s7xOj9NRWnSyw/teiZs0o4JoY09761P+pduQ+mzEmj/GJGXW1eGj4RPcuMFB5Xm3sKV6vHfsTacyW6LYtVU7KuVT3rXzbaQ1H97cMAci29rcqzCmOOklj10vc5TPUyuHcbsv94wGbvmQqZaUcT20nTd7ioMWNtpUwN9rc23X2ksYII04GAzE4e5pJGJrzPPEH5tjEft+oC6BNePXLXpu4BECXQL0pTOXojVbHQZXk12qzS9+vecKpeMEpKdYjKbLSOmurWmdQAA0Ma9RvVaZ2O+i/k1jKuNH3vvYp5PbR2ydMMh/FJaVTWM88+I03/NlC3KR+bU5rURxp9Iod1pm7Uf6GduBuW0BWL3eT4Ue9qyX5VGlkp7gYvqYfSjccr9EkblV601G1ltvsZPaisHSXVzcJwDLqYOFM30qOxhnXzO1Kjq7x7bxaZczzHcmn+/tp5Ys9utJm89W4T0zbJ0oOU5p0knHXVs5vfiAA7OeRrw10961NgQhotQj8UzsJ1JpkEQhuw0ya8/FUnk3oPsPzSPZuENP0LKNUGJJdWNHOIzHRJ1G9L+22Tw5eH3VxzA6bOlDk2peb0hEwURd528VWRpWkCXfaA5Pt4k2qmOKRRBdHn1p5GDd9s9+ZqEy1NGxPrb1mewh0IkO8NppKRyMXDWM/hQXUvP/35CHsce2qMtO3faXlRNNN6r/vpM1oaZ+BWPRTHuHGrDRk4UUZ7JiYTZ3IFOVPy6EVsaQasEkJHZXyHNMNknbd22Nf73ffYTEozurFKfz56qVRVfRoS0hSu7ePHP8wyJK5hPGWA/dyHNYw0UCnffaDHmA1jDVSyMzMxaM/O1+52+8SZ+pehtqmvlI+MEjGlGSYPmJMsjWlrWtPHIc0w+eYT2LmZVa77qvTnM0pfYkCsInW9WMxpmMasZnuTugZ7rufFZ6E5pdHniQmVIP2w5CF90sJuZeoTyLtx7A5K3Qc598WBdhX2mbR51WlufyOgb4bJqyjihpy1ec03vfJp2PTqtzik0cqsp2nNR83TIUPOeubsk62ypdHfG9X0V7a6Vor51653R24zXjr6twCGpmOSaN9lGH9X4JpfDbTTtPs2Rdp8sES0SwNwO1M2H84YrRrA5EjBdvLY1Gn7WWrZ1OdocnWmajTusHt2WROtaJdAyFxHT4mruN8aZN58tP/9cGxJknf7L7OfhqlZZP1Pulu/d8EB/XM0rD2CtT6B+mrHR33qRvVpft7MOr2jn6ZLfC1bivYhGG+ovk+zSHi7lQrCy63jzUXbMukS2GfT8OSbYaI/SlnkBVVUsIltCWt/OVun9duNF3ne7jR6YbKiyAs+eXR68xK0zs3n4/F0HZs1G8Y53sHz8Xho3/jkxAGHHYbb51OJbz6iVQ2L9vm4L4pIXM8nD/bi+G95UjWnXRgNowHgC6Sxh9HsCqQB4UAalDTg66RB9Qx8GcdLg+oZ+DIgDapnIBBIA2lAIKxoOHJwRtO18hitr/Eztw8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgORK/Aeo6eCTyNBiXQAAAABJRU5ErkJggg==" alt="Logo Oficial - Hotel Deville Express" style="max-height: 85px; max-width: 260px; object-fit: contain;">
+            </div>
+        </div>
+
+        <div class="grid-cards">
+            <div class="card">
+                <div class="card-title">🎨 Identidade Visual & Cores</div>
+                <p style="font-size: 13px; color: var(--c-muted); margin-bottom: 12px;">Paleta institucional extraída dos ativos oficiais via Brandfetch.</p>
+                <div class="palette-row">
+                    <div class="swatch" style="background: #26A899;">#26A899</div>
+                    <div class="swatch" style="background: #004F59; color: #000; text-shadow: none;">#004F59</div>
+                    <div class="swatch" style="background: #8CDFFF;">#8CDFFF</div>
+                    <div class="swatch" style="background: #12181A;">#12181A</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">🔤 Tipografia & Fontes Homologadas</div>
+                <div class="data-row">
+                    <span class="data-label">Títulos & Destaque</span>
+                    <span class="data-val">Eater</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Corpo & Interface</span>
+                    <span class="data-val">Source Sans Pro</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Arquitetura de Marca</span>
+                    <span class="data-val">Hotel Executivo</span>
+                </div>
+            </div>
+
+            <div class="card" style="grid-column: 1 / -1;">
+                <div class="card-title">📊 Métricas Operacionais & Acesso Oficial</div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; align-items: center;">
+                    <div>
+                        <div class="data-label">Capacidade Declarada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">86 Apartamentos</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Diária Média Estimada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px; color: var(--c-gold);">R$ 350.00</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Ativos de Marca</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">3 arquivo(s) homologado(s)</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Canal Digital Direto</div>
+                        <a href="https://www.deville.com.br" target="_blank" rel="noopener noreferrer" class="btn-site-action">
+                            Acessar Website do Hotel ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

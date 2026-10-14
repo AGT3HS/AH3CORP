@@ -1,0 +1,13 @@
+{
+  "nome": "Hotel Kennedy",
+  "unidade": "Continente (Kobrasol)",
+  "categoria": "Hotel Econômico",
+  "regiao": "Continente",
+  "quartos": 54,
+  "diaria_media": 250,
+  "site": "https://hotelkennedy.com.br",
+  "ranking": 86,
+  "telefone": "(48) 3266-0361",
+  "telefone_fixo": "+55 48 3266-0361",
+  "phone_clean": "554832660361"
+}

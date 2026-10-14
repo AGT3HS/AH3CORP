@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Identidade Visual · Majestic Palace Hotel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --c-primary: #EB9316;
+            --c-gold: #985F0D;
+            --c-bg: #090D0E;
+            --c-card: #12181A;
+            --c-card-border: #1E282C;
+            --c-text: #E5EAE8;
+            --c-muted: #8E9E98;
+            --c-accent: #C39D4A;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--c-bg);
+            color: var(--c-text);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .header {
+            background: linear-gradient(145deg, #131B1E, #0D1315);
+            border: 1px solid var(--c-card-border);
+            border-radius: 16px;
+            padding: 36px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            gap: 20px;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--c-gold), transparent);
+        }
+        .badge-rank {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--c-gold);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .hotel-title {
+            font-family: 'Cinzel', serif;
+            font-size: 30px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 6px;
+        }
+        .hotel-meta {
+            color: var(--c-muted);
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        .site-link-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            color: var(--c-gold);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .site-link-header:hover {
+            background: var(--c-gold);
+            color: #000000;
+            transform: translateY(-1px);
+        }
+        .logo-box {
+            background: #FFFFFF;
+            padding: 16px 24px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            min-width: 240px;
+            min-height: 100px;
+        }
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background-color: var(--c-card);
+            border: 1px solid var(--c-card-border);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--c-gold);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .palette-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .swatch {
+            flex: 1;
+            height: 64px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 6px;
+            font-size: 10px;
+            font-weight: 600;
+            color: #FFFFFF;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .data-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 13px;
+        }
+        .data-label { color: var(--c-muted); }
+        .data-val { font-weight: 600; color: #FFF; }
+        .btn-site-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 8px;
+            padding: 10px 18px;
+            background: linear-gradient(135deg, var(--c-gold), #b89020);
+            color: #090D0E;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 13px;
+            transition: all 0.2s ease;
+        }
+        .btn-site-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(212, 175, 55, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <span class="badge-rank">RANKING OFICIAL #07</span>
+                <h1 class="hotel-title">Majestic Palace Hotel</h1>
+                <p class="hotel-meta">Beira-Mar Norte · Beira-Mar Norte · Hotel Luxo & Eventos</p>
+                <a href="https://www.majesticpalace.com.br" target="_blank" rel="noopener noreferrer" class="site-link-header">
+                    🌐 Visitar Website Oficial: https://www.majesticpalace.com.br ↗
+                </a>
+            </div>
+            <div class="logo-box">
+                <img src="data:image/png;base64,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" alt="Logo Oficial - Majestic Palace Hotel" style="max-height: 85px; max-width: 260px; object-fit: contain;">
+            </div>
+        </div>
+
+        <div class="grid-cards">
+            <div class="card">
+                <div class="card-title">🎨 Identidade Visual & Cores</div>
+                <p style="font-size: 13px; color: var(--c-muted); margin-bottom: 12px;">Paleta institucional extraída dos ativos oficiais via Brandfetch.</p>
+                <div class="palette-row">
+                    <div class="swatch" style="background: #EB9316;">#EB9316</div>
+                    <div class="swatch" style="background: #985F0D; color: #000; text-shadow: none;">#985F0D</div>
+                    <div class="swatch" style="background: #C39D4A;">#C39D4A</div>
+                    <div class="swatch" style="background: #12181A;">#12181A</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">🔤 Tipografia & Fontes Homologadas</div>
+                <div class="data-row">
+                    <span class="data-label">Títulos & Destaque</span>
+                    <span class="data-val">font-highlite</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Corpo & Interface</span>
+                    <span class="data-val">font-body</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Arquitetura de Marca</span>
+                    <span class="data-val">Hotel Luxo & Eventos</span>
+                </div>
+            </div>
+
+            <div class="card" style="grid-column: 1 / -1;">
+                <div class="card-title">📊 Métricas Operacionais & Acesso Oficial</div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; align-items: center;">
+                    <div>
+                        <div class="data-label">Capacidade Declarada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">185 Apartamentos</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Diária Média Estimada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px; color: var(--c-gold);">R$ 680.00</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Ativos de Marca</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">2 arquivo(s) homologado(s)</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Canal Digital Direto</div>
+                        <a href="https://www.majesticpalace.com.br" target="_blank" rel="noopener noreferrer" class="btn-site-action">
+                            Acessar Website do Hotel ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

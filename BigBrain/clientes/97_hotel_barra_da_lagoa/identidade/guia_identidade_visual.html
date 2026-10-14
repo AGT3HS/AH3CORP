@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Identidade Visual · Hotel Morro dos Conventos Floripa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --c-primary: #FAF9F9;
+            --c-gold: #454545;
+            --c-bg: #090D0E;
+            --c-card: #12181A;
+            --c-card-border: #1E282C;
+            --c-text: #E5EAE8;
+            --c-muted: #8E9E98;
+            --c-accent: #F5F5F5;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--c-bg);
+            color: var(--c-text);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .header {
+            background: linear-gradient(145deg, #131B1E, #0D1315);
+            border: 1px solid var(--c-card-border);
+            border-radius: 16px;
+            padding: 36px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            gap: 20px;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--c-gold), transparent);
+        }
+        .badge-rank {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--c-gold);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .hotel-title {
+            font-family: 'Cinzel', serif;
+            font-size: 30px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 6px;
+        }
+        .hotel-meta {
+            color: var(--c-muted);
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        .site-link-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            color: var(--c-gold);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .site-link-header:hover {
+            background: var(--c-gold);
+            color: #000000;
+            transform: translateY(-1px);
+        }
+        .logo-box {
+            background: #FFFFFF;
+            padding: 16px 24px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            min-width: 240px;
+            min-height: 100px;
+        }
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background-color: var(--c-card);
+            border: 1px solid var(--c-card-border);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--c-gold);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .palette-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .swatch {
+            flex: 1;
+            height: 64px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 6px;
+            font-size: 10px;
+            font-weight: 600;
+            color: #FFFFFF;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .data-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 13px;
+        }
+        .data-label { color: var(--c-muted); }
+        .data-val { font-weight: 600; color: #FFF; }
+        .btn-site-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 8px;
+            padding: 10px 18px;
+            background: linear-gradient(135deg, var(--c-gold), #b89020);
+            color: #090D0E;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 13px;
+            transition: all 0.2s ease;
+        }
+        .btn-site-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(212, 175, 55, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <span class="badge-rank">RANKING OFICIAL #97</span>
+                <h1 class="hotel-title">Hotel Morro dos Conventos Floripa</h1>
+                <p class="hotel-meta">Armação · Praia da Armação · Hotel de Praia</p>
+                <a href="https://www.hotelmorrodosconventos.com.br" target="_blank" rel="noopener noreferrer" class="site-link-header">
+                    🌐 Visitar Website Oficial: https://www.hotelmorrodosconventos.com.br ↗
+                </a>
+            </div>
+            <div class="logo-box">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADkAAAA5CAMAAAC7xnO3AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAANmaVRYdFhNTDpjb20uYWRvYmUueG1wAAAAAAA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjMtYzAxMSA2Ni4xNDU2NjEsIDIwMTIvMDIvMDYtMTQ6NTY6MjcgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6MEREMzU0NjlDRDE0RTkxMUE4NzdCQUE0NDE2OTQxOTIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NEU5REVCRjY4ODE5MTFFQjhGOUI5QjlDQkRCNTk0RjgiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NEU5REVCRjU4ODE5MTFFQjhGOUI5QjlDQkRCNTk0RjgiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpFOTQ2NEZCOThGN0FFQjExOEY5QUE3REU3N0IxREM3QiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDowREQzNTQ2OUNEMTRFOTExQTg3N0JBQTQ0MTY5NDE5MiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9y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" alt="Logo Oficial - Hotel Morro dos Conventos Floripa" style="max-height: 85px; max-width: 260px; object-fit: contain;">
+            </div>
+        </div>
+
+        <div class="grid-cards">
+            <div class="card">
+                <div class="card-title">🎨 Identidade Visual & Cores</div>
+                <p style="font-size: 13px; color: var(--c-muted); margin-bottom: 12px;">Paleta institucional extraída dos ativos oficiais via Brandfetch.</p>
+                <div class="palette-row">
+                    <div class="swatch" style="background: #FAF9F9;">#FAF9F9</div>
+                    <div class="swatch" style="background: #454545; color: #000; text-shadow: none;">#454545</div>
+                    <div class="swatch" style="background: #F5F5F5;">#F5F5F5</div>
+                    <div class="swatch" style="background: #12181A;">#12181A</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">🔤 Tipografia & Fontes Homologadas</div>
+                <div class="data-row">
+                    <span class="data-label">Títulos & Destaque</span>
+                    <span class="data-val">Cinzel / Playfair Display (Institucional)</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Corpo & Interface</span>
+                    <span class="data-val">Plus Jakarta Sans (Corpo)</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Arquitetura de Marca</span>
+                    <span class="data-val">Hotel de Praia</span>
+                </div>
+            </div>
+
+            <div class="card" style="grid-column: 1 / -1;">
+                <div class="card-title">📊 Métricas Operacionais & Acesso Oficial</div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; align-items: center;">
+                    <div>
+                        <div class="data-label">Capacidade Declarada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">48 Apartamentos</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Diária Média Estimada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px; color: var(--c-gold);">R$ 290.00</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Ativos de Marca</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">4 arquivo(s) homologado(s)</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Canal Digital Direto</div>
+                        <a href="https://www.hotelmorrodosconventos.com.br" target="_blank" rel="noopener noreferrer" class="btn-site-action">
+                            Acessar Website do Hotel ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

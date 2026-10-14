@@ -1,0 +1,13 @@
+{
+  "nome": "Hotel Central Floripa",
+  "unidade": "Centro",
+  "categoria": "Hotel Comercial",
+  "regiao": "Centro",
+  "quartos": 42,
+  "diaria_media": 200,
+  "site": "https://www.hotelcentralfloripa.com.br",
+  "ranking": 118,
+  "telefone": "",
+  "phone_clean": "",
+  "telefone_fixo": ""
+}

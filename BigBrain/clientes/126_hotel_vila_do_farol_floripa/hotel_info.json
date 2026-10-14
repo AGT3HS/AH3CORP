@@ -1,0 +1,13 @@
+{
+  "nome": "Hotel Vila do Farol Floripa",
+  "unidade": "Barra da Lagoa",
+  "categoria": "Hotel de Lazer",
+  "regiao": "Barra da Lagoa",
+  "quartos": 38,
+  "diaria_media": 340,
+  "site": "https://www.viladofarol.com.br",
+  "ranking": 126,
+  "telefone": "",
+  "phone_clean": "",
+  "telefone_fixo": ""
+}

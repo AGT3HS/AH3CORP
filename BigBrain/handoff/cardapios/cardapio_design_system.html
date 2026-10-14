@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Cardápio Digital & Experiência Gastronômica</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0D3B66;
+      --secondary: #112233;
+      --accent: #EE964B;
+      --accent-dark: #E09F3E;
+      --neutral-light: #F8FAFC;
+      --neutral-card: #FFFFFF;
+      --border-card: #E2E8F0;
+      --text-heading: #0D3B66;
+      --text-muted: #64748B;
+      --text-kicker: #94A3B8;
+      --radius-outer: 60px;
+      --radius-card: 20px;
+      --radius-pill: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--neutral-light);
+      color: var(--secondary);
+      padding-bottom: 96px;
+      min-height: 100vh;
+    }
+
+    /* Header Hero com Curva Senoidal */
+    .hero-container {
+      background: var(--primary);
+      position: relative;
+      padding: 32px 20px 48px;
+      color: #FFFFFF;
+      text-align: left;
+    }
+
+    .hero-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+
+    .kicker {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .hero-title {
+      font-size: 26px;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.2;
+    }
+
+    .hero-subtitle {
+      font-size: 14px;
+      font-weight: 500;
+      color: #CBD5E1;
+      margin-top: 4px;
+    }
+
+    /* NFC Badge Cluster */
+    .nfc-badge-cluster {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(238, 150, 75, 0.4);
+      padding: 6px 12px;
+      border-radius: var(--radius-pill);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      backdrop-filter: blur(8px);
+    }
+
+    .nfc-pill {
+      background: var(--accent);
+      color: var(--primary);
+      font-size: 11px;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    .nfc-text {
+      font-size: 11px;
+      font-weight: 600;
+      color: #FFFFFF;
+    }
+
+    /* Wave Separator */
+    .wave-bottom {
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+    }
+
+    .wave-bottom svg {
+      position: relative;
+      display: block;
+      width: calc(100% + 1.3px);
+      height: 28px;
+    }
+
+    .wave-bottom .shape-fill {
+      fill: var(--neutral-light);
+    }
+
+    /* Categorias / Navegação Sticky */
+    .nav-bar {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 16px 20px;
+      position: sticky;
+      top: 0;
+      background: rgba(248, 250, 252, 0.94);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+      border-bottom: 1px solid var(--border-card);
+      scrollbar-width: none;
+    }
+    .nav-bar::-webkit-scrollbar { display: none; }
+
+    .nav-btn {
+      background: var(--neutral-card);
+      border: 1.5px solid var(--border-card);
+      color: var(--text-muted);
+      padding: 8px 16px;
+      border-radius: var(--radius-pill);
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .nav-btn.active, .nav-btn:hover {
+      background: var(--primary);
+      color: #FFFFFF;
+      border-color: var(--primary);
+    }
+
+    /* Conteúdo Principal */
+    .container {
+      padding: 12px 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      margin: 24px 0 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-bar {
+      width: 4px;
+      height: 20px;
+      background: var(--accent);
+      border-radius: 4px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text-heading);
+    }
+
+    /* Grid e Cards no padrão DESIGN.md */
+    .menu-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .card-item {
+      background-color: var(--neutral-card);
+      border: 1.5px solid var(--border-card);
+      border-radius: var(--radius-card);
+      padding: 16px;
+      box-shadow: 0 4px 12px rgba(13, 59, 102, 0.04);
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .card-item:active {
+      transform: scale(0.99);
+    }
+
+    .item-body {
+      flex: 1;
+    }
+
+    .item-title-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .item-badge-featured {
+      background: rgba(238, 150, 75, 0.15);
+      color: var(--accent-dark);
+      font-size: 10px;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .item-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-heading);
+    }
+
+    .item-desc {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    .item-price-tag {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: flex-start;
+    }
+
+    .price-value {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--accent-dark);
+      white-space: nowrap;
+    }
+
+    /* Footer Fixo */
+    .footer-action-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #FFFFFF;
+      border-top: 1.5px solid var(--border-card);
+      padding: 12px 20px;
+      display: flex;
+      gap: 12px;
+      z-index: 200;
+      box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.05);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .btn-action {
+      flex: 1;
+      padding: 14px 12px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: opacity 0.2s ease;
+    }
+
+    .btn-action:active {
+      opacity: 0.9;
+    }
+
+    .btn-primary-action {
+      background: var(--primary);
+      color: #FFFFFF;
+    }
+
+    .btn-accent-action {
+      background: var(--accent);
+      color: var(--primary);
+      font-weight: 800;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Header -->
+  <header class="hero-container">
+    <div class="hero-top">
+      <div>
+        <div class="kicker">Experiência Gastronômica</div>
+        <h1 class="hero-title">Cardápio &amp; Bar</h1>
+        <p class="hero-subtitle">Serviço de Mesa e Balcão</p>
+      </div>
+      <div class="nfc-badge-cluster">
+        <span class="nfc-pill">NFC</span>
+        <span class="nfc-text">Conectado</span>
+      </div>
+    </div>
+
+    <!-- Curva Senoidal Separadora -->
+    <div class="wave-bottom">
+      <svg viewBox="0 0 500 28" preserveAspectRatio="none">
+        <path d="M0,0 Q250,28 500,0 L500,28 L0,28 Z" class="shape-fill"></path>
+      </svg>
+    </div>
+  </header>
+
+  <!-- Navegação de Categorias -->
+  <nav class="nav-bar">
+    <a href="#destaques" class="nav-btn active">⭐ Destaques</a>
+    <a href="#entradas" class="nav-btn">🍤 Entradas &amp; Petiscos</a>
+    <a href="#principais" class="nav-btn">🍽️ Pratos Principais</a>
+    <a href="#bebidas" class="nav-btn">🍹 Coquetelaria</a>
+  </nav>
+
+  <!-- Lista de Itens do Menu -->
+  <main class="container">
+
+    <!-- Seção Destaques -->
+    <section id="destaques">
+      <div class="section-header">
+        <div class="section-bar"></div>
+        <h2 class="section-title">Sugestões do Chef</h2>
+      </div>
+
+      <div class="menu-grid">
+        <article class="card-item">
+          <div class="item-body">
+            <div class="item-title-row">
+              <span class="item-badge-featured">Mais Pedido</span>
+              <h3 class="item-title">Experiência Frutos do Mar</h3>
+            </div>
+            <p class="item-desc">Camarões selecionados grelhados na manteiga de ervas, iscas de peixe nobre e guarnições artesanais.</p>
+          </div>
+          <div class="item-price-tag">
+            <span class="price-value">R$ 149,00</span>
+          </div>
+        </article>
+
+        <article class="card-item">
+          <div class="item-body">
+            <div class="item-title-row">
+              <h3 class="item-title">Polvo Grelhado ao Azeite de Ervas</h3>
+            </div>
+            <p class="item-desc">Tentáculos de polvo crocantes por fora e macios por dentro, servidos com batatas ao murro.</p>
+          </div>
+          <div class="item-price-tag">
+            <span class="price-value">R$ 128,00</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Seção Entradas -->
+    <section id="entradas">
+      <div class="section-header">
+        <div class="section-bar"></div>
+        <h2 class="section-title">Entradas &amp; Petiscos</h2>
+      </div>
+
+      <div class="menu-grid">
+        <article class="card-item">
+          <div class="item-body">
+            <div class="item-title-row">
+              <h3 class="item-title">Casquinha de Siri Especial</h3>
+            </div>
+            <p class="item-desc">Receita tradicional com carne pura de siri temperada e gratinada com queijo artesanal.</p>
+          </div>
+          <div class="item-price-tag">
+            <span class="price-value">R$ 36,00</span>
+          </div>
+        </article>
+
+        <article class="card-item">
+          <div class="item-body">
+            <div class="item-title-row">
+              <h3 class="item-title">Camarão Crocante Panko</h3>
+            </div>
+            <p class="item-desc">Porção de camarões empanados na farinha panko acompanhados de aioli de limão siciliano.</p>
+          </div>
+          <div class="item-price-tag">
+            <span class="price-value">R$ 89,00</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Seção Bebidas -->
+    <section id="bebidas">
+      <div class="section-header">
+        <div class="section-bar"></div>
+        <h2 class="section-title">Bebidas &amp; Coquetelaria</h2>
+      </div>
+
+      <div class="menu-grid">
+        <article class="card-item">
+          <div class="item-body">
+            <div class="item-title-row">
+              <h3 class="item-title">Drink Autoral Tropical Solar</h3>
+            </div>
+            <p class="item-desc">Gin premium infusionado, redução de maracujá com tangerina e água tônica artesanal.</p>
+          </div>
+          <div class="item-price-tag">
+            <span class="price-value">R$ 38,00</span>
+          </div>
+        </article>
+
+        <article class="card-item">
+          <div class="item-body">
+            <div class="item-title-row">
+              <h3 class="item-title">Chopp Artesanal Regional (500ml)</h3>
+            </div>
+            <p class="item-desc">Chopp estilo Pilsen ou IPA puro malte, tirado na pressão e servido estritamente gelado.</p>
+          </div>
+          <div class="item-price-tag">
+            <span class="price-value">R$ 18,00</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Barra Fixa de Ação Inferior -->
+  <footer class="footer-action-bar">
+    <a href="https://wa.me/5548999088162?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20pedido%20pelo%20card%C3%A1pio." target="_blank" class="btn-action btn-accent-action">
+      💬 Fazer Pedido
+    </a>
+    <a href="https://maps.google.com" target="_blank" class="btn-action btn-primary-action">
+      ⭐ Avaliar Atendimento
+    </a>
+  </footer>
+
+</body>
+</html>

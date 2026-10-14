@@ -1,0 +1,13 @@
+{
+  "nome": "Hotel Gaivotas Praia",
+  "unidade": "Praia dos Ingleses",
+  "categoria": "Hotel de Praia",
+  "regiao": "Praia dos Ingleses",
+  "quartos": 72,
+  "diaria_media": 350,
+  "site": "https://www.hotelgaivotaspraia.com.br",
+  "ranking": 51,
+  "telefone": "(48) 3269-1144",
+  "phone_clean": "554832691144",
+  "telefone_fixo": "+55 48 3269-1144"
+}

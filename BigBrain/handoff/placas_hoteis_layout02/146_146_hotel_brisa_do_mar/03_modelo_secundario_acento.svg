@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+  <defs>
+    <style>
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400 800;
+        src: local('Inter'), local('Segoe UI'), local('Arial');
+      }
+      text { font-family: 'Inter', -apple-system, sans-serif; }
+    </style>
+    <clipPath id="cardClip">
+      <rect width="1000" height="1000" rx="60" ry="60"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#cardClip)">
+    <!-- Base Areia Nobre Sólida #FAF8F5 -->
+    <rect width="1000" height="1000" fill="#FAF8F5"/>
+
+    <!-- Divisão Superior Curva Canônica Homologada (guia-institucional.pdf) -->
+    <path d="M0,0 L1000,0 L1000,540 Q500,440 0,540 Z" fill="#C95D42"/>
+
+    <!-- A) LOGO / MARCA DO HOTEL (Topo Esquerdo: X=80, Y=110) -->
+    <image href="data:image/webp;base64,UklGRiYFAABXRUJQVlA4WAoAAAAIAAAAfwAAfwAAVlA4IDQEAAAQFgCdASqAAIAAPm02lkgkIyIhJZdJMIANiWUA10GK/orgHn/+eBvgG8aftV6W8U/MRLbbHPpxTIP0uVJ8AYxtn1epvYM/XPrc+iT+zI+qGQgYKykeb7gof4apOwnfbt/vdfGVXD3EbZEnDNjwveGXnIRA1DspJGCOaH9fWHsy8AtP9mJ+/Wi6JulXkXeBg9cnIbyJWLB4ZqYz1YVpHJhjITQuZjpS2yW5RMg9i6zi3QSTTbOnpFGEgAD+/EoAAABFfpwGI6R4jQGZoSo33kU0ZYwAZcVu2/3CiL++Nppmr/v9dH3X/8T06P/AQ7zWruP6g870kS9Y+BVpohtX1NVXb4vcyvvRjFS0K4vju/vGe5JTptWL3R+RyYnTfLe7zHozUdd32il7H1f/qNz+2yUkf11RUM/7iSVWGbp/6RP7WvVL2BacbBM+J5nA8xenB6XwUoVbXiNfCt/a2gOLmNcc3uBkadfs9pFiDvV1FTN7W1UXkorAL7FduaQ9gd6kBzluxGWnl5CfE1J1FThbHo6FzzRm+2VK7wq9KbL6peX8bDSg7HyrJ2rq7+dxq8wD0omA9F8SbUJ+6BzO6LBZknjOS4AeB/fShxNP/7hy85hKC8es5OJErqIBcL3I0Knb96Mb3Bf7K3XYwvBnuxlIQRHnBXicEoQSf/o6GqRWUnv1qG8F5TG6/DcGbBT4piLYh8geVdDKlS7l83bCVR9+3r5CQgtaMZs/bU7irYOzwyWBSmD1CbbegTdv1KkJ2KqZvc53Il2CqLhjGi4Iv236M9vXt2GWA7V5oonu8fs+JRHPf9WQnvVl8HYF/kXx+jjZ1aLvV+yboNIi+8HWknMKhRj/vSAktbIlAmTxnqu1taxrH9W62nfeQU6BbunfauXJ/LVJ0WcGgSHaC/sj1h83jpg9y8RnGpVj1oFF2PwPZrOWU9xrhXk2NnvT5rbKodJJpxqnq66/7ptHxq/jdCXM/2W96dajd1E6p5Duqx66QqLcGq9uKrqdKdAjHVy2P28GzBtb7Qsg9fhFPzzYsrIXSzWGZDxwdTcmMZa7BZ5TRrPUYlfMJRB/eamCu9VecVFYm74kIbyT8jcLNRJnNsCXFowqqd7UL7tT/Lasb8GI8tkiq+QgweIC6b4TOvwe8XYfGzw7X8fxdt0jsFUvPxiRPvNT2bvt0OM9fzgAzunJaP+qbZ/tUz14dmE2rfxItIGDqddBBykcvKxnm8zaOxZtVw/QT7X3etciHbT7TjtYc1r04Isz49f7TgMPt5/JG/aPvKb0/gw0o/JaE4j0t5PfxihEQqpCtXf1qrJfp6x/dYSsEu5K9AC5vvJLosgcg2RMIdIKf4V/xs+iIR77NX7KBNYHjlam59AJyAH0imfnv3mpflTADMmf/4LXZ/Elgj7fFt0nlwIkuf1JqaP/skjcNTEIAAAAAEVYSUbMAAAARXhpZgAASUkqAAgAAAAHABIBAwABAAAAAQAAABoBBQABAAAAYgAAABsBBQABAAAAagAAACgBAwABAAAAAgAAADEBAgAGAAAAcgAAABMCAwABAAAAAQAAAGmHBAABAAAAeAAAAAAAAABIAAAAAQAAAEgAAAABAAAAYmZAdjEABgAAkAcABAAAADAyMTABkQcABAAAAAECAwAAoAcABAAAADAxMDABoAMAAQAAAP//AAACoAQAAQAAAIAAAAADoAQAAQAAAIAAAAAAAAAA" x="80" y="110" width="380" height="160" preserveAspectRatio="xMidYMid meet" />
+
+    <!-- B) CLUSTER NFC CANÔNICO EM ÂMBAR #F5A623 (Topo Direito: X=830) -->
+    <g transform="translate(830, 95)">
+      <!-- 1. Ondas Contactless NFC em #F5A623 -->
+      <g stroke="#F5A623" stroke-width="6" stroke-linecap="round" fill="none" transform="translate(0, 40)">
+        <circle cx="-25" cy="0" r="3.5" fill="#F5A623" stroke="none"/>
+        <path d="M-12,-18 C-3,-9 -3,9 -12,18"/>
+        <path d="M3,-30 C18,-15 18,15 3,30"/>
+        <path d="M18,-42 C38,-21 38,21 18,42"/>
+      </g>
+
+      <!-- 2. Pílula [ NFC ] em #F5A623 -->
+      <g transform="translate(0, 115)">
+        <rect x="-44" y="-18" width="88" height="36" rx="18" fill="#F5A623"/>
+        <text x="0" y="6" font-size="16" font-weight="800" fill="#12181A" text-anchor="middle" letter-spacing="1.5">NFC</text>
+      </g>
+
+      <!-- 3. Instrução de Proximidade em Branco Puro -->
+      <text x="0" y="170" font-size="14" font-weight="500" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.5">Aproxime o celular</text>
+    </g>
+
+    <!-- C) CHAMADA CANÔNICA: UM TOQUE LIBERA -->
+    <g transform="translate(80, 600)">
+      <text x="0" y="0" font-size="16" font-weight="800" fill="#12181A" letter-spacing="3">UM TOQUE LIBERA</text>
+    </g>
+
+    <!-- D) GRADE 2x2 DE SERVIÇOS REAIS (Inter Medium) -->
+    
+    <!-- Item 1: Wi-Fi -->
+    <g transform="translate(80, 640)">
+      <circle cx="40" cy="40" r="40" fill="#12181A" fill-opacity="0.08"/>
+      <g stroke="#12181A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" transform="translate(26, 26)">
+        <path d="M2 9 C8 3 20 3 26 9"/>
+        <path d="M6 14 C10 10 18 10 22 14"/>
+        <circle cx="14" cy="20" r="2" fill="#12181A"/>
+      </g>
+      <text x="96" y="36" font-size="22" font-weight="700" fill="#12181A">Wi-Fi Instantâneo</text>
+      <text x="96" y="60" font-size="15" font-weight="500" fill="#4B5563">Conexão sem senha manual</text>
+    </g>
+
+    <!-- Item 2: Serviços & Lazer -->
+    <g transform="translate(540, 640)">
+      <circle cx="40" cy="40" r="40" fill="#12181A" fill-opacity="0.08"/>
+      <g stroke="#12181A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" transform="translate(26, 26)">
+        <rect x="3" y="3" width="22" height="22" rx="4"/>
+        <path d="M9 14 L13 18 L19 10"/>
+      </g>
+      <text x="96" y="36" font-size="22" font-weight="700" fill="#12181A">Serviços &amp; Lazer</text>
+      <text x="96" y="60" font-size="15" font-weight="500" fill="#4B5563">Piscina, café e horários</text>
+    </g>
+
+    <!-- Item 3: Gastronomia & Cardápio -->
+    <g transform="translate(80, 755)">
+      <circle cx="40" cy="40" r="40" fill="#12181A" fill-opacity="0.08"/>
+      <g stroke="#12181A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" transform="translate(26, 26)">
+        <path d="M5 3 L5 12 C5 15 8 17 11 17 L11 27"/>
+        <line x1="11" y1="3" x2="11" y2="12"/>
+        <path d="M17 3 L17 12 C17 15 14 17 11 17"/>
+        <path d="M23 3 C27 8 27 15 24 18 L24 27"/>
+      </g>
+      <text x="96" y="36" font-size="22" font-weight="700" fill="#12181A">Gastronomia &amp; Bar</text>
+      <text x="96" y="60" font-size="15" font-weight="500" fill="#4B5563">Cardápio digital atualizado</text>
+    </g>
+
+    <!-- Item 4: Avaliações Google -->
+    <g transform="translate(540, 755)">
+      <circle cx="40" cy="40" r="40" fill="#12181A" fill-opacity="0.08"/>
+      <g stroke="#12181A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" transform="translate(26, 26)">
+        <polygon points="14,2 18,10 26,11 20,17 22,25 14,20 6,25 8,17 2,11 10,10"/>
+      </g>
+      <text x="96" y="36" font-size="22" font-weight="700" fill="#12181A">Avaliar no Google</text>
+      <text x="96" y="60" font-size="15" font-weight="500" fill="#4B5563">Avaliação rápida em 1 toque</text>
+    </g>
+
+    <!-- E) RODAPÉ COM MARGEM DE SEGURANÇA -->
+    <line x1="80" y1="880" x2="920" y2="880" stroke="#12181A" stroke-opacity="0.12" stroke-width="1.5"/>
+    <g transform="translate(80, 920)">
+      <text x="0" y="0" font-size="16" font-weight="600" fill="#6B7280" letter-spacing="1">EXPERIÊNCIA DO HÓSPEDE</text>
+      <text x="840" y="0" font-size="16" font-weight="700" fill="#C95D42" text-anchor="end">www.hotelbrisadomar.com.br</text>
+    </g>
+  </g>
+</svg>

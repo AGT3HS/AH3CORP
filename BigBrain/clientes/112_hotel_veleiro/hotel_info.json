@@ -1,0 +1,13 @@
+{
+  "nome": "Hotel Veleiro",
+  "unidade": "José Mendes",
+  "categoria": "Hotel Econômico",
+  "regiao": "José Mendes",
+  "quartos": 44,
+  "diaria_media": 230,
+  "site": "http://www.hotelveleiro.com.br",
+  "ranking": 112,
+  "telefone": "(48) 3225-7622",
+  "phone_clean": "554832257622",
+  "telefone_fixo": "+55 48 3225-7622"
+}

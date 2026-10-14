@@ -1,0 +1,86 @@
+id,nome,bairro,telefone,tipo,status_wa,fonte,site
+1,1983 Burguer,"Ponta das Canas, Florianópolis",(48) 98436-3225,CELULAR,CELULAR_A_VERIFICAR,Celular Cadastrado,
+2,A Toca Choperia e Petiscaria,"Ponta das Canas, Florianópolis",(48) 3023-8950,LINHA_FIXA,NAO_WHATSAPP,Telefonia Fixa (Ligação apenas),https://atocachoperia.vercel.app/
+3,Antares Club Hotel Lagoinha,"praia da Lagoinha, Florianópolis",(48) 98478-3369,CELULAR,CELULAR_A_VERIFICAR,Celular Cadastrado,http://www.antareslagoinha.com/
+4,Baleia Branca RestoBar,"Ponta das Canas, Florianópolis",(48) 98471-0900,CELULAR,CELULAR_A_VERIFICAR,Celular Cadastrado,https://bio.link/baleiabrancarestobar
+5,Bittera Drinks,"Ponta das Canas, Florianópolis",(48) 99813-8032,CELULAR,CELULAR_A_VERIFICAR,Celular Cadastrado,
+6,Brava Del Mar Restaurante,"Cachoeira do Bom Jesus, Florianópolis",(48) 98880-4141,CELULAR_DIGITAL,CONFIRMADO_SITE,Site: https://bravadelmar.com/,https://bravadelmar.com/
+7,Break Da Ponta Lanches,"Ponta das Canas, Florianópolis",(48) 99215-9440,CELULAR,CELULAR_A_VERIFICAR,Celular Cadastrado,https://bit.ly/m/breakdapontalanches
+8,Canto do Mar Ponta das Canas,"Ponta das Canas, Florianópolis",(48) 3261-0872,LINHA_FIXA,NAO_WHATSAPP,Telefonia Fixa (Ligação apenas),http://www.restaurantescantodomar.com.br/
+9,Capijores - Padaria artesanal argentina,"Ponta das Canas, Florianópolis",(84) 92001-3051,CELULAR,CELULAR_A_VERIFICAR,Celular Cadastrado,
+10,Chico Restaurante,"Ponta das Canas, Florianópolis",(48) 3284-2502,LINHA_FIXA,NAO_WHATSAPP,Telefonia Fixa (Ligação apenas),https://www.lojalocal.com/amstel/78607777000106
+11,Cia do Salgado,"Lagoinha do Norte, Florianópolis",(48) 99129-8431,CELULAR_DIGITAL,CONFIRMADO_INSTAGRAM,Instagram: https://instagram.com/ciadosalgadoflorianopolis,https://instagram.com/ciadosalgadoflorianopolis
+12,DÁZUMBANHO LANCHES E PORÇÕES,"Cachoeira do Bom Jesus, Florianópolis",(48) 99192-8552,CELULAR,CELULAR_A_VERIFICAR,Celular Cadastrado,
+13,FORA DA CURVA FOODS,"Ponta das Canas, Florianópolis",A verificar,SEM_NUMERO,PENDENTE,,
+14,Floresta Negra Café Bar & Chopperia,"Ponta das Canas, Florianópolis",(48) 99695-8235,CELULAR_DIGITAL,CONFIRMADO_INSTAGRAM,Instagram: http://www.instagram.com/florestanegracafebar/,http://www.instagram.com/florestanegracafebar/
+15,Gaivota,"Cachoeira do Bom Jesus, Florianópolis",(48) 3879-2495,LINHA_FIXA,NAO_WHATSAPP,Telefonia Fixa (Ligação apenas),
+16,Gusto Cucina Moema,Moema,(11) 5543-0336,LINHA_FIXA,NAO_WHATSAPP,Telefonia Fixa (Ligação apenas),https://www.gustomoema.site/
+17,La Nonna di Lucca - Moema,Moema,(11) 5051-6193,LINHA_FIXA,NAO_WHATSAPP,Telefonia Fixa (Ligação apenas),http://www.lanonnadilucca.com.br/
+18,Ocean House,"Ponta das Canas, Florianópolis",(48) 3369-3102,LINHA_FIXA,NAO_WHATSAPP,Telefonia Fixa (Ligação apenas),
+19,Ponta da Praia,"Cachoeira do Bom Jesus, Florianópolis",(48) 3209-6417,LINHA_FIXA,NAO_WHATSAPP,Telefonia Fixa (Ligação apenas),https://www.facebook.com/restaurantecantodapraia/
+20,Pátio Floriparadise,"Ponta das Canas, Florianópolis",(48) 99131-8686,CELULAR,CELULAR_A_VERIFICAR,Celular Cadastrado,http://www.floriparadise.com/
+21,Rancho do Pescador,"Praia da Lagoinha, Florianópolis",(48) 99602-8948,CELULAR_DIGITAL,CONFIRMADO_INSTAGRAM,Instagram: https://www.instagram.com/p/CVx1xhIr7ho/?utm_medium=copy_link,https://www.instagram.com/p/CVx1xhIr7ho/?utm_medium=copy_link
+22,Ratones Craft Beer,Sl 7,(48) 99170-1959,CELULAR,CELULAR_A_VERIFICAR,Celular Cadastrado,http://ratonescraftbeer.com.br/
+23,Rest. Canto da Lagoinha,7330,(48) 3371-7090,LINHA_FIXA,NAO_WHATSAPP,Telefonia Fixa (Ligação apenas),
+24,Restaurante Garra Azul,"Ponta das Canas, Florianópolis",(48) 3030-2382,LINHA_FIXA,NAO_WHATSAPP,Telefonia Fixa (Ligação apenas),https://www.instagram.com/restaurantegarraazul/
+25,Restaurante Lula Floripa,"Ponta das Canas, Florianópolis",(48) 98818-5649,CELULAR_DIGITAL,CONFIRMADO_INSTAGRAM,Instagram: https://www.instagram.com/restaurantelulafloripa/?igshid=596ukn0y9dr9,https://www.instagram.com/restaurantelulafloripa/?igshid=596ukn0y9dr9
+26,Restaurante Mira Maré,"Ponta das Canas, Florianópolis",(48) 99139-6523,CELULAR,CELULAR_A_VERIFICAR,Celular Cadastrado,https://www.miramarerestaurante.com.br/
+27,Restaurante Tradição Campeira,"Ponta das Canas, Florianópolis",(48) 99918-5419,CELULAR,CELULAR_A_VERIFICAR,Celular Cadastrado,
+28,Restaurante VENTO SULI,"Ponta das Canas, Florianópolis",(48) 3500-0261,LINHA_FIXA,NAO_WHATSAPP,Telefonia Fixa (Ligação apenas),
+29,Sabore,"Ponta das Canas, Florianópolis",(48) 99903-9607,CELULAR_DIGITAL,CONFIRMADO_CARDAPIO_IFOOD,Cardápio/iFood: http://pedido.anota.ai/loja/sabore-marmitas,http://pedido.anota.ai/loja/sabore-marmitas
+30,EL PATIO GRILL RESTAURANTE,"Canasvieiras, Florianópolis",(47) 99115-0610,CELULAR,CELULAR_A_VERIFICAR,Celular Cadastrado,
+31,Pizzaria Silvestre,"Canasvieiras, Florianópolis",(48) 3207-3312,LINHA_FIXA,NAO_WHATSAPP,Telefonia Fixa (Ligação apenas),
+32,Barracão Bar e Pizzaria do Luiz,"Canasvieiras, Florianópolis",(48) 3028-5246,LINHA_FIXA,NAO_WHATSAPP,Telefonia Fixa (Ligação apenas),
+33,Pastel Dog e cia,"Canasvieiras, Florianópolis",(48) 99801-1994,CELULAR,CELULAR_A_VERIFICAR,Celular Cadastrado,
+34,Canas Pizzaria - Forno a Lenha,"Canasvieiras, Florianópolis",,SEM_NUMERO,PENDENTE,,
+35,Restaurante Candeias,"Canasvieiras, Florianópolis",(48) 3369-4282,LINHA_FIXA,NAO_WHATSAPP,Telefonia Fixa (Ligação apenas),https://restaurantecandeias.com/
+36,Trilegal,"Canasvieiras, Florianópolis",(48) 99825-9338,CELULAR_DIGITAL,CONFIRMADO_INSTAGRAM,Instagram: https://instagram.com/restaurantetrilegal_oficial?utm_medium=copy_link,https://instagram.com/restaurantetrilegal_oficial?utm_medium=copy_link
+37,Restaurante e Pizzaria Espetinho de Ouro Canasvieiras,"Canasvieiras, Florianópolis",(48) 3266-1498,LINHA_FIXA,NAO_WHATSAPP,Telefonia Fixa (Ligação apenas),
+38,Ecco Trattoria,"Canasvieiras, Florianópolis",(48) 3266-1458,LINHA_FIXA,NAO_WHATSAPP,Telefonia Fixa (Ligação apenas),
+39,Buteco Floripa,"Canasvieiras, Florianópolis",(51) 98128-1795,CELULAR_DIGITAL,CONFIRMADO_INSTAGRAM,Instagram: https://www.instagram.com/buteco.floripa?igsh=MTJ2Y3U4YWVwNmZyeQ==,https://www.instagram.com/buteco.floripa?igsh=MTJ2Y3U4YWVwNmZyeQ==
+40,Porto de Canas,"Canasvieiras, Florianópolis",(48) 99852-4226,CELULAR,CELULAR_A_VERIFICAR,Celular Cadastrado,
+41,Gigantes da Pizza Canasvieiras,"Canasvieiras, Florianópolis",(48) 98837-3041,CELULAR_DIGITAL,CONFIRMADO_INSTAGRAM,Instagram: https://www.instagram.com/gigantesdapizza__?igsh=NzZnaWJlYXZhc292,https://www.instagram.com/gigantesdapizza__?igsh=NzZnaWJlYXZhc292
+42,BARONG BURGUER & CHOPP CANASVIEIRAS,"Canasvieiras, Florianópolis",(48) 99129-9096,CELULAR_DIGITAL,CONFIRMADO_INSTAGRAM,Instagram: https://instagram.com/__barong__?igshid=YmMyMTA2M2Y=,https://instagram.com/__barong__?igshid=YmMyMTA2M2Y=
+43,Restobar Degraus,"Canasvieiras, Florianópolis",(48) 99936-8800,CELULAR,CELULAR_A_VERIFICAR,Celular Cadastrado,
+44,Direto do Mar - Peixaria em Canasvieiras,"Canasvieiras, Florianópolis",(48) 99934-3505,CELULAR_DIGITAL,CONFIRMADO_INSTAGRAM,Instagram: https://www.instagram.com/diretodomar_canas/profilecard/?igsh=NjVzYnNkeW1lbmls,https://www.instagram.com/diretodomar_canas/profilecard/?igsh=NjVzYnNkeW1lbmls
+45,Boa Vista Beach Club,"Canasvieiras, Florianópolis",(48) 98867-1747,CELULAR,CELULAR_A_VERIFICAR,Celular Cadastrado,
+46,Ponto X Choperia e Hamburgueria,"Canasvieiras, Florianópolis",(48) 3307-9892,LINHA_FIXA,NAO_WHATSAPP,Telefonia Fixa (Ligação apenas),
+47,Focaccia Express,"Canasvieiras, Florianópolis",,SEM_NUMERO,PENDENTE,,
+48,Pirata,"Canasvieiras, Florianópolis",,SEM_NUMERO,PENDENTE,,
+49,Costillas Grill - Costelaria & Churrascaria,"Canasvieiras, Florianópolis",(48) 98477-7309,CELULAR,CELULAR_A_VERIFICAR,Celular Cadastrado,https://www.facebook.com/costillasgrill/
+50,Galpão Gaúcho Restaurante & Churrascaria,"Canasvieiras, Florianópolis",(48) 3879-0080,LINHA_FIXA,NAO_WHATSAPP,Telefonia Fixa (Ligação apenas),
+51,Tomat`s Grill,"Canasvieiras, Florianópolis",(48) 99609-1779,CELULAR,CELULAR_A_VERIFICAR,Celular Cadastrado,http://www.canasvieiras.com.br/tomats
+52,Camarão do Rafa,"Canasvieiras, Florianópolis",(48) 99865-6566,CELULAR_DIGITAL,CONFIRMADO_SITE,Site: https://camaraodorafa.com.br/,https://camaraodorafa.com.br/
+53,Jacks London Floripa,"Canasvieiras, Florianópolis",(48) 99642-2246,CELULAR_WHATSAPP,CONFIRMADO_LINK_DIRETO,Link WhatsApp: https://api.whatsapp.com/send?phone=5548996422246,https://api.whatsapp.com/send?phone=5548996422246
+54,North Pub Canasvieiras,"Canasvieiras, Florianópolis",(48) 98842-4590,CELULAR,CELULAR_A_VERIFICAR,Celular Cadastrado,https://northpub.com.br/
+55,Bierstrand - Restaurante em Canasvieiras,"Canasvieiras, Florianópolis",(48) 99134-7079,CELULAR,CELULAR_A_VERIFICAR,Celular Cadastrado,
+56,Milton Pizzaria - Canasvieiras,"Canasvieiras, Florianópolis",(48) 99646-5044,CELULAR_DIGITAL,CONFIRMADO_INSTAGRAM,Instagram: https://www.instagram.com/milton_pizzaria?igsh=NG8xbHl0ejdpcXBo,https://www.instagram.com/milton_pizzaria?igsh=NG8xbHl0ejdpcXBo
+57,Bob's Shakes - Canasvieiras,"Canasvieiras, Florianópolis",(48) 3266-3127,LINHA_FIXA,NAO_WHATSAPP,Telefonia Fixa (Ligação apenas),https://bobs.com.br/
+58,Renascer Drinks Canasvieiras,"Canasvieiras, Florianópolis",(48) 99990-1507,CELULAR_DIGITAL,CONFIRMADO_INSTAGRAM,Instagram: https://www.instagram.com/renascerdrinks.br?igsh=MTRzNTExemJicHN3dA==,https://www.instagram.com/renascerdrinks.br?igsh=MTRzNTExemJicHN3dA==
+59,Holiday Cafe,"Canasvieiras, Florianópolis",,SEM_NUMERO,PENDENTE,,
+60,Terra Santa,"Canasvieiras, Florianópolis",,SEM_NUMERO,PENDENTE,,
+61,Restaurante Churrasco ao Vivo Canasvieiras,"Canasvieiras, Florianópolis",(48) 99665-1046,CELULAR,CELULAR_A_VERIFICAR,Celular Cadastrado,
+62,Subway Canasvieiras,"Canasvieiras, Florianópolis",(48) 97400-7017,CELULAR,CELULAR_A_VERIFICAR,Celular Cadastrado,https://www.subway.com.br/
+63,Pizzaria e Restaurante Firenze,"Canasvieiras, Florianópolis",(48) 99916-4173,CELULAR_DIGITAL,CONFIRMADO_CARDAPIO_IFOOD,Cardápio/iFood: http://app.anota.ai/p/firenzepizzaria,http://app.anota.ai/p/firenzepizzaria
+64,Resto Bar Panamericana - Canasvieiras,"Canasvieiras, Florianópolis",(48) 99204-9004,CELULAR_DIGITAL,CONFIRMADO_CARDAPIO_IFOOD,Cardápio/iFood: https://www.ifood.com.br/delivery/florianopolis-sc/hambugueria-panamericana-canasvieiras/3ef664ed-4137-452e-b0fa-477551fa1b52?UTM_Medium=share,https://www.ifood.com.br/delivery/florianopolis-sc/hambugueria-panamericana-canasvieiras/3ef664ed-4137-452e-b0fa-477551fa1b52?UTM_Medium=share
+65,Restaurante Malukus,"Canasvieiras, Florianópolis",(48) 99973-8253,CELULAR,CELULAR_A_VERIFICAR,Celular Cadastrado,
+66,Parada Quilmes - Bar e Restaurante,"Canasvieiras, Florianópolis",(48) 98809-9723,CELULAR_DIGITAL,CONFIRMADO_CARDAPIO_IFOOD,Cardápio/iFood: https://www.ifood.com.br/delivery/florianopolis-sc/parada-quilmes-canasvieiras/4e61fe02-4579-4849-b22f-816c8cd0d51d,https://www.ifood.com.br/delivery/florianopolis-sc/parada-quilmes-canasvieiras/4e61fe02-4579-4849-b22f-816c8cd0d51d
+67,FLATY,"Canasvieiras, Florianópolis",(48) 99122-1194,CELULAR_DIGITAL,CONFIRMADO_CARDAPIO_IFOOD,Cardápio/iFood: https://app.cardapioweb.com/flaty_burger,https://app.cardapioweb.com/flaty_burger
+68,Café santorini,"Canasvieiras, Florianópolis",,SEM_NUMERO,PENDENTE,,
+69,Bistro Largo José Daux Bar e Restaurante - Canasvieiras - Florianópolis - SC,"Canasvieiras, Florianópolis",(48) 98809-7926,CELULAR,CELULAR_A_VERIFICAR,Celular Cadastrado,
+70,Café Monet - Canasvieiras,"Canasvieiras, Florianópolis",(48) 98446-3030,CELULAR,CELULAR_A_VERIFICAR,Celular Cadastrado,
+71,Cafezim Floripa,"Canasvieiras, Florianópolis",(48) 99680-1477,CELULAR_DIGITAL,CONFIRMADO_INSTAGRAM,Instagram: https://www.instagram.com/cafezimfloripa,https://www.instagram.com/cafezimfloripa
+72,Oh Titta Doce - Cestas personalizadas,"Canasvieiras, Florianópolis",0362 414-3343,NUMERO_ANOMALO,PENDENTE,Formato Inválido,https://www.instagram.com/ohtittadoce/
+73,Chopperia Chopp Natural,"Canasvieiras, Florianópolis",,SEM_NUMERO,PENDENTE,,
+74,Capetaria Porto Seguro,"Canasvieiras, Florianópolis",(48) 3050-0776,LINHA_FIXA,NAO_WHATSAPP,Telefonia Fixa (Ligação apenas),
+75,Churrascaria Silvestre,"Canasvieiras, Florianópolis",(48) 3266-5309,LINHA_FIXA,NAO_WHATSAPP,Telefonia Fixa (Ligação apenas),
+76,Bar e Restaurante do Quinha,"Canasvieiras, Florianópolis",(48) 3266-1728,LINHA_FIXA,NAO_WHATSAPP,Telefonia Fixa (Ligação apenas),
+77,SEU BODEGA Gastrobar,"Canasvieiras, Florianópolis",(48) 98817-7469,CELULAR_DIGITAL,CONFIRMADO_INSTAGRAM,Instagram: https://www.instagram.com/seubodegagastrobar/,https://www.instagram.com/seubodegagastrobar/
+78,Piratas da Praia Bar e Petiscaria,"Canasvieiras, Florianópolis",,SEM_NUMERO,PENDENTE,,
+79,Pizzaria Di Tália,"Canasvieiras, Florianópolis",(48) 3307-6532,LINHA_FIXA,NAO_WHATSAPP,Telefonia Fixa (Ligação apenas),
+80,Portal Canas Bar,"Canasvieiras, Florianópolis",(48) 99678-7518,CELULAR,CELULAR_A_VERIFICAR,Celular Cadastrado,https://www.lojalocal.com/amstel/05915458000194
+81,Brazão Burguer,"Canasvieiras, Florianópolis",(48) 99183-5708,CELULAR_DIGITAL,CONFIRMADO_CARDAPIO_IFOOD,Cardápio/iFood: https://pedido.anota.ai/loja/brazao-burguer?from=site&utm_source=portal-share-btn&referer=https%3A%2F%2Fwww.google.com%2F,https://pedido.anota.ai/loja/brazao-burguer?from=site&utm_source=portal-share-btn&referer=https%3A%2F%2Fwww.google.com%2F
+82,Restaurante e Lanchonete Teixeira,"Canasvieiras, Florianópolis",(45) 99932-2873,CELULAR,CELULAR_A_VERIFICAR,Celular Cadastrado,
+83,Movil,"Canasvieiras, Florianópolis",,SEM_NUMERO,PENDENTE,,
+84,Pantera Food Bar,"Canasvieiras, Florianópolis",(48) 99155-9158,CELULAR_DIGITAL,CONFIRMADO_CARDAPIO_IFOOD,Cardápio/iFood: https://www.ifood.com.br/delivery/florianopolis-sc/pantera-food-bar-canasvieiras/5b0c5448-e634-40c6-986f-a57e38070984?utm_medium=share,https://www.ifood.com.br/delivery/florianopolis-sc/pantera-food-bar-canasvieiras/5b0c5448-e634-40c6-986f-a57e38070984?utm_medium=share
+85,Fátima Peixes e Frutos do mar.,"Canasvieiras, Florianópolis",(48) 99967-5896,CELULAR,CELULAR_A_VERIFICAR,Celular Cadastrado,

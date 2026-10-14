@@ -1,0 +1,13 @@
+{
+  "nome": "Hotel Porto da Barra",
+  "unidade": "Barra da Lagoa",
+  "categoria": "Hotel Náutico",
+  "regiao": "Barra da Lagoa",
+  "quartos": 42,
+  "diaria_media": 320,
+  "site": "https://www.hotelportodabarra.com.br",
+  "ranking": 114,
+  "telefone": "",
+  "phone_clean": "",
+  "telefone_fixo": ""
+}

@@ -1,0 +1,13 @@
+{
+  "nome": "Hotel Praia Vermelha",
+  "unidade": "Praia Vermelha / Leste",
+  "categoria": "Hotel Ecológico",
+  "regiao": "Leste da Ilha",
+  "quartos": 28,
+  "diaria_media": 310,
+  "site": "https://www.hotelpraiavermelha.com.br",
+  "ranking": 144,
+  "telefone": "",
+  "phone_clean": "",
+  "telefone_fixo": ""
+}

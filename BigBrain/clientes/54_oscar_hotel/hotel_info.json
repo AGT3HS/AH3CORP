@@ -1,0 +1,13 @@
+{
+  "nome": "Oscar Hotel",
+  "unidade": "Centro",
+  "categoria": "Hotel Executivo",
+  "regiao": "Centro",
+  "quartos": 70,
+  "diaria_media": 290,
+  "site": "https://www.oscarhotel.com.br",
+  "ranking": 54,
+  "telefone": "(48) 99193-9840",
+  "telefone_fixo": "+55 48 3266-0220",
+  "phone_clean": "5548991939840"
+}

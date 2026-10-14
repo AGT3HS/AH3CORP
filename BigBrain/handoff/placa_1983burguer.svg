@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+  <defs>
+    <clipPath id="card-shape">
+      <rect x="0" y="0" width="1000" height="1000" rx="60" ry="60"/>
+    </clipPath>
+    <linearGradient id="topGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4DA2AD"/>
+      <stop offset="1" stop-color="#276B75"/>
+    </linearGradient>
+  </defs>
+
+  <g clip-path="url(#card-shape)">
+    <!-- Base Areia Nobre / Fundo Base -->
+    <rect width="1000" height="1000" rx="60" ry="60" fill="#FAF8F5"/>
+
+    <!-- Topo Institucional com Curva Canônica -->
+    <path d="M0,0 H1000 V530 Q500,480 0,530 Z" fill="url(#topGrad)"/>
+
+    <!-- ZONA A: MARCA E IDENTIDADE -->
+    <g transform="translate(90, 110)">
+      <image x="0" y="0" width="140" height="140" preserveAspectRatio="xMidYMid meet" href="data:image/png;base64,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"/>
+      <g transform="translate(160, 42)">
+        <text font-family="'Cinzel', 'Georgia', serif" font-size="38" font-weight="700" fill="#FAF8F5" letter-spacing="2">1983 BURGUER</text>
+        <text font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="600" fill="#FAF8F5" letter-spacing="3" opacity="0.85" y="40">FLORIANÓPOLIS • BRASIL</text>
+      </g>
+    </g>
+
+    <!-- ZONA B: SENSOR NFC CANÔNICO (X: 700 a 910) -->
+    <g fill="none" stroke="#E8A825" stroke-width="14" stroke-linecap="round">
+      <circle cx="720" cy="180" r="14" fill="#E8A825" stroke="none"/>
+      <path d="M 760 125 Q 830 180 760 235"/>
+      <path d="M 800 95 Q 880 180 800 265"/>
+      <path d="M 840 65 Q 930 180 840 295"/>
+    </g>
+
+    <!-- Pílula NFC -->
+    <rect x="710" y="300" width="180" height="46" rx="23" fill="#E8A825"/>
+    <text x="800" y="333" font-family="'Plus Jakarta Sans', Helvetica, sans-serif" font-size="30" font-weight="800" fill="#12181A" text-anchor="middle" letter-spacing="3">NFC</text>
+    <text x="800" y="378" font-family="'Plus Jakarta Sans', Helvetica, sans-serif" font-size="28" font-weight="500" fill="#FAF8F5" text-anchor="middle">Aproxime o celular</text>
+
+    <!-- ZONA C: CHAMADA 'UM TOQUE LIBERA' -->
+    <text x="90" y="615" font-family="'Plus Jakarta Sans', Helvetica, sans-serif" font-size="29" font-weight="800" fill="#276B75" letter-spacing="4">UM TOQUE LIBERA</text>
+
+    <!-- ZONA D: GRADE 2x2 DE ATIVAÇÃO DE EXPERIÊNCIA -->
+    <g>
+      <circle cx="130" cy="710" r="40" fill="#276B75" fill-opacity="0.12"/>
+      <text x="190" y="724" font-family="'Plus Jakarta Sans', Helvetica, sans-serif" font-size="44" font-weight="600" fill="#12181A">Avaliações Google</text>
+    </g>
+    <g>
+      <circle cx="580" cy="710" r="40" fill="#276B75" fill-opacity="0.12"/>
+      <text x="640" y="724" font-family="'Plus Jakarta Sans', Helvetica, sans-serif" font-size="44" font-weight="600" fill="#12181A">Cardápio &amp; Room</text>
+    </g>
+    <g>
+      <circle cx="130" cy="850" r="40" fill="#276B75" fill-opacity="0.12"/>
+      <text x="190" y="864" font-family="'Plus Jakarta Sans', Helvetica, sans-serif" font-size="44" font-weight="600" fill="#12181A">Wi-Fi &amp; Serviços</text>
+    </g>
+    <g>
+      <circle cx="580" cy="850" r="40" fill="#276B75" fill-opacity="0.12"/>
+      <text x="640" y="864" font-family="'Plus Jakarta Sans', Helvetica, sans-serif" font-size="44" font-weight="600" fill="#12181A">Recepção 24h</text>
+    </g>
+  </g>
+</svg>

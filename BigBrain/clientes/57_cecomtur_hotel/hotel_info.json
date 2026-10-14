@@ -1,0 +1,13 @@
+{
+  "nome": "Cecomtur Hotel",
+  "unidade": "Centro",
+  "categoria": "Hotel Executivo",
+  "regiao": "Centro",
+  "quartos": 68,
+  "diaria_media": 270,
+  "site": "https://www.cecomtur.com.br",
+  "ranking": 57,
+  "telefone": "(48) 3380-8800",
+  "phone_clean": "554833808800",
+  "telefone_fixo": "+55 48 3380-8800"
+}

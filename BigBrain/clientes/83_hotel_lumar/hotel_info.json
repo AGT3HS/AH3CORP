@@ -1,0 +1,13 @@
+{
+  "nome": "Hotel Lumar",
+  "unidade": "Centro",
+  "categoria": "Hotel Econômico",
+  "regiao": "Centro",
+  "quartos": 55,
+  "diaria_media": 240,
+  "site": "https://www.lumarhotel.com.br",
+  "ranking": 83,
+  "telefone": "",
+  "phone_clean": "",
+  "telefone_fixo": ""
+}

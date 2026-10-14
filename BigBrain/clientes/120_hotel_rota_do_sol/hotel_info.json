@@ -1,0 +1,13 @@
+{
+  "nome": "Hotel Rota do Sol",
+  "unidade": "Barra da Lagoa",
+  "categoria": "Hotel de Praia",
+  "regiao": "Barra da Lagoa",
+  "quartos": 40,
+  "diaria_media": 260,
+  "site": "https://www.hotelrotadosol.com.br",
+  "ranking": 120,
+  "telefone": "",
+  "phone_clean": "",
+  "telefone_fixo": ""
+}

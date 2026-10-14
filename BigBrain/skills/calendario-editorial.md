@@ -1,18 +1,42 @@
-# SKILL: calendario-editorial  (Fase 3 · dono: @Conteúdo)
-Leia antes: `BigBrain/travas.md`.
+---
+name: calendario-editorial
+description: Planejamento semanal e mensal de conteúdos e campanhas locais sincronizados com a sazonalidade e clima de Florianópolis.
+owner: "@Marketing"
+phase: 3
+triggers:
+  - "Início de cada semana ou virada de mês para clientes ativos"
+  - "Augusto pede planejamento de pautas para restaurante ou hotel"
+inputs:
+  - cliente: "BigBrain/clientes/<slug>/"
+  - historico: "Posts anteriores e eventos locais de Florianópolis"
+outputs:
+  - calendario: "BigBrain/clientes/<slug>/conteudo/calendario_<AAAA-MM>.md"
+governance_rules:
+  - "Balancear formatos: 2x Carrosséis/Imagens estáticas, 2x Reels, 1x Foto/Feed e Stories diários."
+  - "Adaptar a pauta para dias úteis (almoço/corporativo) vs finais de semana (lazer/família/turismo)."
+---
 
-## Quando usar
-Início de semana, por cliente.
+# SKILL: calendario-editorial (Fase 3 · Dono: @Marketing)
 
-## Entradas
-`clientes/<slug>/`, histórico de posts
+## Quando Usar
+Toda segunda-feira de manhã para abastecer o cliente com o cronograma de conteúdos da semana.
 
-## Passos
-1. Montar 7 dias de pauta.
-2. Salvar em `clientes/<slug>/conteudo/`.
+## Matriz Semanal Canônica de 5 Publicações
 
-## Saída
-Calendário do cliente.
+| Dia | Formato | Pilar de Conteúdo | Gancho / Objetivo |
+|---|---|---|---|
+| **Segunda** | Carrossel Imagem | Bastidores & Qualidade | *"Como nossos frutos do mar chegam frescos todos os dias da Ilha"* |
+| **Terça** | Reels Vídeo | Prato Protagonista | Vídeo macro de preparo com fumaça e corte do prato principal. |
+| **Quinta** | Post Imagem Estática | Prova Social (Google Reviews) | Depoimento 5 estrelas de cliente com foto do ambiente. |
+| **Sexta** | Carrossel / Imagem | Convite para Fim de Semana | Destaque para drinks, música ao vivo ou cardápio especial de happy hour. |
+| **Domingo** | Reels / Stories | Experiência & Família | Salão cheio, clima acolhedor e chamada para almoço de domingo. |
 
-## Ao final
-Registre no ledger (`scripts/ledger_append.py`). Se algo falhou ou pode melhorar, escreva a SUGESTÃO em `handoff/melhorias/calendario-editorial-<data>.md`. NÃO edite esta skill: o Augusto aprova e aplica.
+## Sazonalidade de Florianópolis
+- **Verão / Alta Temporada (Dez - Março):** Foco em turistas, reservas antecipadas, drinks refrescantes e localização próxima às praias.
+- **Inverno / Baixa Temporada (Maio - Agosto):** Foco no público residente da Grande Florianópolis, pratos quentes, vinhos, lareira e eventos corporativos.
+
+## Ao Final
+Registrar a montagem do calendário no ledger:
+```bash
+python scripts/ledger_append.py "Calendário" "Calendário editorial da semana gerado para <slug>."
+```

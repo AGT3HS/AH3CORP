@@ -1,0 +1,13 @@
+{
+  "nome": "Hotel Campinas Executive",
+  "unidade": "São José / Campinas",
+  "categoria": "Hotel Executivo",
+  "regiao": "Continente",
+  "quartos": 68,
+  "diaria_media": 260,
+  "site": "https://www.campinasexecutive.com.br",
+  "ranking": 58,
+  "telefone": "(48) 3269-1050",
+  "phone_clean": "554832691050",
+  "telefone_fixo": "+55 48 3269-1050"
+}

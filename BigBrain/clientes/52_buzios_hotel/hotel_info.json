@@ -1,0 +1,13 @@
+{
+  "nome": "Búzios Hotel",
+  "unidade": "Canasvieiras",
+  "categoria": "Hotel de Praia",
+  "regiao": "Canasvieiras",
+  "quartos": 72,
+  "diaria_media": 300,
+  "site": "https://www.buzioshotel.com.br",
+  "ranking": 52,
+  "telefone": "(48) 98437-0029",
+  "phone_clean": "5548984370029",
+  "telefone_fixo": "+55 48 98437-0029"
+}

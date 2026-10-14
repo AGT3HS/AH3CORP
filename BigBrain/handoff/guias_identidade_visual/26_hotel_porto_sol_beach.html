@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Identidade Visual · Hotel Porto Sol Beach</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --c-primary: #646464;
+            --c-gold: #8ED1FC;
+            --c-bg: #090D0E;
+            --c-card: #12181A;
+            --c-card-border: #1E282C;
+            --c-text: #E5EAE8;
+            --c-muted: #8E9E98;
+            --c-accent: #569FF7;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--c-bg);
+            color: var(--c-text);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .header {
+            background: linear-gradient(145deg, #131B1E, #0D1315);
+            border: 1px solid var(--c-card-border);
+            border-radius: 16px;
+            padding: 36px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            gap: 20px;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--c-gold), transparent);
+        }
+        .badge-rank {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--c-gold);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .hotel-title {
+            font-family: 'Cinzel', serif;
+            font-size: 30px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 6px;
+        }
+        .hotel-meta {
+            color: var(--c-muted);
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        .site-link-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            color: var(--c-gold);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .site-link-header:hover {
+            background: var(--c-gold);
+            color: #000000;
+            transform: translateY(-1px);
+        }
+        .logo-box {
+            background: #FFFFFF;
+            padding: 16px 24px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            min-width: 240px;
+            min-height: 100px;
+        }
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background-color: var(--c-card);
+            border: 1px solid var(--c-card-border);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--c-gold);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .palette-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .swatch {
+            flex: 1;
+            height: 64px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 6px;
+            font-size: 10px;
+            font-weight: 600;
+            color: #FFFFFF;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .data-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 13px;
+        }
+        .data-label { color: var(--c-muted); }
+        .data-val { font-weight: 600; color: #FFF; }
+        .btn-site-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 8px;
+            padding: 10px 18px;
+            background: linear-gradient(135deg, var(--c-gold), #b89020);
+            color: #090D0E;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 13px;
+            transition: all 0.2s ease;
+        }
+        .btn-site-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(212, 175, 55, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <span class="badge-rank">RANKING OFICIAL #26</span>
+                <h1 class="hotel-title">Hotel Porto Sol Beach</h1>
+                <p class="hotel-meta">Cachoeira do Bom Jesus · Cachoeira do Bom Jesus · Hotel de Praia / Familiar</p>
+                <a href="https://hoteisportosol.com.br" target="_blank" rel="noopener noreferrer" class="site-link-header">
+                    🌐 Visitar Website Oficial: https://hoteisportosol.com.br ↗
+                </a>
+            </div>
+            <div class="logo-box">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAMAAAC5zwKfAAABdFBMVEVMaXH+///////////7/v7////////h6/S2zNz6///////////////////////+///////////////////////////////+//8Ahqr////////////////////////////9/v////////////////94tNIBaqVZtMz////+/v7///9NmcT///////////8AYaHU6vIAgqf8/f5np8xttdCGw9m83eit1OXY6fFQr8dEksBJlcBbncWCvdWbzt+Sy92Uxtyky+GXwttuv9TF4O/8fz8Aiq0AhqoCa6cCi64AY6IAZqMAiK0AhKkAaKf+eTQHbag5pcD7gEFQrsb5fj5CqcMembgyob47i7kAX6Asg7Yrn7xXm8Ige7EQkrP5ezoKlrsDb6//iEQzjcBdoskbf7lIrMX/gDpJkr3op4Qpo8MBjrWrpJ//j1JCkb8PeLUWda37nmvTqI4ohLttnraYzeGtr66dqa3+ll6CqrOPssDIvbdhngsWAAAARXRSTlMAXrD3BAfHAgEDfkswv3k9JFJl1RMNN6b9tY7o4ygY7W6edKuVwP3+zXCF/rke3PxV/Ub01rNtg0fn9+jW/KPWmbOM47CejySvAAAAxmVYSWZJSSoACAAAAAcAEgEDAAEAAAABAAAAGgEFAAEAAABiAAAAGwEFAAEAAABqAAAAKAEDAAEAAAACAAAAMQECAAYAAAByAAAAEwIDAAEAAAABAAAAaYcEAAEAAAB4AAAAAAAAAC8ZAQDoAwAALxkBAOgDAABiZkB2MQAGAACQBwAEAAAAMDIxMAGRBwAEAAAAAQIDAACgBwAEAAAAMDEwMAGgAwABAAAA//8AAAKgBAABAAAAUAAAAAOgBAABAAAAUAAAAAAAAACnXh4wAAAACXBIWXMAAAsSAAALEgHS3X78AAAG/UlEQVRYhe2YZ3PqSBaGX0DQEiByxiYbG5yzffPM7rWERDQ5Guecb94/v9UC+9qerRqD58tW+XwBdaOnT+w+DfAqr/L/Iqwi/xSMkD6KJeSfwAGA1hEIODj6yL0Ux8K59ucf796+eft27MPKKMGLtCQEgdV3u9sXjbosS5P7l2/G5hjceWAIHrShxcusNNuoSfl4vBWXpe3bj+ahleQwOrbbmhVFuX0k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" alt="Logo Oficial - Hotel Porto Sol Beach" style="max-height: 85px; max-width: 260px; object-fit: contain;">
+            </div>
+        </div>
+
+        <div class="grid-cards">
+            <div class="card">
+                <div class="card-title">🎨 Identidade Visual & Cores</div>
+                <p style="font-size: 13px; color: var(--c-muted); margin-bottom: 12px;">Paleta institucional extraída dos ativos oficiais via Brandfetch.</p>
+                <div class="palette-row">
+                    <div class="swatch" style="background: #646464;">#646464</div>
+                    <div class="swatch" style="background: #8ED1FC; color: #000; text-shadow: none;">#8ED1FC</div>
+                    <div class="swatch" style="background: #569FF7;">#569FF7</div>
+                    <div class="swatch" style="background: #12181A;">#12181A</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">🔤 Tipografia & Fontes Homologadas</div>
+                <div class="data-row">
+                    <span class="data-label">Títulos & Destaque</span>
+                    <span class="data-val">var(--e-global-typography-b1371c2-font-family)</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Corpo & Interface</span>
+                    <span class="data-val">-apple-system</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Arquitetura de Marca</span>
+                    <span class="data-val">Hotel de Praia / Familiar</span>
+                </div>
+            </div>
+
+            <div class="card" style="grid-column: 1 / -1;">
+                <div class="card-title">📊 Métricas Operacionais & Acesso Oficial</div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; align-items: center;">
+                    <div>
+                        <div class="data-label">Capacidade Declarada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">116 Apartamentos</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Diária Média Estimada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px; color: var(--c-gold);">R$ 430.00</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Ativos de Marca</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">2 arquivo(s) homologado(s)</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Canal Digital Direto</div>
+                        <a href="https://hoteisportosol.com.br" target="_blank" rel="noopener noreferrer" class="btn-site-action">
+                            Acessar Website do Hotel ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

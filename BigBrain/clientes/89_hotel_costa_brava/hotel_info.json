@@ -1,0 +1,13 @@
+{
+  "nome": "Hotel Costa Brava",
+  "unidade": "Canasvieiras",
+  "categoria": "Hotel Familiar",
+  "regiao": "Canasvieiras",
+  "quartos": 52,
+  "diaria_media": 260,
+  "site": "https://www.hotelcostabrava.com.br",
+  "ranking": 89,
+  "telefone": "",
+  "phone_clean": "",
+  "telefone_fixo": ""
+}

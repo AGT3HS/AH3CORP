@@ -1,0 +1,13 @@
+{
+  "nome": "Hotel Lexus Internacional",
+  "unidade": "Canasvieiras",
+  "categoria": "Hotel Pé na Areia",
+  "regiao": "Canasvieiras",
+  "quartos": 55,
+  "diaria_media": 380,
+  "site": "https://www.hotellexus.com.br",
+  "ranking": 80,
+  "telefone": "(48) 3207-0475",
+  "phone_clean": "554832070475",
+  "telefone_fixo": "+55 48 3207-0475"
+}

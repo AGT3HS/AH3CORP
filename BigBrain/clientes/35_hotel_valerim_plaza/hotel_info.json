@@ -1,0 +1,13 @@
+{
+  "nome": "Hotel Valerim Plaza",
+  "unidade": "Centro (Rua Felipe Schmidt)",
+  "categoria": "Hotel Executivo",
+  "regiao": "Centro",
+  "quartos": 94,
+  "diaria_media": 320,
+  "site": "https://www.hotelvalerim.com.br",
+  "ranking": 35,
+  "telefone": "(48) 98880-8771",
+  "telefone_fixo": "+55 48 98880-8771",
+  "phone_clean": "5548988808771"
+}

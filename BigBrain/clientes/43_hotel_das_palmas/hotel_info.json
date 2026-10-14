@@ -1,0 +1,13 @@
+{
+  "nome": "Hotel das Palmas",
+  "unidade": "Canasvieiras",
+  "categoria": "Hotel de Lazer",
+  "regiao": "Canasvieiras",
+  "quartos": 80,
+  "diaria_media": 320,
+  "site": "https://www.hoteldaspalmas.com.br",
+  "ranking": 43,
+  "telefone": "(48) 3266-1172",
+  "phone_clean": "554832661172",
+  "telefone_fixo": "+55 48 3266-1172"
+}

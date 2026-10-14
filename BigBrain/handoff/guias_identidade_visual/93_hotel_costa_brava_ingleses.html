@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Identidade Visual · Hotel Costa Brava Ingleses</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --c-primary: #1B3B2B;
+            --c-gold: #D4AF37;
+            --c-bg: #090D0E;
+            --c-card: #12181A;
+            --c-card-border: #1E282C;
+            --c-text: #E5EAE8;
+            --c-muted: #8E9E98;
+            --c-accent: #E8A825;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--c-bg);
+            color: var(--c-text);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .header {
+            background: linear-gradient(145deg, #131B1E, #0D1315);
+            border: 1px solid var(--c-card-border);
+            border-radius: 16px;
+            padding: 36px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            gap: 20px;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--c-gold), transparent);
+        }
+        .badge-rank {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--c-gold);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .hotel-title {
+            font-family: 'Cinzel', serif;
+            font-size: 30px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 6px;
+        }
+        .hotel-meta {
+            color: var(--c-muted);
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        .site-link-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            color: var(--c-gold);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .site-link-header:hover {
+            background: var(--c-gold);
+            color: #000000;
+            transform: translateY(-1px);
+        }
+        .logo-box {
+            background: #FFFFFF;
+            padding: 16px 24px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            min-width: 240px;
+            min-height: 100px;
+        }
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background-color: var(--c-card);
+            border: 1px solid var(--c-card-border);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--c-gold);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .palette-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .swatch {
+            flex: 1;
+            height: 64px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 6px;
+            font-size: 10px;
+            font-weight: 600;
+            color: #FFFFFF;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .data-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 13px;
+        }
+        .data-label { color: var(--c-muted); }
+        .data-val { font-weight: 600; color: #FFF; }
+        .btn-site-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 8px;
+            padding: 10px 18px;
+            background: linear-gradient(135deg, var(--c-gold), #b89020);
+            color: #090D0E;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 13px;
+            transition: all 0.2s ease;
+        }
+        .btn-site-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(212, 175, 55, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <span class="badge-rank">RANKING OFICIAL #93</span>
+                <h1 class="hotel-title">Hotel Costa Brava Ingleses</h1>
+                <p class="hotel-meta">Praia dos Ingleses · Praia dos Ingleses · Hotel de Praia</p>
+                <a href="https://www.costabravaingleses.com.br" target="_blank" rel="noopener noreferrer" class="site-link-header">
+                    🌐 Visitar Website Oficial: https://www.costabravaingleses.com.br ↗
+                </a>
+            </div>
+            <div class="logo-box">
+                <img src="data:image/webp;base64,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" alt="Logo Oficial - Hotel Costa Brava Ingleses" style="max-height: 85px; max-width: 260px; object-fit: contain;">
+            </div>
+        </div>
+
+        <div class="grid-cards">
+            <div class="card">
+                <div class="card-title">🎨 Identidade Visual & Cores</div>
+                <p style="font-size: 13px; color: var(--c-muted); margin-bottom: 12px;">Paleta institucional extraída dos ativos oficiais via Brandfetch.</p>
+                <div class="palette-row">
+                    <div class="swatch" style="background: #1B3B2B;">#1B3B2B</div>
+                    <div class="swatch" style="background: #D4AF37; color: #000; text-shadow: none;">#D4AF37</div>
+                    <div class="swatch" style="background: #E8A825;">#E8A825</div>
+                    <div class="swatch" style="background: #12181A;">#12181A</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">🔤 Tipografia & Fontes Homologadas</div>
+                <div class="data-row">
+                    <span class="data-label">Títulos & Destaque</span>
+                    <span class="data-val">Cinzel / Playfair Display (Institucional)</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Corpo & Interface</span>
+                    <span class="data-val">Plus Jakarta Sans (Corpo)</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Arquitetura de Marca</span>
+                    <span class="data-val">Hotel de Praia</span>
+                </div>
+            </div>
+
+            <div class="card" style="grid-column: 1 / -1;">
+                <div class="card-title">📊 Métricas Operacionais & Acesso Oficial</div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; align-items: center;">
+                    <div>
+                        <div class="data-label">Capacidade Declarada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">50 Apartamentos</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Diária Média Estimada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px; color: var(--c-gold);">R$ 270.00</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Ativos de Marca</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">1 arquivo(s) homologado(s)</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Canal Digital Direto</div>
+                        <a href="https://www.costabravaingleses.com.br" target="_blank" rel="noopener noreferrer" class="btn-site-action">
+                            Acessar Website do Hotel ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

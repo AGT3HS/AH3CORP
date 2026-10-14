@@ -1,0 +1,13 @@
+{
+  "nome": "Hotel Itamaraty",
+  "unidade": "Centro",
+  "categoria": "Hotel Comercial",
+  "regiao": "Centro",
+  "quartos": 45,
+  "diaria_media": 220,
+  "site": "https://www.hotelitamaratyfloripa.com.br",
+  "ranking": 108,
+  "telefone": "",
+  "phone_clean": "",
+  "telefone_fixo": ""
+}

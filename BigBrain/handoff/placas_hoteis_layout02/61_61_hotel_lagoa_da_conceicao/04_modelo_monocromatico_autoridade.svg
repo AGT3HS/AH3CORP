@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+  <defs>
+    <style>
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400 800;
+        src: local('Inter'), local('Segoe UI'), local('Arial');
+      }
+      text { font-family: 'Inter', -apple-system, sans-serif; }
+    </style>
+    <clipPath id="cardClip">
+      <rect width="1000" height="1000" rx="60" ry="60"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#cardClip)">
+    <rect width="1000" height="1000" fill="#FAF8F5"/>
+    <path d="M0,0 L1000,0 L1000,540 Q500,440 0,540 Z" fill="#1A242B"/>
+
+    <image href="data:image/png;base64,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" x="80" y="110" width="380" height="160" preserveAspectRatio="xMidYMid meet" />
+
+    <g transform="translate(830, 95)">
+      <g stroke="#F5A623" stroke-width="6" stroke-linecap="round" fill="none" transform="translate(0, 40)">
+        <circle cx="-25" cy="0" r="3.5" fill="#F5A623" stroke="none"/>
+        <path d="M-12,-18 C-3,-9 -3,9 -12,18"/>
+        <path d="M3,-30 C18,-15 18,15 3,30"/>
+        <path d="M18,-42 C38,-21 38,21 18,42"/>
+      </g>
+      <g transform="translate(0, 115)">
+        <rect x="-44" y="-18" width="88" height="36" rx="18" fill="#F5A623"/>
+        <text x="0" y="6" font-size="16" font-weight="800" fill="#12181A" text-anchor="middle" letter-spacing="1.5">NFC</text>
+      </g>
+      <text x="0" y="170" font-size="14" font-weight="500" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.5">Aproxime o celular</text>
+    </g>
+
+    <g transform="translate(80, 600)">
+      <text x="0" y="0" font-size="16" font-weight="800" fill="#12181A" letter-spacing="3">UM TOQUE LIBERA</text>
+    </g>
+
+    <g transform="translate(80, 640)">
+      <circle cx="40" cy="40" r="40" fill="#12181A" fill-opacity="0.08"/>
+      <g stroke="#12181A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" transform="translate(26, 26)">
+        <path d="M2 9 C8 3 20 3 26 9"/>
+        <path d="M6 14 C10 10 18 10 22 14"/>
+        <circle cx="14" cy="20" r="2" fill="#12181A"/>
+      </g>
+      <text x="96" y="36" font-size="22" font-weight="700" fill="#12181A">Wi-Fi Instantâneo</text>
+      <text x="96" y="60" font-size="15" font-weight="500" fill="#4B5563">Conexão sem senha manual</text>
+    </g>
+
+    <g transform="translate(540, 640)">
+      <circle cx="40" cy="40" r="40" fill="#12181A" fill-opacity="0.08"/>
+      <g stroke="#12181A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" transform="translate(26, 26)">
+        <rect x="3" y="3" width="22" height="22" rx="4"/>
+        <path d="M9 14 L13 18 L19 10"/>
+      </g>
+      <text x="96" y="36" font-size="22" font-weight="700" fill="#12181A">Serviços &amp; Lazer</text>
+      <text x="96" y="60" font-size="15" font-weight="500" fill="#4B5563">Piscina, café e horários</text>
+    </g>
+
+    <g transform="translate(80, 755)">
+      <circle cx="40" cy="40" r="40" fill="#12181A" fill-opacity="0.08"/>
+      <g stroke="#12181A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" transform="translate(26, 26)">
+        <path d="M5 3 L5 12 C5 15 8 17 11 17 L11 27"/>
+        <line x1="11" y1="3" x2="11" y2="12"/>
+        <path d="M17 3 L17 12 C17 15 14 17 11 17"/>
+        <path d="M23 3 C27 8 27 15 24 18 L24 27"/>
+      </g>
+      <text x="96" y="36" font-size="22" font-weight="700" fill="#12181A">Gastronomia &amp; Bar</text>
+      <text x="96" y="60" font-size="15" font-weight="500" fill="#4B5563">Cardápio digital atualizado</text>
+    </g>
+
+    <g transform="translate(540, 755)">
+      <circle cx="40" cy="40" r="40" fill="#12181A" fill-opacity="0.08"/>
+      <g stroke="#12181A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" transform="translate(26, 26)">
+        <polygon points="14,2 18,10 26,11 20,17 22,25 14,20 6,25 8,17 2,11 10,10"/>
+      </g>
+      <text x="96" y="36" font-size="22" font-weight="700" fill="#12181A">Avaliar no Google</text>
+      <text x="96" y="60" font-size="15" font-weight="500" fill="#4B5563">Avaliação rápida em 1 toque</text>
+    </g>
+
+    <line x1="80" y1="880" x2="920" y2="880" stroke="#12181A" stroke-opacity="0.12" stroke-width="1.5"/>
+    <g transform="translate(80, 920)">
+      <text x="0" y="0" font-size="16" font-weight="600" fill="#6B7280" letter-spacing="1">EXPERIÊNCIA DO HÓSPEDE</text>
+      <text x="840" y="0" font-size="16" font-weight="700" fill="#1A242B" text-anchor="end">www.hotellagoadaconceicao.co...</text>
+    </g>
+  </g>
+</svg>

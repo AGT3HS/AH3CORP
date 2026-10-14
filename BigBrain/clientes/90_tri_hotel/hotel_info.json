@@ -1,0 +1,13 @@
+{
+  "nome": "Tri Hotel",
+  "unidade": "Continente (Capoeiras)",
+  "categoria": "Hotel Econômico",
+  "regiao": "Continente",
+  "quartos": 52,
+  "diaria_media": 230,
+  "site": "https://trihoteis.com/floripa",
+  "ranking": 90,
+  "telefone": "(48) 99116-8225",
+  "telefone_fixo": "+55 48 3954-2600",
+  "phone_clean": "5548991168225"
+}

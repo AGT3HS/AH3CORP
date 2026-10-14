@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Identidade Visual · Blue Tree Premium Florianópolis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --c-primary: #033951;
+            --c-gold: #003E47;
+            --c-bg: #090D0E;
+            --c-card: #12181A;
+            --c-card-border: #1E282C;
+            --c-text: #E5EAE8;
+            --c-muted: #8E9E98;
+            --c-accent: #D8D6CB;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--c-bg);
+            color: var(--c-text);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .header {
+            background: linear-gradient(145deg, #131B1E, #0D1315);
+            border: 1px solid var(--c-card-border);
+            border-radius: 16px;
+            padding: 36px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            gap: 20px;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--c-gold), transparent);
+        }
+        .badge-rank {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--c-gold);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .hotel-title {
+            font-family: 'Cinzel', serif;
+            font-size: 30px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 6px;
+        }
+        .hotel-meta {
+            color: var(--c-muted);
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        .site-link-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            color: var(--c-gold);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .site-link-header:hover {
+            background: var(--c-gold);
+            color: #000000;
+            transform: translateY(-1px);
+        }
+        .logo-box {
+            background: #FFFFFF;
+            padding: 16px 24px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            min-width: 240px;
+            min-height: 100px;
+        }
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background-color: var(--c-card);
+            border: 1px solid var(--c-card-border);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--c-gold);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .palette-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .swatch {
+            flex: 1;
+            height: 64px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 6px;
+            font-size: 10px;
+            font-weight: 600;
+            color: #FFFFFF;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .data-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 13px;
+        }
+        .data-label { color: var(--c-muted); }
+        .data-val { font-weight: 600; color: #FFF; }
+        .btn-site-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 8px;
+            padding: 10px 18px;
+            background: linear-gradient(135deg, var(--c-gold), #b89020);
+            color: #090D0E;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 13px;
+            transition: all 0.2s ease;
+        }
+        .btn-site-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(212, 175, 55, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <span class="badge-rank">RANKING OFICIAL #14</span>
+                <h1 class="hotel-title">Blue Tree Premium Florianópolis</h1>
+                <p class="hotel-meta">Beira-Mar Norte · Beira-Mar Norte · Hotel Executivo / Upscale</p>
+                <a href="https://www.bluetree.com.br" target="_blank" rel="noopener noreferrer" class="site-link-header">
+                    🌐 Visitar Website Oficial: https://www.bluetree.com.br ↗
+                </a>
+            </div>
+            <div class="logo-box">
+                <img src="data:image/png;base64,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" alt="Logo Oficial - Blue Tree Premium Florianópolis" style="max-height: 85px; max-width: 260px; object-fit: contain;">
+            </div>
+        </div>
+
+        <div class="grid-cards">
+            <div class="card">
+                <div class="card-title">🎨 Identidade Visual & Cores</div>
+                <p style="font-size: 13px; color: var(--c-muted); margin-bottom: 12px;">Paleta institucional extraída dos ativos oficiais via Brandfetch.</p>
+                <div class="palette-row">
+                    <div class="swatch" style="background: #033951;">#033951</div>
+                    <div class="swatch" style="background: #003E47; color: #000; text-shadow: none;">#003E47</div>
+                    <div class="swatch" style="background: #D8D6CB;">#D8D6CB</div>
+                    <div class="swatch" style="background: #12181A;">#12181A</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">🔤 Tipografia & Fontes Homologadas</div>
+                <div class="data-row">
+                    <span class="data-label">Títulos & Destaque</span>
+                    <span class="data-val">Raleway</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Corpo & Interface</span>
+                    <span class="data-val">Source Sans Pro</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Arquitetura de Marca</span>
+                    <span class="data-val">Hotel Executivo / Upscale</span>
+                </div>
+            </div>
+
+            <div class="card" style="grid-column: 1 / -1;">
+                <div class="card-title">📊 Métricas Operacionais & Acesso Oficial</div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; align-items: center;">
+                    <div>
+                        <div class="data-label">Capacidade Declarada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">145 Apartamentos</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Diária Média Estimada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px; color: var(--c-gold);">R$ 540.00</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Ativos de Marca</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">3 arquivo(s) homologado(s)</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Canal Digital Direto</div>
+                        <a href="https://www.bluetree.com.br" target="_blank" rel="noopener noreferrer" class="btn-site-action">
+                            Acessar Website do Hotel ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

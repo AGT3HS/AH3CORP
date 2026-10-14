@@ -1,0 +1,13 @@
+{
+  "nome": "Hotel Ibis Florianópolis",
+  "unidade": "Centro",
+  "categoria": "Hotel Econômico / Midscale",
+  "regiao": "Centro",
+  "quartos": 140,
+  "diaria_media": 330,
+  "site": "https://all.accor.com",
+  "ranking": 15,
+  "telefone": "(48) 3216-0000",
+  "phone_clean": "554832160000",
+  "telefone_fixo": "+55 48 3216-0000"
+}

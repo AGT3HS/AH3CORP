@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Identidade Visual · Ingleses Acquamar Hotel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --c-primary: #1515FF;
+            --c-gold: #030000;
+            --c-bg: #090D0E;
+            --c-card: #12181A;
+            --c-card-border: #1E282C;
+            --c-text: #E5EAE8;
+            --c-muted: #8E9E98;
+            --c-accent: #FE7EEB;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--c-bg);
+            color: var(--c-text);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .header {
+            background: linear-gradient(145deg, #131B1E, #0D1315);
+            border: 1px solid var(--c-card-border);
+            border-radius: 16px;
+            padding: 36px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            gap: 20px;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--c-gold), transparent);
+        }
+        .badge-rank {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--c-gold);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .hotel-title {
+            font-family: 'Cinzel', serif;
+            font-size: 30px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 6px;
+        }
+        .hotel-meta {
+            color: var(--c-muted);
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        .site-link-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            color: var(--c-gold);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .site-link-header:hover {
+            background: var(--c-gold);
+            color: #000000;
+            transform: translateY(-1px);
+        }
+        .logo-box {
+            background: #FFFFFF;
+            padding: 16px 24px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            min-width: 240px;
+            min-height: 100px;
+        }
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background-color: var(--c-card);
+            border: 1px solid var(--c-card-border);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--c-gold);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .palette-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .swatch {
+            flex: 1;
+            height: 64px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 6px;
+            font-size: 10px;
+            font-weight: 600;
+            color: #FFFFFF;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .data-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 13px;
+        }
+        .data-label { color: var(--c-muted); }
+        .data-val { font-weight: 600; color: #FFF; }
+        .btn-site-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 8px;
+            padding: 10px 18px;
+            background: linear-gradient(135deg, var(--c-gold), #b89020);
+            color: #090D0E;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 13px;
+            transition: all 0.2s ease;
+        }
+        .btn-site-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(212, 175, 55, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <span class="badge-rank">RANKING OFICIAL #40</span>
+                <h1 class="hotel-title">Ingleses Acquamar Hotel</h1>
+                <p class="hotel-meta">Praia dos Ingleses · Praia dos Ingleses · Hotel de Praia</p>
+                <a href="https://www.inglesesacquamar.com.br" target="_blank" rel="noopener noreferrer" class="site-link-header">
+                    🌐 Visitar Website Oficial: https://www.inglesesacquamar.com.br ↗
+                </a>
+            </div>
+            <div class="logo-box">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVcAAAAsCAMAAADmfQucAAAAJ1BMVEVMaXH////////////////////////////////////////////////c+C/6AAAADHRSTlMA34RCosQfEGDvcDCumNNAAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAxmVYSWZJSSoACAAAAAcAEgEDAAEAAAABAAAAGgEFAAEAAABiAAAAGwEFAAEAAABqAAAAKAEDAAEAAAACAAAAMQECAAYAAAByAAAAEwIDAAEAAAABAAAAaYcEAAEAAAB4AAAAAAAAAEgAAAABAAAASAAAAAEAAABiZkB2MQAGAACQBwAEAAAAMDIxMAGRBwAEAAAAAQIDAACgBwAEAAAAMDEwMAGgAwABAAAA//8AAAKgBAABAAAAVwEAAAOgBAABAAAALAAAAAAAAAB1P6iCAAAHjklEQVR4nO1b6XbjOgi29s3v/7z3WCABkuwkbtNp7ox+9MTWAnwgBMjdtu9pOu02fNNabyIR933f3fZRLb+fZ32QsH8Zru7gef/dJOI/XFftr8S1+gH9u0nED8R1y07pd59bTn1Jcx+J6we0+A/X/xGuJWqdzXorh2KKfDwZKIaUl3uDv5p1slA46/APcfXaqn1PTpfXVl7z6CVKRzM21dN23y1xE51zzmxBq9rjIo6Fg1llGnkMdPQYcEayOEXSwt7dRcl4hoU7oaFVdqqDLfirccJ4rq0ghdph+rQR14L06muxhOcLrDpmHgklhoMlAuzIrYF49LgSYu6JGWXayPrY19NNR8eYQzKuecQCezOTUslZF3mBqb8CrZTYOlvQQpjYpw241viCGluC9/AMT6ysBLKRZE4NQIacALau0hSE8sqxcYErA762WAPPVJbCkJ0Upgy28gWugg4FCoM0Lp/gyjGSwMoe0vEZTm1pohlWw/fdsPWluG4ADdGqv4F+mFdTx9+wFqazPU4zj3BN6/F+eA9txhU5cTrmw8eyJSRG+67QYmecelI9dlUi6EqyDx4gaLQbCMlpzfFMtrp7NrL+BoCaS0nWOly5PooVlaUVQbkgjDUhGCukOcW1ziVOcHyX0OnetcLVwyRuQW0J4Df7rUTF7RIYTrp4jzx2EwfutfdsCr7DETBBGBdsVVJJ5p1mwBWV7eA96qmJ40WnR+Z0Zxr1D6T0Q1wRFcFJWzNI+hOuTuoO1oBDkRkJblmueWm8OIxz36bwd9sWEnk31OKwwZq8mT0RDSBnOxjNfC1pnE4CdLa+zWN7OWn/CNfkxTKWaa5753a2jbjCCoyE631m9MIqV4YVB6MBi+ME95XPvEXLWEQC3CS7o5Mwc1YIV+DXMTRQMN07aQGuG8HZllcp8YgrGTQYH/HITB3d/YirHWuOph8XRjAZWqg4aQJeMNdhmGnWYCHEfhQGCIOAoh40NIQjrLvTBPP0E8PVguZOQCR1JV0mGyOuXqpHSYQl/RFXJ9QYStRdOPADay8kkopEcADZxlDU8tANsWUHbrlU7aQpcYErs2FpsMc06XE2clqmbwYWVD+MB0bsDgkG1XeuR1yRYV+ito4iiIomPLoh25qZZ3X2vIhosYXM1lfLAr3cq3zDdFwXcum2X1ZCw7vY/Ho9x81zuKoFrmBrcgG7wBWjgSkksyLE5qnTFAcKpFpwqcZTQWRBzW28jmtYyBWbcYEwA2r96O+x0xGi+Zu4Tk7wEtepJRCWZZ8E7QmuWGenaInzzlKkZCnefx3XFXS5SXONK4vJKE76KVyVszmWIeraxea+xpVnBt019xQyHXuwDojf7AfsY1w3nxnviyPsCVxXJNypf60JigC0tRZaM5zcNa7bhhkBHWAYmFZQRaB1A1c1H02u8dZ9KW9SEaWVtFYXLk/gGhZTl+cW8OnP449gKFurIgc/NopCGrI9hWSayLN+b+BqKT+Zo7MF6GYysJbHzgWCJ3DFuI3TxzRpmDaEkLV3ArngBjophc+RV7fz3AUnHe9fwZVFi9iAtTprBp2nzayUmJ7JY5e4TnkB+r06rVB4NuvT78n2yF7SxOB/bKpHvNo5We10Q97Q9atu4oow6gE46BvTJK4Gb5N58AXGM7hiuNZptOOkTgMvAc4PslK/Ot6MUycxe+TXAQCUR7468x1OqBO01y0SCzdxjSLaMM3jwAy3LpUaSONJyngb13aU24pA6NVmKy2sm4+Xlf2IBjekyCBzVFwRVB8AbrphNiyAAmqi1+D9TVx78OesJc+P2wRj1BY8w36vFGQiaG/7ATq3leOJFAtMeUELyzuBOVLpFj2BI1nEqLA+ihwcUpPQfkAxkGJIcxdXdjtCbSgmKxtNbAXYyiqWZOqFF9523Dq3FtVnigeECfX6e+ppF4CmWS0T8GBH3VEi9t63kx/gb8yT+FVeWFa1EjFkBvkursNlGbRue3MfltJa8ugcWpk8rJ/HdQTWstIVeF9R5WUNbbHnpA7r8hgaLgxmMpe2ReJ85ZRK9273cOUR8p4gIB2KYFyYsu5Y3Bw+ieu2sSu5pEVJUOwEEfyzTGQEvCEwXtyxQvLI/PxWla04q2tafBfXbYtg+k6HsQjGQZe3naJjdSH7NK6bj2A3B32BK9ZbwhjI9zuMq+vpAT5xB8xTRVYw7L5G5OX3cd1qflKdZe3i8Yln1IQPpTxWsvE6rkh/cQgCMiSTz9YdZjTQK3aF92HiZyye9Bhtrc1nFboXWjASLLMQefMmay2CwSaP0Tpf1WBvNOGI+PXBZQvm5POfcxZL1tbqRx8C3Wp1Y4nUjoc2P9SkZodSjFl93vLrGwQymV5ATee938WKFg7Vcj1C8kzP7exef6v0Sxumkbk9y9vgn2ijAx2f2TcMn4QsxmwWSmuZEqof1ixmGJhHs+tmfqonm40pn+ER6CB16uojtre1Ho0rNXxJsp18f7V9RJsyqvTSB61fb/MnYJN7F5H/h+A65R7lpxlA79P1OljrmIR8Cq4iP0zv/l+ORwycRlQ91/oYXI+UqhYglIUvm/4UA+maAR+1U+lduP4H5UjKj8sBvj0AAAAASUVORK5CYII=" alt="Logo Oficial - Ingleses Acquamar Hotel" style="max-height: 85px; max-width: 260px; object-fit: contain;">
+            </div>
+        </div>
+
+        <div class="grid-cards">
+            <div class="card">
+                <div class="card-title">🎨 Identidade Visual & Cores</div>
+                <p style="font-size: 13px; color: var(--c-muted); margin-bottom: 12px;">Paleta institucional extraída dos ativos oficiais via Brandfetch.</p>
+                <div class="palette-row">
+                    <div class="swatch" style="background: #1515FF;">#1515FF</div>
+                    <div class="swatch" style="background: #030000; color: #000; text-shadow: none;">#030000</div>
+                    <div class="swatch" style="background: #FE7EEB;">#FE7EEB</div>
+                    <div class="swatch" style="background: #12181A;">#12181A</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">🔤 Tipografia & Fontes Homologadas</div>
+                <div class="data-row">
+                    <span class="data-label">Títulos & Destaque</span>
+                    <span class="data-val">Raleway</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Corpo & Interface</span>
+                    <span class="data-val">Arial</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Arquitetura de Marca</span>
+                    <span class="data-val">Hotel de Praia</span>
+                </div>
+            </div>
+
+            <div class="card" style="grid-column: 1 / -1;">
+                <div class="card-title">📊 Métricas Operacionais & Acesso Oficial</div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; align-items: center;">
+                    <div>
+                        <div class="data-label">Capacidade Declarada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">85 Apartamentos</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Diária Média Estimada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px; color: var(--c-gold);">R$ 360.00</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Ativos de Marca</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">2 arquivo(s) homologado(s)</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Canal Digital Direto</div>
+                        <a href="https://www.inglesesacquamar.com.br" target="_blank" rel="noopener noreferrer" class="btn-site-action">
+                            Acessar Website do Hotel ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

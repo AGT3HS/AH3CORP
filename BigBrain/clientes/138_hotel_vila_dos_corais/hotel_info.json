@@ -1,0 +1,13 @@
+{
+  "nome": "Hotel Vila dos Corais",
+  "unidade": "Campeche",
+  "categoria": "Hotel de Lazer",
+  "regiao": "Praia do Campeche",
+  "quartos": 32,
+  "diaria_media": 360,
+  "site": "https://www.viladoscorais.com.br",
+  "ranking": 138,
+  "telefone": "",
+  "phone_clean": "",
+  "telefone_fixo": ""
+}

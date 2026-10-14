@@ -1,0 +1,13 @@
+{
+  "nome": "Florianópolis Palace Hotel",
+  "unidade": "Centro",
+  "categoria": "Hotel Tradicional",
+  "regiao": "Centro",
+  "quartos": 84,
+  "diaria_media": 280,
+  "site": "https://www.florianopolispalacehotel.com.br",
+  "ranking": 41,
+  "telefone": "(48) 3266-1555",
+  "phone_clean": "554832661555",
+  "telefone_fixo": "+55 48 3266-1555"
+}

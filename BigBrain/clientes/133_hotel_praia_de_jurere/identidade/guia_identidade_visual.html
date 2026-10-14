@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Identidade Visual · Hotel Solar do Castelo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --c-primary: #1B3B2B;
+            --c-gold: #D4AF37;
+            --c-bg: #090D0E;
+            --c-card: #12181A;
+            --c-card-border: #1E282C;
+            --c-text: #E5EAE8;
+            --c-muted: #8E9E98;
+            --c-accent: #E8A825;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--c-bg);
+            color: var(--c-text);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .header {
+            background: linear-gradient(145deg, #131B1E, #0D1315);
+            border: 1px solid var(--c-card-border);
+            border-radius: 16px;
+            padding: 36px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            gap: 20px;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--c-gold), transparent);
+        }
+        .badge-rank {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--c-gold);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .hotel-title {
+            font-family: 'Cinzel', serif;
+            font-size: 30px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 6px;
+        }
+        .hotel-meta {
+            color: var(--c-muted);
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        .site-link-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            color: var(--c-gold);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .site-link-header:hover {
+            background: var(--c-gold);
+            color: #000000;
+            transform: translateY(-1px);
+        }
+        .logo-box {
+            background: #FFFFFF;
+            padding: 16px 24px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            min-width: 240px;
+            min-height: 100px;
+        }
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background-color: var(--c-card);
+            border: 1px solid var(--c-card-border);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--c-gold);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .palette-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .swatch {
+            flex: 1;
+            height: 64px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 6px;
+            font-size: 10px;
+            font-weight: 600;
+            color: #FFFFFF;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .data-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 13px;
+        }
+        .data-label { color: var(--c-muted); }
+        .data-val { font-weight: 600; color: #FFF; }
+        .btn-site-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 8px;
+            padding: 10px 18px;
+            background: linear-gradient(135deg, var(--c-gold), #b89020);
+            color: #090D0E;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 13px;
+            transition: all 0.2s ease;
+        }
+        .btn-site-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(212, 175, 55, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <span class="badge-rank">RANKING OFICIAL #133</span>
+                <h1 class="hotel-title">Hotel Solar do Castelo</h1>
+                <p class="hotel-meta">Santo Antônio de Lisboa · Santo Antônio de Lisboa · Hotel Histórico / Boutique</p>
+                <a href="https://www.solardocastelo.com.br" target="_blank" rel="noopener noreferrer" class="site-link-header">
+                    🌐 Visitar Website Oficial: https://www.solardocastelo.com.br ↗
+                </a>
+            </div>
+            <div class="logo-box">
+                <img src="data:image/webp;base64,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" alt="Logo Oficial - Hotel Solar do Castelo" style="max-height: 85px; max-width: 260px; object-fit: contain;">
+            </div>
+        </div>
+
+        <div class="grid-cards">
+            <div class="card">
+                <div class="card-title">🎨 Identidade Visual & Cores</div>
+                <p style="font-size: 13px; color: var(--c-muted); margin-bottom: 12px;">Paleta institucional extraída dos ativos oficiais via Brandfetch.</p>
+                <div class="palette-row">
+                    <div class="swatch" style="background: #1B3B2B;">#1B3B2B</div>
+                    <div class="swatch" style="background: #D4AF37; color: #000; text-shadow: none;">#D4AF37</div>
+                    <div class="swatch" style="background: #E8A825;">#E8A825</div>
+                    <div class="swatch" style="background: #12181A;">#12181A</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">🔤 Tipografia & Fontes Homologadas</div>
+                <div class="data-row">
+                    <span class="data-label">Títulos & Destaque</span>
+                    <span class="data-val">Cinzel / Playfair Display (Institucional)</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Corpo & Interface</span>
+                    <span class="data-val">Plus Jakarta Sans (Corpo)</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Arquitetura de Marca</span>
+                    <span class="data-val">Hotel Histórico / Boutique</span>
+                </div>
+            </div>
+
+            <div class="card" style="grid-column: 1 / -1;">
+                <div class="card-title">📊 Métricas Operacionais & Acesso Oficial</div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; align-items: center;">
+                    <div>
+                        <div class="data-label">Capacidade Declarada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">35 Apartamentos</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Diária Média Estimada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px; color: var(--c-gold);">R$ 520.00</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Ativos de Marca</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">1 arquivo(s) homologado(s)</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Canal Digital Direto</div>
+                        <a href="https://www.solardocastelo.com.br" target="_blank" rel="noopener noreferrer" class="btn-site-action">
+                            Acessar Website do Hotel ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

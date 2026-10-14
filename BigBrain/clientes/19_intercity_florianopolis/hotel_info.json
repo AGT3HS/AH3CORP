@@ -1,0 +1,13 @@
+{
+  "nome": "Intercity Florianópolis",
+  "unidade": "Centro",
+  "categoria": "Hotel Executivo",
+  "regiao": "Centro",
+  "quartos": 132,
+  "diaria_media": 410,
+  "site": "https://www.intercityhoteis.com.br",
+  "ranking": 19,
+  "telefone": "(51) 3201-7700",
+  "telefone_fixo": "+55 48 3027-2200",
+  "phone_clean": "555132017700"
+}

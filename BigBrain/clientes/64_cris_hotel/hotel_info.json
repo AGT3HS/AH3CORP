@@ -1,0 +1,13 @@
+{
+  "nome": "Cris Hotel",
+  "unidade": "Praia da Joaquina",
+  "categoria": "Hotel Pé na Areia",
+  "regiao": "Praia da Joaquina",
+  "quartos": 64,
+  "diaria_media": 440,
+  "site": "https://www.crishotel.com.br",
+  "ranking": 64,
+  "telefone": "(48) 99181-5380",
+  "telefone_fixo": "+55 48 3282-1445",
+  "phone_clean": "5548991815380"
+}

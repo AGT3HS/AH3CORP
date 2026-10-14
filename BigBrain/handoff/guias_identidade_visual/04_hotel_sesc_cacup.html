@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Identidade Visual · Hotel Sesc Cacupé</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --c-primary: #0D95E8;
+            --c-gold: #004587;
+            --c-bg: #090D0E;
+            --c-card: #12181A;
+            --c-card-border: #1E282C;
+            --c-text: #E5EAE8;
+            --c-muted: #8E9E98;
+            --c-accent: #59B0DF;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--c-bg);
+            color: var(--c-text);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .header {
+            background: linear-gradient(145deg, #131B1E, #0D1315);
+            border: 1px solid var(--c-card-border);
+            border-radius: 16px;
+            padding: 36px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            gap: 20px;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--c-gold), transparent);
+        }
+        .badge-rank {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--c-gold);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .hotel-title {
+            font-family: 'Cinzel', serif;
+            font-size: 30px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 6px;
+        }
+        .hotel-meta {
+            color: var(--c-muted);
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        .site-link-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            color: var(--c-gold);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .site-link-header:hover {
+            background: var(--c-gold);
+            color: #000000;
+            transform: translateY(-1px);
+        }
+        .logo-box {
+            background: #FFFFFF;
+            padding: 16px 24px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            min-width: 240px;
+            min-height: 100px;
+        }
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background-color: var(--c-card);
+            border: 1px solid var(--c-card-border);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--c-gold);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .palette-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .swatch {
+            flex: 1;
+            height: 64px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 6px;
+            font-size: 10px;
+            font-weight: 600;
+            color: #FFFFFF;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .data-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 13px;
+        }
+        .data-label { color: var(--c-muted); }
+        .data-val { font-weight: 600; color: #FFF; }
+        .btn-site-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 8px;
+            padding: 10px 18px;
+            background: linear-gradient(135deg, var(--c-gold), #b89020);
+            color: #090D0E;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 13px;
+            transition: all 0.2s ease;
+        }
+        .btn-site-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(212, 175, 55, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <span class="badge-rank">RANKING OFICIAL #04</span>
+                <h1 class="hotel-title">Hotel Sesc Cacupé</h1>
+                <p class="hotel-meta">Cacupé · Cacupé · Hotel de Lazer & Convenções</p>
+                <a href="https://www.sesc-sc.com.br/hotelsesccacupe/" target="_blank" rel="noopener noreferrer" class="site-link-header">
+                    🌐 Visitar Website Oficial: https://www.sesc-sc.com.br/hotelsesccacupe/ ↗
+                </a>
+            </div>
+            <div class="logo-box">
+                <img src="data:image/png;base64,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" alt="Logo Oficial - Hotel Sesc Cacupé" style="max-height: 85px; max-width: 260px; object-fit: contain;">
+            </div>
+        </div>
+
+        <div class="grid-cards">
+            <div class="card">
+                <div class="card-title">🎨 Identidade Visual & Cores</div>
+                <p style="font-size: 13px; color: var(--c-muted); margin-bottom: 12px;">Paleta institucional extraída dos ativos oficiais via Brandfetch.</p>
+                <div class="palette-row">
+                    <div class="swatch" style="background: #0D95E8;">#0D95E8</div>
+                    <div class="swatch" style="background: #004587; color: #000; text-shadow: none;">#004587</div>
+                    <div class="swatch" style="background: #59B0DF;">#59B0DF</div>
+                    <div class="swatch" style="background: #12181A;">#12181A</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">🔤 Tipografia & Fontes Homologadas</div>
+                <div class="data-row">
+                    <span class="data-label">Títulos & Destaque</span>
+                    <span class="data-val">Open Sans</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Corpo & Interface</span>
+                    <span class="data-val">Arial</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Arquitetura de Marca</span>
+                    <span class="data-val">Hotel de Lazer & Convenções</span>
+                </div>
+            </div>
+
+            <div class="card" style="grid-column: 1 / -1;">
+                <div class="card-title">📊 Métricas Operacionais & Acesso Oficial</div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; align-items: center;">
+                    <div>
+                        <div class="data-label">Capacidade Declarada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">240 Apartamentos</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Diária Média Estimada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px; color: var(--c-gold);">R$ 380.00</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Ativos de Marca</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">2 arquivo(s) homologado(s)</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Canal Digital Direto</div>
+                        <a href="https://www.sesc-sc.com.br/hotelsesccacupe/" target="_blank" rel="noopener noreferrer" class="btn-site-action">
+                            Acessar Website do Hotel ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "nome": "Plaza Florianópolis Hotel",
+  "unidade": "Centro",
+  "categoria": "Hotel Executivo",
+  "regiao": "Centro",
+  "quartos": 125,
+  "diaria_media": 370,
+  "site": "https://www.plazahoteis.com.br",
+  "ranking": 22,
+  "telefone": "(51) 99444-6964",
+  "telefone_fixo": "+55 48 3232-1666",
+  "phone_clean": "5551994446964"
+}

@@ -1,0 +1,13 @@
+{
+  "nome": "Hotel Sonho Meu",
+  "unidade": "Canasvieiras",
+  "categoria": "Hotel Familiar",
+  "regiao": "Canasvieiras",
+  "quartos": 66,
+  "diaria_media": 290,
+  "site": "https://www.hotelsonhomeu.com.br",
+  "ranking": 59,
+  "telefone": "(48) 3232-5059",
+  "telefone_fixo": "+55 48 3232-5059",
+  "phone_clean": "554832325059"
+}

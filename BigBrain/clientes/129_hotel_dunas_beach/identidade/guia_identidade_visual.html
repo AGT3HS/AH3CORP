@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Identidade Visual · Hotel Mirante da Ilha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --c-primary: #1B3B2B;
+            --c-gold: #D4AF37;
+            --c-bg: #090D0E;
+            --c-card: #12181A;
+            --c-card-border: #1E282C;
+            --c-text: #E5EAE8;
+            --c-muted: #8E9E98;
+            --c-accent: #E8A825;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--c-bg);
+            color: var(--c-text);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .header {
+            background: linear-gradient(145deg, #131B1E, #0D1315);
+            border: 1px solid var(--c-card-border);
+            border-radius: 16px;
+            padding: 36px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            gap: 20px;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--c-gold), transparent);
+        }
+        .badge-rank {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--c-gold);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .hotel-title {
+            font-family: 'Cinzel', serif;
+            font-size: 30px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 6px;
+        }
+        .hotel-meta {
+            color: var(--c-muted);
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        .site-link-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            color: var(--c-gold);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .site-link-header:hover {
+            background: var(--c-gold);
+            color: #000000;
+            transform: translateY(-1px);
+        }
+        .logo-box {
+            background: #FFFFFF;
+            padding: 16px 24px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            min-width: 240px;
+            min-height: 100px;
+        }
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background-color: var(--c-card);
+            border: 1px solid var(--c-card-border);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--c-gold);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .palette-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .swatch {
+            flex: 1;
+            height: 64px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 6px;
+            font-size: 10px;
+            font-weight: 600;
+            color: #FFFFFF;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .data-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 13px;
+        }
+        .data-label { color: var(--c-muted); }
+        .data-val { font-weight: 600; color: #FFF; }
+        .btn-site-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 8px;
+            padding: 10px 18px;
+            background: linear-gradient(135deg, var(--c-gold), #b89020);
+            color: #090D0E;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 13px;
+            transition: all 0.2s ease;
+        }
+        .btn-site-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(212, 175, 55, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <span class="badge-rank">RANKING OFICIAL #129</span>
+                <h1 class="hotel-title">Hotel Mirante da Ilha</h1>
+                <p class="hotel-meta">Cacupé · Cacupé · Hotel Panorâmico</p>
+                <a href="https://www.hotelmirantedailha.com.br" target="_blank" rel="noopener noreferrer" class="site-link-header">
+                    🌐 Visitar Website Oficial: https://www.hotelmirantedailha.com.br ↗
+                </a>
+            </div>
+            <div class="logo-box">
+                <img src="data:image/webp;base64,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" alt="Logo Oficial - Hotel Mirante da Ilha" style="max-height: 85px; max-width: 260px; object-fit: contain;">
+            </div>
+        </div>
+
+        <div class="grid-cards">
+            <div class="card">
+                <div class="card-title">🎨 Identidade Visual & Cores</div>
+                <p style="font-size: 13px; color: var(--c-muted); margin-bottom: 12px;">Paleta institucional extraída dos ativos oficiais via Brandfetch.</p>
+                <div class="palette-row">
+                    <div class="swatch" style="background: #1B3B2B;">#1B3B2B</div>
+                    <div class="swatch" style="background: #D4AF37; color: #000; text-shadow: none;">#D4AF37</div>
+                    <div class="swatch" style="background: #E8A825;">#E8A825</div>
+                    <div class="swatch" style="background: #12181A;">#12181A</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">🔤 Tipografia & Fontes Homologadas</div>
+                <div class="data-row">
+                    <span class="data-label">Títulos & Destaque</span>
+                    <span class="data-val">Cinzel / Playfair Display (Institucional)</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Corpo & Interface</span>
+                    <span class="data-val">Plus Jakarta Sans (Corpo)</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Arquitetura de Marca</span>
+                    <span class="data-val">Hotel Panorâmico</span>
+                </div>
+            </div>
+
+            <div class="card" style="grid-column: 1 / -1;">
+                <div class="card-title">📊 Métricas Operacionais & Acesso Oficial</div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; align-items: center;">
+                    <div>
+                        <div class="data-label">Capacidade Declarada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">36 Apartamentos</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Diária Média Estimada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px; color: var(--c-gold);">R$ 410.00</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Ativos de Marca</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">8 arquivo(s) homologado(s)</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Canal Digital Direto</div>
+                        <a href="https://www.hotelmirantedailha.com.br" target="_blank" rel="noopener noreferrer" class="btn-site-action">
+                            Acessar Website do Hotel ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

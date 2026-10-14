@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Ranking Consolidado - 109 Estabelecimentos (Polo Norte / iFood AH3)</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card-bg: #161b22;
+      --border: #30363d;
+      --text: #c9d1d9;
+      --text-bright: #f0f6fc;
+      --accent: #f5a623;
+      --accent-hover: #d48806;
+      --blue: #58a6ff;
+      --green: #3fb950;
+      --red: #f85149;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 20px;
+    }
+    .header {
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--border);
+    }
+    h1 {
+      color: var(--text-bright);
+      margin: 0 0 8px 0;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .badge {
+      background: rgba(245, 166, 35, 0.15);
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      font-size: 12px;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-weight: bold;
+    }
+    .subtitle {
+      color: #8b949e;
+      font-size: 14px;
+      margin: 0;
+    }
+    .filters {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .search-box {
+      flex: 1;
+      min-width: 250px;
+      padding: 8px 12px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text-bright);
+      font-size: 14px;
+    }
+    .btn-filter {
+      padding: 6px 14px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 13px;
+      transition: all 0.2s;
+    }
+    .btn-filter.active, .btn-filter:hover {
+      background: var(--accent);
+      color: #000;
+      font-weight: bold;
+      border-color: var(--accent);
+    }
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 12px;
+    }
+    .stat-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      color: #8b949e;
+      margin-bottom: 4px;
+    }
+    .stat-val {
+      font-size: 20px;
+      font-weight: bold;
+      color: var(--text-bright);
+    }
+    .table-container {
+      overflow-x: auto;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      text-align: left;
+    }
+    th {
+      background: #21262d;
+      color: var(--text-bright);
+      padding: 10px 12px;
+      font-weight: 600;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      user-select: none;
+    }
+    th:hover {
+      color: var(--accent);
+    }
+    td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    tr:hover {
+      background: rgba(255, 255, 255, 0.03);
+    }
+    .rank-cell {
+      font-weight: bold;
+      color: #8b949e;
+      width: 40px;
+      text-align: center;
+    }
+    .name-cell {
+      font-weight: 600;
+      color: var(--text-bright);
+    }
+    .score-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: bold;
+      font-size: 12px;
+    }
+    .score-high {
+      background: rgba(248, 81, 73, 0.2);
+      color: #ff7b72;
+      border: 1px solid #f85149;
+    }
+    .score-med {
+      background: rgba(245, 166, 35, 0.2);
+      color: #f5a623;
+      border: 1px solid #f5a623;
+    }
+    .score-low {
+      background: rgba(63, 185, 80, 0.2);
+      color: #56d364;
+      border: 1px solid #3fb950;
+    }
+    .tag {
+      background: #21262d;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 11px;
+      color: #8b949e;
+    }
+    .tel-link {
+      color: var(--blue);
+      text-decoration: none;
+    }
+    .tel-link:hover {
+      text-decoration: underline;
+    }
+    .btn-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(63, 185, 80, 0.15);
+      color: #56d364;
+      border: 1px solid #3fb950;
+      padding: 2px 8px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .btn-wa:hover {
+      background: #3fb950;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>
+      <span>Polo Norte - 109 Estabelecimentos Mapeados</span>
+      <span class="badge">AH3 Pipeline</span>
+    </h1>
+    <p class="subtitle">Varredura consolidada: Canasvieiras, Ingleses, Cachoeira do Bom Jesus e Ponta das Canas. Ordenado por Score de Oportunidade AH3.</p>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat-card">
+      <div class="stat-title">Total Mapeado</div>
+      <div class="stat-val">109 leads</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-title">Canasvieiras</div>
+      <div class="stat-val" style="color: var(--accent);">43 lojas</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-title">Ingleses</div>
+      <div class="stat-val" style="color: var(--blue);">33 lojas</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-title">Cachoeira do Bom Jesus</div>
+      <div class="stat-val" style="color: var(--green);">20 lojas</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-title">Ponta das Canas</div>
+      <div class="stat-val">13 lojas</div>
+    </div>
+  </div>
+
+  <div class="filters">
+    <input type="text" id="searchInput" class="search-box" placeholder="Filtrar por nome, categoria ou telefone..." onkeyup="filterTable()">
+    <button class="btn-filter active" onclick="setBairro('todos')">Todos (109)</button>
+    <button class="btn-filter" onclick="setBairro('Canasvieiras')">Canasvieiras (43)</button>
+    <button class="btn-filter" onclick="setBairro('Ingleses')">Ingleses (33)</button>
+    <button class="btn-filter" onclick="setBairro('Cachoeira do Bom Jesus')">Cachoeira (20)</button>
+    <button class="btn-filter" onclick="setBairro('Ponta das Canas')">Ponta das Canas (13)</button>
+  </div>
+
+  <div class="table-container">
+    <table id="leadsTable">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Estabelecimento</th>
+          <th>Bairro</th>
+          <th>Nota</th>
+          <th>Avaliações</th>
+          <th>Score AH3</th>
+          <th>GAP Líder</th>
+          <th>Contato WhatsApp / Tel</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-bairro="Cachoeira do Bom Jesus">
+          <td class="rank-cell">#01</td>
+          <td class="name-cell">Boka's Beach</td>
+          <td><span class="tag">Cachoeira do Bom Jesus</span></td>
+          <td><b>4.5★</b></td>
+          <td>10,564</td>
+          <td><span class="score-badge score-high">5,282.0</span></td>
+          <td><b>1.0x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/554832843434" target="_blank">📱 (48) 3284-3434</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td class="rank-cell">#02</td>
+          <td class="name-cell">Canas Pizzaria - Forno a Lenha</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.0★</b></td>
+          <td>4,013</td>
+          <td><span class="score-badge score-high">4,013.0</span></td>
+          <td><b>2.7x</b></td>
+          <td><span class="tag">Não informado</span></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td class="rank-cell">#03</td>
+          <td class="name-cell">Costillas Grill - Costelaria & Churrascaria</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.3★</b></td>
+          <td>4,793</td>
+          <td><span class="score-badge score-high">3,355.1</span></td>
+          <td><b>2.3x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548984777309" target="_blank">📱 (48) 98477-7309</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td class="rank-cell">#04</td>
+          <td class="name-cell">Restaurante e Pizzaria Espetinho de Ouro Canasvieiras</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.1★</b></td>
+          <td>3,105</td>
+          <td><span class="score-badge score-high">2,794.5</span></td>
+          <td><b>3.5x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/554832661498" target="_blank">📱 (48) 3266-1498</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td class="rank-cell">#05</td>
+          <td class="name-cell">Paixão Restaurante & Pizzaria</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.5★</b></td>
+          <td>5,385</td>
+          <td><span class="score-badge score-high">2,692.5</span></td>
+          <td><b>2.0x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/554832691355" target="_blank">📱 (48) 3269-1355</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td class="rank-cell">#06</td>
+          <td class="name-cell">Terra Santa</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.4★</b></td>
+          <td>3,644</td>
+          <td><span class="score-badge score-high">2,186.4</span></td>
+          <td><b>3.0x</b></td>
+          <td><span class="tag">Não informado</span></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td class="rank-cell">#07</td>
+          <td class="name-cell">Galpão Gaúcho Restaurante & Churrascaria</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.3★</b></td>
+          <td>2,809</td>
+          <td><span class="score-badge score-high">1,966.3</span></td>
+          <td><b>3.9x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/554838790080" target="_blank">📱 (48) 3879-0080</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td class="rank-cell">#08</td>
+          <td class="name-cell">Capetaria Porto Seguro</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.5★</b></td>
+          <td>3,622</td>
+          <td><span class="score-badge score-high">1,811.0</span></td>
+          <td><b>3.0x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/554830500776" target="_blank">📱 (48) 3050-0776</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td class="rank-cell">#09</td>
+          <td class="name-cell">Tomat`s Grill</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.3★</b></td>
+          <td>2,559</td>
+          <td><span class="score-badge score-high">1,791.3</span></td>
+          <td><b>4.3x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548996091779" target="_blank">📱 (48) 99609-1779</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td class="rank-cell">#10</td>
+          <td class="name-cell">Doca's Restaurante</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.4★</b></td>
+          <td>2,641</td>
+          <td><span class="score-badge score-high">1,584.6</span></td>
+          <td><b>4.2x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/554832076808" target="_blank">📱 (48) 3207-6808</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td class="rank-cell">#11</td>
+          <td class="name-cell">Camarão Chef Seghetto</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.6★</b></td>
+          <td>3,857</td>
+          <td><span class="score-badge score-high">1,542.8</span></td>
+          <td><b>2.8x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548996240845" target="_blank">📱 (48) 99624-0845</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td class="rank-cell">#12</td>
+          <td class="name-cell">Camarão do Rafa</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.3★</b></td>
+          <td>2,171</td>
+          <td><span class="score-badge score-high">1,519.7</span></td>
+          <td><b>5.0x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548998656566" target="_blank">📱 (48) 99865-6566</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td class="rank-cell">#13</td>
+          <td class="name-cell">Cantina Santa Maria</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.6★</b></td>
+          <td>3,708</td>
+          <td><span class="score-badge score-med">1,483.2</span></td>
+          <td><b>3.0x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/554832662652" target="_blank">📱 (48) 3266-2652</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td class="rank-cell">#14</td>
+          <td class="name-cell">Restaurante Churrasco ao Vivo Canasvieiras</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.4★</b></td>
+          <td>2,443</td>
+          <td><span class="score-badge score-med">1,465.8</span></td>
+          <td><b>4.5x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548996651046" target="_blank">📱 (48) 99665-1046</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td class="rank-cell">#15</td>
+          <td class="name-cell">Restaurante Estaleiro</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.3★</b></td>
+          <td>1,942</td>
+          <td><span class="score-badge score-med">1,359.4</span></td>
+          <td><b>5.6x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/554833698538" target="_blank">📱 (48) 3369-8538</a></td>
+        </tr>
+        <tr data-bairro="Ponta das Canas">
+          <td class="rank-cell">#16</td>
+          <td class="name-cell">Ponta das Caranhas</td>
+          <td><span class="tag">Ponta das Canas</span></td>
+          <td><b>4.6★</b></td>
+          <td>3,105</td>
+          <td><span class="score-badge score-med">1,242.0</span></td>
+          <td><b>3.5x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/554832323076" target="_blank">📱 (48) 3232-3076</a></td>
+        </tr>
+        <tr data-bairro="Cachoeira do Bom Jesus">
+          <td class="rank-cell">#17</td>
+          <td class="name-cell">Antonio's Restaurante</td>
+          <td><span class="tag">Cachoeira do Bom Jesus</span></td>
+          <td><b>4.7★</b></td>
+          <td>3,920</td>
+          <td><span class="score-badge score-med">1,176.0</span></td>
+          <td><b>2.8x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/554832845736" target="_blank">📱 (48) 3284-5736</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td class="rank-cell">#18</td>
+          <td class="name-cell">Marisqueira Sintra</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.6★</b></td>
+          <td>2,928</td>
+          <td><span class="score-badge score-med">1,171.2</span></td>
+          <td><b>3.7x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/554832344219" target="_blank">📱 (48) 3234-4219</a></td>
+        </tr>
+        <tr data-bairro="Cachoeira do Bom Jesus">
+          <td class="rank-cell">#19</td>
+          <td class="name-cell">Bar do Lua</td>
+          <td><span class="tag">Cachoeira do Bom Jesus</span></td>
+          <td><b>4.4★</b></td>
+          <td>1,869</td>
+          <td><span class="score-badge score-med">1,121.4</span></td>
+          <td><b>5.9x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548999768190" target="_blank">📱 (48) 99976-8190</a></td>
+        </tr>
+        <tr data-bairro="Ponta das Canas">
+          <td class="rank-cell">#20</td>
+          <td class="name-cell">Restaurante Rancho de Canoa</td>
+          <td><span class="tag">Ponta das Canas</span></td>
+          <td><b>4.9★</b></td>
+          <td>10,962</td>
+          <td><span class="score-badge score-med">1,096.2</span></td>
+          <td><b>1.0x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/554832323639" target="_blank">📱 (48) 3232-3639</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td class="rank-cell">#21</td>
+          <td class="name-cell">Beach House Bistrô e Lounge - Bar e Restaurante</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.2★</b></td>
+          <td>1,235</td>
+          <td><span class="score-badge score-med">988.0</span></td>
+          <td><b>8.9x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548984285343" target="_blank">📱 (48) 98428-5343</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td class="rank-cell">#22</td>
+          <td class="name-cell">Pizzaria e Restaurante Firenze</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.4★</b></td>
+          <td>1,625</td>
+          <td><span class="score-badge score-med">975.0</span></td>
+          <td><b>6.7x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548999164173" target="_blank">📱 (48) 99916-4173</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td class="rank-cell">#23</td>
+          <td class="name-cell">Vila Gastronômica Canasvieiras Food Park - Canasvieiras - Florianópolis - SC</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.6★</b></td>
+          <td>2,402</td>
+          <td><span class="score-badge score-med">960.8</span></td>
+          <td><b>4.6x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548984712345" target="_blank">📱 (48) 98471-2345</a></td>
+        </tr>
+        <tr data-bairro="Ponta das Canas">
+          <td class="rank-cell">#24</td>
+          <td class="name-cell">Restaurante Garra Azul</td>
+          <td><span class="tag">Ponta das Canas</span></td>
+          <td><b>4.3★</b></td>
+          <td>1,363</td>
+          <td><span class="score-badge score-med">954.1</span></td>
+          <td><b>8.0x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/554830302382" target="_blank">📱 (48) 3030-2382</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td class="rank-cell">#25</td>
+          <td class="name-cell">Canto do Mar</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.6★</b></td>
+          <td>2,239</td>
+          <td><span class="score-badge score-med">895.6</span></td>
+          <td><b>4.9x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548988029229" target="_blank">📱 (48) 98802-9229</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td class="rank-cell">#26</td>
+          <td class="name-cell">Churrascaria Silvestre</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.5★</b></td>
+          <td>1,611</td>
+          <td><span class="score-badge score-med">805.5</span></td>
+          <td><b>6.8x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/554832665309" target="_blank">📱 (48) 3266-5309</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td class="rank-cell">#27</td>
+          <td class="name-cell">Restaurante O Pescador</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.5★</b></td>
+          <td>1,577</td>
+          <td><span class="score-badge score-med">788.5</span></td>
+          <td><b>7.0x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/554838790335" target="_blank">📱 (48) 3879-0335</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td class="rank-cell">#28</td>
+          <td class="name-cell">Pizzaria e Restaurante Terezas</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.7★</b></td>
+          <td>2,612</td>
+          <td><span class="score-badge score-med">783.6</span></td>
+          <td><b>4.2x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/554832663266" target="_blank">📱 (48) 3266-3266</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td class="rank-cell">#29</td>
+          <td class="name-cell">Restaurante Arriba - Ingleses</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.7★</b></td>
+          <td>2,557</td>
+          <td><span class="score-badge score-med">767.1</span></td>
+          <td><b>4.3x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548988244601" target="_blank">📱 (48) 98824-4601</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td class="rank-cell">#30</td>
+          <td class="name-cell">Vantaggio Restaurante</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.6★</b></td>
+          <td>1,911</td>
+          <td><span class="score-badge score-med">764.4</span></td>
+          <td><b>5.7x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548984552026" target="_blank">📱 (48) 98455-2026</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td class="rank-cell">#31</td>
+          <td class="name-cell">Boteco O Mané - Bar</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.7★</b></td>
+          <td>2,493</td>
+          <td><span class="score-badge score-med">747.9</span></td>
+          <td><b>4.4x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548991659282" target="_blank">📱 (48) 99165-9282</a></td>
+        </tr>
+        <tr data-bairro="Ponta das Canas">
+          <td class="rank-cell">#32</td>
+          <td class="name-cell">Restaurante Mira Maré</td>
+          <td><span class="tag">Ponta das Canas</span></td>
+          <td><b>4.5★</b></td>
+          <td>1,446</td>
+          <td><span class="score-badge score-med">723.0</span></td>
+          <td><b>7.6x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548991396523" target="_blank">📱 (48) 99139-6523</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td class="rank-cell">#33</td>
+          <td class="name-cell">Trilegal</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.0★</b></td>
+          <td>644</td>
+          <td><span class="score-badge score-med">644.0</span></td>
+          <td><b>17.0x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548998259338" target="_blank">📱 (48) 99825-9338</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td class="rank-cell">#34</td>
+          <td class="name-cell">Bar e Restaurante do Quinha</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.5★</b></td>
+          <td>1,257</td>
+          <td><span class="score-badge score-med">628.5</span></td>
+          <td><b>8.7x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/554832661728" target="_blank">📱 (48) 3266-1728</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td class="rank-cell">#35</td>
+          <td class="name-cell">Mano's Gastrobar</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.6★</b></td>
+          <td>1,501</td>
+          <td><span class="score-badge score-med">600.4</span></td>
+          <td><b>7.3x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548999684291" target="_blank">📱 (48) 99968-4291</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td class="rank-cell">#36</td>
+          <td class="name-cell">Vila Futuro Ingleses</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.4★</b></td>
+          <td>1,000</td>
+          <td><span class="score-badge score-med">600.0</span></td>
+          <td><b>11.0x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548996707472" target="_blank">📱 (48) 99670-7472</a></td>
+        </tr>
+        <tr data-bairro="Ponta das Canas">
+          <td class="rank-cell">#37</td>
+          <td class="name-cell">Restaurante Tradição Campeira</td>
+          <td><span class="tag">Ponta das Canas</span></td>
+          <td><b>4.4★</b></td>
+          <td>998</td>
+          <td><span class="score-badge score-med">598.8</span></td>
+          <td><b>11.0x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548999185419" target="_blank">📱 (48) 99918-5419</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td class="rank-cell">#38</td>
+          <td class="name-cell">Restaurante Malukus</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.4★</b></td>
+          <td>967</td>
+          <td><span class="score-badge score-med">580.2</span></td>
+          <td><b>11.3x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548999738253" target="_blank">📱 (48) 99973-8253</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td class="rank-cell">#39</td>
+          <td class="name-cell">EL PATIO GRILL RESTAURANTE</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>3.7★</b></td>
+          <td>429</td>
+          <td><span class="score-badge score-med">557.7</span></td>
+          <td><b>25.6x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5547991150610" target="_blank">📱 (47) 99115-0610</a></td>
+        </tr>
+        <tr data-bairro="Cachoeira do Bom Jesus">
+          <td class="rank-cell">#40</td>
+          <td class="name-cell">Restaurante e Cafeteria Barió</td>
+          <td><span class="tag">Cachoeira do Bom Jesus</span></td>
+          <td><b>4.5★</b></td>
+          <td>1,066</td>
+          <td><span class="score-badge score-med">533.0</span></td>
+          <td><b>10.3x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548988387231" target="_blank">📱 (48) 98838-7231</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td class="rank-cell">#41</td>
+          <td class="name-cell">Restaurante Schiavon</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.6★</b></td>
+          <td>1,298</td>
+          <td><span class="score-badge score-med">519.2</span></td>
+          <td><b>8.4x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/554832094789" target="_blank">📱 (48) 3209-4789</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td class="rank-cell">#42</td>
+          <td class="name-cell">Cadiquim de Minas Restaurante + Petiscaria | Culinária Mineira</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.6★</b></td>
+          <td>1,280</td>
+          <td><span class="score-badge score-med">512.0</span></td>
+          <td><b>8.6x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548991731528" target="_blank">📱 (48) 99173-1528</a></td>
+        </tr>
+        <tr data-bairro="Ponta das Canas">
+          <td class="rank-cell">#43</td>
+          <td class="name-cell">Ratones Craft Beer</td>
+          <td><span class="tag">Ponta das Canas</span></td>
+          <td><b>4.8★</b></td>
+          <td>2,115</td>
+          <td><span class="score-badge score-low">423.0</span></td>
+          <td><b>5.2x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548991701959" target="_blank">📱 (48) 99170-1959</a></td>
+        </tr>
+        <tr data-bairro="Cachoeira do Bom Jesus">
+          <td class="rank-cell">#44</td>
+          <td class="name-cell">Il Caravaggio - Restaurante Italiano</td>
+          <td><span class="tag">Cachoeira do Bom Jesus</span></td>
+          <td><b>4.4★</b></td>
+          <td>700</td>
+          <td><span class="score-badge score-low">420.0</span></td>
+          <td><b>15.7x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548985005714" target="_blank">📱 (48) 98500-5714</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td class="rank-cell">#45</td>
+          <td class="name-cell">Brutus Bier Restaurante</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.3★</b></td>
+          <td>574</td>
+          <td><span class="score-badge score-low">401.8</span></td>
+          <td><b>19.1x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/554832693018" target="_blank">📱 (48) 3269-3018</a></td>
+        </tr>
+        <tr data-bairro="Cachoeira do Bom Jesus">
+          <td class="rank-cell">#46</td>
+          <td class="name-cell">Buono Beach Restaurante Florianópolis</td>
+          <td><span class="tag">Cachoeira do Bom Jesus</span></td>
+          <td><b>4.7★</b></td>
+          <td>1,295</td>
+          <td><span class="score-badge score-low">388.5</span></td>
+          <td><b>8.5x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548996155550" target="_blank">📱 (48) 99615-5550</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td class="rank-cell">#47</td>
+          <td class="name-cell">TOSCANELLA PIZZARIA, CANTINA E RESTAURANTE</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.7★</b></td>
+          <td>1,278</td>
+          <td><span class="score-badge score-low">383.4</span></td>
+          <td><b>8.6x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/554832695888" target="_blank">📱 (48) 3269-5888</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td class="rank-cell">#48</td>
+          <td class="name-cell">SEU BODEGA Gastrobar</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.5★</b></td>
+          <td>745</td>
+          <td><span class="score-badge score-low">372.5</span></td>
+          <td><b>14.7x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548988177469" target="_blank">📱 (48) 98817-7469</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td class="rank-cell">#49</td>
+          <td class="name-cell">Restaurante Beira D' Água</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.1★</b></td>
+          <td>408</td>
+          <td><span class="score-badge score-low">367.2</span></td>
+          <td><b>26.9x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/554832848643" target="_blank">📱 (48) 3284-8643</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td class="rank-cell">#50</td>
+          <td class="name-cell">Tropical Beach</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.6★</b></td>
+          <td>906</td>
+          <td><span class="score-badge score-low">362.4</span></td>
+          <td><b>12.1x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/554830307957" target="_blank">📱 (48) 3030-7957</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td class="rank-cell">#51</td>
+          <td class="name-cell">BOULEVARD Gourmet</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.7★</b></td>
+          <td>1,018</td>
+          <td><span class="score-badge score-low">305.4</span></td>
+          <td><b>10.8x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/554840093338" target="_blank">📱 (48) 4009-3338</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td class="rank-cell">#52</td>
+          <td class="name-cell">Direto do Mar - Peixaria em Canasvieiras</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.2★</b></td>
+          <td>378</td>
+          <td><span class="score-badge score-low">302.4</span></td>
+          <td><b>29.0x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548999343505" target="_blank">📱 (48) 99934-3505</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td class="rank-cell">#53</td>
+          <td class="name-cell">Restaurante Garapuvu</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.7★</b></td>
+          <td>992</td>
+          <td><span class="score-badge score-low">297.6</span></td>
+          <td><b>11.1x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548996774013" target="_blank">📱 (48) 99677-4013</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td class="rank-cell">#54</td>
+          <td class="name-cell">Restaurante Do Zé</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.3★</b></td>
+          <td>395</td>
+          <td><span class="score-badge score-low">276.5</span></td>
+          <td><b>27.8x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548988036216" target="_blank">📱 (48) 98803-6216</a></td>
+        </tr>
+        <tr data-bairro="Cachoeira do Bom Jesus">
+          <td class="rank-cell">#55</td>
+          <td class="name-cell">Confiance Restaurante</td>
+          <td><span class="tag">Cachoeira do Bom Jesus</span></td>
+          <td><b>4.6★</b></td>
+          <td>675</td>
+          <td><span class="score-badge score-low">270.0</span></td>
+          <td><b>16.2x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/554832118077" target="_blank">📱 (48) 3211-8077</a></td>
+        </tr>
+        <tr data-bairro="Cachoeira do Bom Jesus">
+          <td class="rank-cell">#56</td>
+          <td class="name-cell">Santo Lua Restobar - Florianópolis</td>
+          <td><span class="tag">Cachoeira do Bom Jesus</span></td>
+          <td><b>4.4★</b></td>
+          <td>421</td>
+          <td><span class="score-badge score-low">252.6</span></td>
+          <td><b>26.0x</b></td>
+          <td><span class="tag">Não informado</span></td>
+        </tr>
+        <tr data-bairro="Ponta das Canas">
+          <td class="rank-cell">#57</td>
+          <td class="name-cell">Restaurante Lula Floripa</td>
+          <td><span class="tag">Ponta das Canas</span></td>
+          <td><b>4.6★</b></td>
+          <td>626</td>
+          <td><span class="score-badge score-low">250.4</span></td>
+          <td><b>17.5x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548988185649" target="_blank">📱 (48) 98818-5649</a></td>
+        </tr>
+        <tr data-bairro="Cachoeira do Bom Jesus">
+          <td class="rank-cell">#58</td>
+          <td class="name-cell">Paraíso da Gula</td>
+          <td><span class="tag">Cachoeira do Bom Jesus</span></td>
+          <td><b>4.6★</b></td>
+          <td>610</td>
+          <td><span class="score-badge score-low">244.0</span></td>
+          <td><b>18.0x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548988018857" target="_blank">📱 (48) 98801-8857</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td class="rank-cell">#59</td>
+          <td class="name-cell">Il cantuccio pizzaria</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.8★</b></td>
+          <td>1,144</td>
+          <td><span class="score-badge score-low">228.8</span></td>
+          <td><b>9.6x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/554833653652" target="_blank">📱 (48) 3365-3652</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td class="rank-cell">#60</td>
+          <td class="name-cell">Restaurante Aladym</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.9★</b></td>
+          <td>2,072</td>
+          <td><span class="score-badge score-low">207.2</span></td>
+          <td><b>5.3x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548991046545" target="_blank">📱 (48) 99104-6545</a></td>
+        </tr>
+        <tr data-bairro="Cachoeira do Bom Jesus">
+          <td class="rank-cell">#61</td>
+          <td class="name-cell">Gaivota</td>
+          <td><span class="tag">Cachoeira do Bom Jesus</span></td>
+          <td><b>4.4★</b></td>
+          <td>335</td>
+          <td><span class="score-badge score-low">201.0</span></td>
+          <td><b>32.7x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/554838792495" target="_blank">📱 (48) 3879-2495</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td class="rank-cell">#62</td>
+          <td class="name-cell">Orlando Restaurante</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.7★</b></td>
+          <td>648</td>
+          <td><span class="score-badge score-low">194.4</span></td>
+          <td><b>16.9x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/554833711049" target="_blank">📱 (48) 3371-1049</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td class="rank-cell">#63</td>
+          <td class="name-cell">Restaurante Panela Açoriana</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.6★</b></td>
+          <td>485</td>
+          <td><span class="score-badge score-low">194.0</span></td>
+          <td><b>22.6x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548984653839" target="_blank">📱 (48) 98465-3839</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td class="rank-cell">#64</td>
+          <td class="name-cell">Milton Pizzaria - Canasvieiras</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.4★</b></td>
+          <td>323</td>
+          <td><span class="score-badge score-low">193.8</span></td>
+          <td><b>33.9x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548996465044" target="_blank">📱 (48) 99646-5044</a></td>
+        </tr>
+        <tr data-bairro="Ponta das Canas">
+          <td class="rank-cell">#65</td>
+          <td class="name-cell">Ocean House</td>
+          <td><span class="tag">Ponta das Canas</span></td>
+          <td><b>4.6★</b></td>
+          <td>475</td>
+          <td><span class="score-badge score-low">190.0</span></td>
+          <td><b>23.1x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/554833693102" target="_blank">📱 (48) 3369-3102</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td class="rank-cell">#66</td>
+          <td class="name-cell">Restaurante & Petiscaria Porto Da Ilha</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.3★</b></td>
+          <td>266</td>
+          <td><span class="score-badge score-low">186.2</span></td>
+          <td><b>41.2x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548984323178" target="_blank">📱 (48) 98432-3178</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td class="rank-cell">#67</td>
+          <td class="name-cell">Bere Birra Forneria</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.9★</b></td>
+          <td>1,854</td>
+          <td><span class="score-badge score-low">185.4</span></td>
+          <td><b>5.9x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548984061242" target="_blank">📱 (48) 98406-1242</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td class="rank-cell">#68</td>
+          <td class="name-cell">Laut Gastronomia e Bar</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.3★</b></td>
+          <td>260</td>
+          <td><span class="score-badge score-low">182.0</span></td>
+          <td><b>42.2x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/554830650557" target="_blank">📱 (48) 3065-0557</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td class="rank-cell">#69</td>
+          <td class="name-cell">Suculenta Burger Resto Canasvieiras</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.8★</b></td>
+          <td>877</td>
+          <td><span class="score-badge score-low">175.4</span></td>
+          <td><b>12.5x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5547992484453" target="_blank">📱 (47) 99248-4453</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td class="rank-cell">#70</td>
+          <td class="name-cell">Gigantes da Pizza Canasvieiras</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.1★</b></td>
+          <td>186</td>
+          <td><span class="score-badge score-low">167.4</span></td>
+          <td><b>58.9x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548988373041" target="_blank">📱 (48) 98837-3041</a></td>
+        </tr>
+        <tr data-bairro="Cachoeira do Bom Jesus">
+          <td class="rank-cell">#71</td>
+          <td class="name-cell">O Italiano | Cozinha toscana</td>
+          <td><span class="tag">Cachoeira do Bom Jesus</span></td>
+          <td><b>4.7★</b></td>
+          <td>556</td>
+          <td><span class="score-badge score-low">166.8</span></td>
+          <td><b>19.7x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548996511322" target="_blank">📱 (48) 99651-1322</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td class="rank-cell">#72</td>
+          <td class="name-cell">Mamma Mía Resto Bar</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.5★</b></td>
+          <td>321</td>
+          <td><span class="score-badge score-low">160.5</span></td>
+          <td><b>34.1x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548999414057" target="_blank">📱 (48) 99941-4057</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td class="rank-cell">#73</td>
+          <td class="name-cell">Restaurante Nonna Maria</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.4★</b></td>
+          <td>238</td>
+          <td><span class="score-badge score-low">142.8</span></td>
+          <td><b>46.1x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548998082204" target="_blank">📱 (48) 99808-2204</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td class="rank-cell">#74</td>
+          <td class="name-cell">Basílio Steakhouse - Churrascaria</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.9★</b></td>
+          <td>1,423</td>
+          <td><span class="score-badge score-low">142.3</span></td>
+          <td><b>7.7x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548988412702" target="_blank">📱 (48) 98841-2702</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td class="rank-cell">#75</td>
+          <td class="name-cell">Restaurante Petisqueira | Gastronomia, Frutos do Mar e Porções, - Ingleses.</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.8★</b></td>
+          <td>688</td>
+          <td><span class="score-badge score-low">137.6</span></td>
+          <td><b>15.9x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/554830305990" target="_blank">📱 (48) 3030-5990</a></td>
+        </tr>
+        <tr data-bairro="Cachoeira do Bom Jesus">
+          <td class="rank-cell">#76</td>
+          <td class="name-cell">Tomato Passeio Sapiens</td>
+          <td><span class="tag">Cachoeira do Bom Jesus</span></td>
+          <td><b>4.6★</b></td>
+          <td>310</td>
+          <td><span class="score-badge score-low">124.0</span></td>
+          <td><b>35.4x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548992061745" target="_blank">📱 (48) 99206-1745</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td class="rank-cell">#77</td>
+          <td class="name-cell">Restaurante Cabral Ingleses</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.7★</b></td>
+          <td>393</td>
+          <td><span class="score-badge score-low">117.9</span></td>
+          <td><b>27.9x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548984602590" target="_blank">📱 (48) 98460-2590</a></td>
+        </tr>
+        <tr data-bairro="Cachoeira do Bom Jesus">
+          <td class="rank-cell">#78</td>
+          <td class="name-cell">Cravo e Canela</td>
+          <td><span class="tag">Cachoeira do Bom Jesus</span></td>
+          <td><b>4.6★</b></td>
+          <td>289</td>
+          <td><span class="score-badge score-low">115.6</span></td>
+          <td><b>37.9x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548999151951" target="_blank">📱 (48) 99915-1951</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td class="rank-cell">#79</td>
+          <td class="name-cell">Pizzaria Lomarin</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.8★</b></td>
+          <td>572</td>
+          <td><span class="score-badge score-low">114.4</span></td>
+          <td><b>19.2x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548988281519" target="_blank">📱 (48) 98828-1519</a></td>
+        </tr>
+        <tr data-bairro="Cachoeira do Bom Jesus">
+          <td class="rank-cell">#80</td>
+          <td class="name-cell">Restaurante Casa Barcellos</td>
+          <td><span class="tag">Cachoeira do Bom Jesus</span></td>
+          <td><b>4.5★</b></td>
+          <td>217</td>
+          <td><span class="score-badge score-low">108.5</span></td>
+          <td><b>50.5x</b></td>
+          <td><span class="tag">Não informado</span></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td class="rank-cell">#81</td>
+          <td class="name-cell">CANTO CHILENO</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.7★</b></td>
+          <td>357</td>
+          <td><span class="score-badge score-low">107.1</span></td>
+          <td><b>30.7x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548999441650" target="_blank">📱 (48) 99944-1650</a></td>
+        </tr>
+        <tr data-bairro="Ponta das Canas">
+          <td class="rank-cell">#82</td>
+          <td class="name-cell">Chico Restaurante</td>
+          <td><span class="tag">Ponta das Canas</span></td>
+          <td><b>4.5★</b></td>
+          <td>183</td>
+          <td><span class="score-badge score-low">91.5</span></td>
+          <td><b>59.9x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/554832842502" target="_blank">📱 (48) 3284-2502</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td class="rank-cell">#83</td>
+          <td class="name-cell">Na Brasa Churrascaria Canasvieiras</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.4★</b></td>
+          <td>142</td>
+          <td><span class="score-badge score-low">85.2</span></td>
+          <td><b>77.2x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/554833647332" target="_blank">📱 (48) 3364-7332</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td class="rank-cell">#84</td>
+          <td class="name-cell">Sabor Cubano</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.8★</b></td>
+          <td>424</td>
+          <td><span class="score-badge score-low">84.8</span></td>
+          <td><b>25.9x</b></td>
+          <td><span class="tag">Não informado</span></td>
+        </tr>
+        <tr data-bairro="Cachoeira do Bom Jesus">
+          <td class="rank-cell">#85</td>
+          <td class="name-cell">La Rotiseria - Casa de Comidas</td>
+          <td><span class="tag">Cachoeira do Bom Jesus</span></td>
+          <td><b>4.4★</b></td>
+          <td>139</td>
+          <td><span class="score-badge score-low">83.4</span></td>
+          <td><b>78.9x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548999143538" target="_blank">📱 (48) 99914-3538</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td class="rank-cell">#86</td>
+          <td class="name-cell">Rancho do Pescador</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.7★</b></td>
+          <td>263</td>
+          <td><span class="score-badge score-low">78.9</span></td>
+          <td><b>41.7x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548996028948" target="_blank">📱 (48) 99602-8948</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td class="rank-cell">#87</td>
+          <td class="name-cell">Brazza On The Beach</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.5★</b></td>
+          <td>155</td>
+          <td><span class="score-badge score-low">77.5</span></td>
+          <td><b>70.7x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548991619023" target="_blank">📱 (48) 99161-9023</a></td>
+        </tr>
+        <tr data-bairro="Ponta das Canas">
+          <td class="rank-cell">#88</td>
+          <td class="name-cell">Canto do Mar Ponta das Canas</td>
+          <td><span class="tag">Ponta das Canas</span></td>
+          <td><b>4.6★</b></td>
+          <td>178</td>
+          <td><span class="score-badge score-low">71.2</span></td>
+          <td><b>61.6x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/554832610872" target="_blank">📱 (48) 3261-0872</a></td>
+        </tr>
+        <tr data-bairro="Cachoeira do Bom Jesus">
+          <td class="rank-cell">#89</td>
+          <td class="name-cell">Ponta da Praia</td>
+          <td><span class="tag">Cachoeira do Bom Jesus</span></td>
+          <td><b>4.7★</b></td>
+          <td>217</td>
+          <td><span class="score-badge score-low">65.1</span></td>
+          <td><b>50.5x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/554832096417" target="_blank">📱 (48) 3209-6417</a></td>
+        </tr>
+        <tr data-bairro="Cachoeira do Bom Jesus">
+          <td class="rank-cell">#90</td>
+          <td class="name-cell">Brava Del Mar Restaurante</td>
+          <td><span class="tag">Cachoeira do Bom Jesus</span></td>
+          <td><b>4.8★</b></td>
+          <td>273</td>
+          <td><span class="score-badge score-low">54.6</span></td>
+          <td><b>40.2x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548988804141" target="_blank">📱 (48) 98880-4141</a></td>
+        </tr>
+        <tr data-bairro="Ponta das Canas">
+          <td class="rank-cell">#91</td>
+          <td class="name-cell">Restaurante em Ponta das Canas | Baleia Branca Resto Bar</td>
+          <td><span class="tag">Ponta das Canas</span></td>
+          <td><b>4.3★</b></td>
+          <td>73</td>
+          <td><span class="score-badge score-low">51.1</span></td>
+          <td><b>150.2x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548984710900" target="_blank">📱 (48) 98471-0900</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td class="rank-cell">#92</td>
+          <td class="name-cell">Sabor Gaúcho | Restaurante</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.8★</b></td>
+          <td>244</td>
+          <td><span class="score-badge score-low">48.8</span></td>
+          <td><b>44.9x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548991234890" target="_blank">📱 (48) 99123-4890</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td class="rank-cell">#93</td>
+          <td class="name-cell">Restaurante Bombordo Floripa</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.8★</b></td>
+          <td>237</td>
+          <td><span class="score-badge score-low">47.4</span></td>
+          <td><b>46.3x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548996286525" target="_blank">📱 (48) 99628-6525</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td class="rank-cell">#94</td>
+          <td class="name-cell">Empório das Massas</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.8★</b></td>
+          <td>228</td>
+          <td><span class="score-badge score-low">45.6</span></td>
+          <td><b>48.1x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5567991184611" target="_blank">📱 (67) 99118-4611</a></td>
+        </tr>
+        <tr data-bairro="Cachoeira do Bom Jesus">
+          <td class="rank-cell">#95</td>
+          <td class="name-cell">Savas Sapiens</td>
+          <td><span class="tag">Cachoeira do Bom Jesus</span></td>
+          <td><b>4.4★</b></td>
+          <td>72</td>
+          <td><span class="score-badge score-low">43.2</span></td>
+          <td><b>152.2x</b></td>
+          <td><span class="tag">Não informado</span></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td class="rank-cell">#96</td>
+          <td class="name-cell">Marisqueira Sintra</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.6★</b></td>
+          <td>91</td>
+          <td><span class="score-badge score-low">36.4</span></td>
+          <td><b>120.5x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/554832344219" target="_blank">📱 (48) 3234-4219</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td class="rank-cell">#97</td>
+          <td class="name-cell">Mig Restaurante</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.8★</b></td>
+          <td>141</td>
+          <td><span class="score-badge score-low">28.2</span></td>
+          <td><b>77.7x</b></td>
+          <td><span class="tag">Não informado</span></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td class="rank-cell">#98</td>
+          <td class="name-cell">Route 22 - Canasvieiras</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>3.8★</b></td>
+          <td>23</td>
+          <td><span class="score-badge score-low">27.6</span></td>
+          <td><b>476.6x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548988647846" target="_blank">📱 (48) 98864-7846</a></td>
+        </tr>
+        <tr data-bairro="Ponta das Canas">
+          <td class="rank-cell">#99</td>
+          <td class="name-cell">A Toca Choperia e Petiscaria</td>
+          <td><span class="tag">Ponta das Canas</span></td>
+          <td><b>4.9★</b></td>
+          <td>168</td>
+          <td><span class="score-badge score-low">16.8</span></td>
+          <td><b>65.2x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/554830238950" target="_blank">📱 (48) 3023-8950</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td class="rank-cell">#100</td>
+          <td class="name-cell">MERCADOTECA</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.3★</b></td>
+          <td>24</td>
+          <td><span class="score-badge score-low">16.8</span></td>
+          <td><b>456.8x</b></td>
+          <td><span class="tag">Não informado</span></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td class="rank-cell">#101</td>
+          <td class="name-cell">Ponto de interrogação restaurante e petisqueria</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.5★</b></td>
+          <td>29</td>
+          <td><span class="score-badge score-low">14.5</span></td>
+          <td><b>378.0x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/554832044737" target="_blank">📱 (48) 3204-4737</a></td>
+        </tr>
+        <tr data-bairro="Ponta das Canas">
+          <td class="rank-cell">#102</td>
+          <td class="name-cell">Sabore</td>
+          <td><span class="tag">Ponta das Canas</span></td>
+          <td><b>4.7★</b></td>
+          <td>39</td>
+          <td><span class="score-badge score-low">11.7</span></td>
+          <td><b>281.1x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548999039607" target="_blank">📱 (48) 99903-9607</a></td>
+        </tr>
+        <tr data-bairro="Cachoeira do Bom Jesus">
+          <td class="rank-cell">#103</td>
+          <td class="name-cell">Osteria Carbone | Florianopolis</td>
+          <td><span class="tag">Cachoeira do Bom Jesus</span></td>
+          <td><b>4.7★</b></td>
+          <td>39</td>
+          <td><span class="score-badge score-low">11.7</span></td>
+          <td><b>281.1x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548998378200" target="_blank">📱 (48) 99837-8200</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td class="rank-cell">#104</td>
+          <td class="name-cell">Don Tobio Pizzas Argentinas y Empanadas Argentinas</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.9★</b></td>
+          <td>91</td>
+          <td><span class="score-badge score-low">9.1</span></td>
+          <td><b>120.5x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548999458298" target="_blank">📱 (48) 99945-8298</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td class="rank-cell">#105</td>
+          <td class="name-cell">Floripa Bistrô - cafeteria em canasvieiras</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.9★</b></td>
+          <td>56</td>
+          <td><span class="score-badge score-low">5.6</span></td>
+          <td><b>195.8x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5567991184611" target="_blank">📱 (67) 99118-4611</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td class="rank-cell">#106</td>
+          <td class="name-cell">PETISCARIA ÂNCORA</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.9★</b></td>
+          <td>42</td>
+          <td><span class="score-badge score-low">4.2</span></td>
+          <td><b>261.0x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548999668527" target="_blank">📱 (48) 99966-8527</a></td>
+        </tr>
+        <tr data-bairro="Cachoeira do Bom Jesus">
+          <td class="rank-cell">#107</td>
+          <td class="name-cell">Top Lanches Restaurante - Florianópolis</td>
+          <td><span class="tag">Cachoeira do Bom Jesus</span></td>
+          <td><b>5.0★</b></td>
+          <td>40</td>
+          <td><span class="score-badge score-low">4.0</span></td>
+          <td><b>274.1x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548999529626" target="_blank">📱 (48) 99952-9626</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td class="rank-cell">#108</td>
+          <td class="name-cell">900 Pizza & Burguer.</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>5.0★</b></td>
+          <td>35</td>
+          <td><span class="score-badge score-low">3.5</span></td>
+          <td><b>313.2x</b></td>
+          <td><a class="btn-wa" href="https://wa.me/5548991273223" target="_blank">📱 (48) 99127-3223</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td class="rank-cell">#109</td>
+          <td class="name-cell">Restaurante Nossa Senhora da Vitoria</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.5★</b></td>
+          <td>2</td>
+          <td><span class="score-badge score-low">1.0</span></td>
+          <td><b>5481.0x</b></td>
+          <td><span class="tag">Não informado</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    let currentBairro = 'todos';
+
+    function setBairro(bairro) {
+      currentBairro = bairro;
+      const btns = document.querySelectorAll('.btn-filter');
+      btns.forEach(btn => {
+        if ((bairro === 'todos' && btn.textContent.startsWith('Todos')) || btn.textContent.includes(bairro)) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+      filterTable();
+    }
+
+    function filterTable() {
+      const search = document.getElementById('searchInput').value.toLowerCase();
+      const rows = document.querySelectorAll('#leadsTable tbody tr');
+
+      rows.forEach(row => {
+        const bairro = row.getAttribute('data-bairro');
+        const text = row.innerText.toLowerCase();
+
+        const matchBairro = (currentBairro === 'todos' || bairro === currentBairro);
+        const matchSearch = text.includes(search);
+
+        if (matchBairro && matchSearch) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

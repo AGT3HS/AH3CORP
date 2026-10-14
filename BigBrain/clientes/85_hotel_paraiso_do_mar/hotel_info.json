@@ -1,0 +1,13 @@
+{
+  "nome": "Hotel Paraíso do Mar",
+  "unidade": "Canasvieiras",
+  "categoria": "Hotel de Praia",
+  "regiao": "Canasvieiras",
+  "quartos": 54,
+  "diaria_media": 270,
+  "site": "https://www.hotelparaisodomar.com.br",
+  "ranking": 85,
+  "telefone": "",
+  "phone_clean": "",
+  "telefone_fixo": ""
+}

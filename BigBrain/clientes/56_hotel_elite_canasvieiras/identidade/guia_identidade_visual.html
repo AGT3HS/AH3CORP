@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Identidade Visual · Hotel Dom Marujo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --c-primary: #B10035;
+            --c-gold: #000000;
+            --c-bg: #090D0E;
+            --c-card: #12181A;
+            --c-card-border: #1E282C;
+            --c-text: #E5EAE8;
+            --c-muted: #8E9E98;
+            --c-accent: #FFFFFF;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--c-bg);
+            color: var(--c-text);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .header {
+            background: linear-gradient(145deg, #131B1E, #0D1315);
+            border: 1px solid var(--c-card-border);
+            border-radius: 16px;
+            padding: 36px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            gap: 20px;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--c-gold), transparent);
+        }
+        .badge-rank {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--c-gold);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .hotel-title {
+            font-family: 'Cinzel', serif;
+            font-size: 30px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 6px;
+        }
+        .hotel-meta {
+            color: var(--c-muted);
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        .site-link-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            color: var(--c-gold);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .site-link-header:hover {
+            background: var(--c-gold);
+            color: #000000;
+            transform: translateY(-1px);
+        }
+        .logo-box {
+            background: #FFFFFF;
+            padding: 16px 24px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            min-width: 240px;
+            min-height: 100px;
+        }
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background-color: var(--c-card);
+            border: 1px solid var(--c-card-border);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--c-gold);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .palette-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .swatch {
+            flex: 1;
+            height: 64px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 6px;
+            font-size: 10px;
+            font-weight: 600;
+            color: #FFFFFF;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .data-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 13px;
+        }
+        .data-label { color: var(--c-muted); }
+        .data-val { font-weight: 600; color: #FFF; }
+        .btn-site-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 8px;
+            padding: 10px 18px;
+            background: linear-gradient(135deg, var(--c-gold), #b89020);
+            color: #090D0E;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 13px;
+            transition: all 0.2s ease;
+        }
+        .btn-site-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(212, 175, 55, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <span class="badge-rank">RANKING OFICIAL #56</span>
+                <h1 class="hotel-title">Hotel Dom Marujo</h1>
+                <p class="hotel-meta">Canasvieiras · Canasvieiras · Hotel de Lazer</p>
+                <a href="https://www.hoteldommarujo.com.br" target="_blank" rel="noopener noreferrer" class="site-link-header">
+                    🌐 Visitar Website Oficial: https://www.hoteldommarujo.com.br ↗
+                </a>
+            </div>
+            <div class="logo-box">
+                <img src="data:image/png;base64,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" alt="Logo Oficial - Hotel Dom Marujo" style="max-height: 85px; max-width: 260px; object-fit: contain;">
+            </div>
+        </div>
+
+        <div class="grid-cards">
+            <div class="card">
+                <div class="card-title">🎨 Identidade Visual & Cores</div>
+                <p style="font-size: 13px; color: var(--c-muted); margin-bottom: 12px;">Paleta institucional extraída dos ativos oficiais via Brandfetch.</p>
+                <div class="palette-row">
+                    <div class="swatch" style="background: #B10035;">#B10035</div>
+                    <div class="swatch" style="background: #000000; color: #000; text-shadow: none;">#000000</div>
+                    <div class="swatch" style="background: #FFFFFF;">#FFFFFF</div>
+                    <div class="swatch" style="background: #12181A;">#12181A</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">🔤 Tipografia & Fontes Homologadas</div>
+                <div class="data-row">
+                    <span class="data-label">Títulos & Destaque</span>
+                    <span class="data-val">Mukta</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Corpo & Interface</span>
+                    <span class="data-val">Mukta</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Arquitetura de Marca</span>
+                    <span class="data-val">Hotel de Lazer</span>
+                </div>
+            </div>
+
+            <div class="card" style="grid-column: 1 / -1;">
+                <div class="card-title">📊 Métricas Operacionais & Acesso Oficial</div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; align-items: center;">
+                    <div>
+                        <div class="data-label">Capacidade Declarada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">70 Apartamentos</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Diária Média Estimada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px; color: var(--c-gold);">R$ 290.00</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Ativos de Marca</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">3 arquivo(s) homologado(s)</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Canal Digital Direto</div>
+                        <a href="https://www.hoteldommarujo.com.br" target="_blank" rel="noopener noreferrer" class="btn-site-action">
+                            Acessar Website do Hotel ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

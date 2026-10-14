@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Identidade Visual · Ingleses Palace Hotel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --c-primary: #01103C;
+            --c-gold: #01103B;
+            --c-bg: #090D0E;
+            --c-card: #12181A;
+            --c-card-border: #1E282C;
+            --c-text: #E5EAE8;
+            --c-muted: #8E9E98;
+            --c-accent: #A6B1FF;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--c-bg);
+            color: var(--c-text);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .header {
+            background: linear-gradient(145deg, #131B1E, #0D1315);
+            border: 1px solid var(--c-card-border);
+            border-radius: 16px;
+            padding: 36px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            gap: 20px;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--c-gold), transparent);
+        }
+        .badge-rank {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--c-gold);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .hotel-title {
+            font-family: 'Cinzel', serif;
+            font-size: 30px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 6px;
+        }
+        .hotel-meta {
+            color: var(--c-muted);
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        .site-link-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            color: var(--c-gold);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .site-link-header:hover {
+            background: var(--c-gold);
+            color: #000000;
+            transform: translateY(-1px);
+        }
+        .logo-box {
+            background: #FFFFFF;
+            padding: 16px 24px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            min-width: 240px;
+            min-height: 100px;
+        }
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background-color: var(--c-card);
+            border: 1px solid var(--c-card-border);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--c-gold);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .palette-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .swatch {
+            flex: 1;
+            height: 64px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 6px;
+            font-size: 10px;
+            font-weight: 600;
+            color: #FFFFFF;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .data-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 13px;
+        }
+        .data-label { color: var(--c-muted); }
+        .data-val { font-weight: 600; color: #FFF; }
+        .btn-site-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 8px;
+            padding: 10px 18px;
+            background: linear-gradient(135deg, var(--c-gold), #b89020);
+            color: #090D0E;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 13px;
+            transition: all 0.2s ease;
+        }
+        .btn-site-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(212, 175, 55, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <span class="badge-rank">RANKING OFICIAL #42</span>
+                <h1 class="hotel-title">Ingleses Palace Hotel</h1>
+                <p class="hotel-meta">Praia dos Ingleses · Praia dos Ingleses · Hotel de Praia</p>
+                <a href="https://www.inglesespalacehotel.com.br" target="_blank" rel="noopener noreferrer" class="site-link-header">
+                    🌐 Visitar Website Oficial: https://www.inglesespalacehotel.com.br ↗
+                </a>
+            </div>
+            <div class="logo-box">
+                <img src="data:image/png;base64,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" alt="Logo Oficial - Ingleses Palace Hotel" style="max-height: 85px; max-width: 260px; object-fit: contain;">
+            </div>
+        </div>
+
+        <div class="grid-cards">
+            <div class="card">
+                <div class="card-title">🎨 Identidade Visual & Cores</div>
+                <p style="font-size: 13px; color: var(--c-muted); margin-bottom: 12px;">Paleta institucional extraída dos ativos oficiais via Brandfetch.</p>
+                <div class="palette-row">
+                    <div class="swatch" style="background: #01103C;">#01103C</div>
+                    <div class="swatch" style="background: #01103B; color: #000; text-shadow: none;">#01103B</div>
+                    <div class="swatch" style="background: #A6B1FF;">#A6B1FF</div>
+                    <div class="swatch" style="background: #12181A;">#12181A</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">🔤 Tipografia & Fontes Homologadas</div>
+                <div class="data-row">
+                    <span class="data-label">Títulos & Destaque</span>
+                    <span class="data-val">Georgia</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Corpo & Interface</span>
+                    <span class="data-val">Plus Jakarta Sans</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Arquitetura de Marca</span>
+                    <span class="data-val">Hotel de Praia</span>
+                </div>
+            </div>
+
+            <div class="card" style="grid-column: 1 / -1;">
+                <div class="card-title">📊 Métricas Operacionais & Acesso Oficial</div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; align-items: center;">
+                    <div>
+                        <div class="data-label">Capacidade Declarada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">82 Apartamentos</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Diária Média Estimada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px; color: var(--c-gold);">R$ 410.00</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Ativos de Marca</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">2 arquivo(s) homologado(s)</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Canal Digital Direto</div>
+                        <a href="https://www.inglesespalacehotel.com.br" target="_blank" rel="noopener noreferrer" class="btn-site-action">
+                            Acessar Website do Hotel ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

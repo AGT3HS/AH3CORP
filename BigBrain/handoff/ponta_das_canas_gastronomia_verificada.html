@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Gastronomia Verificada - Ponta das Canas (AH3)</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card-bg: #161b22;
+      --border: #30363d;
+      --text: #c9d1d9;
+      --text-bright: #f0f6fc;
+      --amber: #f5a623;
+      --blue: #58a6ff;
+      --green: #3fb950;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 24px;
+    }
+    .header {
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    h1 {
+      color: var(--text-bright);
+      margin: 0 0 6px 0;
+      font-size: 22px;
+    }
+    .stats-bar {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 12px 16px;
+      flex: 1;
+    }
+    .stat-val {
+      font-size: 22px;
+      font-weight: bold;
+      color: var(--text-bright);
+    }
+    .stat-label {
+      font-size: 12px;
+      color: #8b949e;
+      margin-top: 2px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    th {
+      background: #21262d;
+      color: var(--text-bright);
+      padding: 10px 12px;
+      font-weight: 600;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+    }
+    td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    tr:hover {
+      background: rgba(255, 255, 255, 0.03);
+    }
+    .rating {
+      color: var(--amber);
+      font-weight: bold;
+    }
+    .reviews {
+      color: #8b949e;
+      font-size: 12px;
+    }
+    a.btn-link {
+      color: var(--blue);
+      text-decoration: none;
+    }
+    a.btn-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>📍 Gastronomia Mapeada e Verificada — Ponta das Canas</h1>
+    <p style="color: #8b949e; margin: 0; font-size: 13px;">Varredura oficial via Google Places API New (Dados reais e verificados sem presunções).</p>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat-card">
+      <div class="stat-val">24</div>
+      <div class="stat-label">Estabelecimentos Mapeados</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">10,952</div>
+      <div class="stat-label">Total de Avaliações Google</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">Ratones Craft Beer (2.121)</div>
+      <div class="stat-label">Líder em Avaliações no Bairro</div>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Estabelecimento</th>
+        <th>Avaliação Google</th>
+        <th>Endereço</th>
+        <th>Telefone</th>
+        <th>Ficha Google Maps</th>
+        <th>Website / Cardápio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>#01</b></td>
+        <td style="font-weight:600; color:var(--text-bright);">Ratones Craft Beer</td>
+        <td><span class="rating">⭐ 4.8</span> <span class="reviews">(2121 revs)</span></td>
+        <td style="font-size:12px;">Av. Luiz Boiteux Piazza, n 5076 - Sl 7 - Ponta das Canas, Florianópolis - SC, 88056-682, Brasil</td>
+        <td>(48) 99170-1959</td>
+        <td><a class="btn-link" href="https://maps.google.com/?cid=5326571827359026775&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank">Abrir Maps</a></td>
+        <td style="font-size:12px;"><a class="btn-link" href="http://ratonescraftbeer.com.br/" target="_blank">Acessar</a></td>
+      </tr>
+      <tr>
+        <td><b>#02</b></td>
+        <td style="font-weight:600; color:var(--text-bright);">Restaurante Mira Maré</td>
+        <td><span class="rating">⭐ 4.5</span> <span class="reviews">(1447 revs)</span></td>
+        <td style="font-size:12px;">R. Dep. Fernando Viégas, 36 - Ponta das Canas, Florianópolis - SC, 88056-730, Brasil</td>
+        <td>(48) 99139-6523</td>
+        <td><a class="btn-link" href="https://maps.google.com/?cid=9308328434584365536&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank">Abrir Maps</a></td>
+        <td style="font-size:12px;"><a class="btn-link" href="https://www.miramarerestaurante.com.br/" target="_blank">Acessar</a></td>
+      </tr>
+      <tr>
+        <td><b>#03</b></td>
+        <td style="font-weight:600; color:var(--text-bright);">Restaurante Garra Azul</td>
+        <td><span class="rating">⭐ 4.3</span> <span class="reviews">(1363 revs)</span></td>
+        <td style="font-size:12px;">R. Dep. Fernando Viégas, 20 - Ponta das Canas, Florianópolis - SC, 88056-730, Brasil</td>
+        <td>(48) 3030-2382</td>
+        <td><a class="btn-link" href="https://maps.google.com/?cid=1108660713544558342&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank">Abrir Maps</a></td>
+        <td style="font-size:12px;"><a class="btn-link" href="https://www.instagram.com/restaurantegarraazul/" target="_blank">Acessar</a></td>
+      </tr>
+      <tr>
+        <td><b>#04</b></td>
+        <td style="font-weight:600; color:var(--text-bright);">Restaurante Tradição Campeira</td>
+        <td><span class="rating">⭐ 4.4</span> <span class="reviews">(998 revs)</span></td>
+        <td style="font-size:12px;">Av. Luiz Boiteux Piazza, 6208 - Ponta das Canas, Florianópolis - SC, 88056-000, Brasil</td>
+        <td>(48) 99918-5419</td>
+        <td><a class="btn-link" href="https://maps.google.com/?cid=5996681598512678445&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank">Abrir Maps</a></td>
+        <td style="font-size:12px;"><span style="color:#6e7681;">-</span></td>
+      </tr>
+      <tr>
+        <td><b>#05</b></td>
+        <td style="font-weight:600; color:var(--text-bright);">1983 Burguer</td>
+        <td><span class="rating">⭐ 4.7</span> <span class="reviews">(765 revs)</span></td>
+        <td style="font-size:12px;">Av. Luiz Boiteux Piazza, 4838 - Ponta das Canas, Florianópolis - SC, 88056-000, Brasil</td>
+        <td>(48) 98436-3225</td>
+        <td><a class="btn-link" href="https://maps.google.com/?cid=9555678848534178734&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank">Abrir Maps</a></td>
+        <td style="font-size:12px;"><span style="color:#6e7681;">-</span></td>
+      </tr>
+      <tr>
+        <td><b>#06</b></td>
+        <td style="font-weight:600; color:var(--text-bright);">Dogão Da Ilha</td>
+        <td><span class="rating">⭐ 4.3</span> <span class="reviews">(693 revs)</span></td>
+        <td style="font-size:12px;">Av. Luiz Boiteux Piazza, 2099 - Cachoeira do Bom Jesus, Florianópolis - SC, 88056-000, Brasil</td>
+        <td>(48) 99157-2775</td>
+        <td><a class="btn-link" href="https://maps.google.com/?cid=605155210918363946&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank">Abrir Maps</a></td>
+        <td style="font-size:12px;"><a class="btn-link" href="https://www.ifood.com.br/delivery/florianopolis-sc/dogao-da-ilha-cachoeira-do-bom-jesus/6a451b48-4a5e-4307-932c-c33a0bfb2e9b" target="_blank">Acessar</a></td>
+      </tr>
+      <tr>
+        <td><b>#07</b></td>
+        <td style="font-weight:600; color:var(--text-bright);">Restaurante Lula Floripa</td>
+        <td><span class="rating">⭐ 4.6</span> <span class="reviews">(626 revs)</span></td>
+        <td style="font-size:12px;">Estr. Jorn. Jaime de Arruda Ramos, 1216 - Ponta das Canas, Florianópolis - SC, 88056-750, Brasil</td>
+        <td>(48) 98818-5649</td>
+        <td><a class="btn-link" href="https://maps.google.com/?cid=6650142973276836740&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank">Abrir Maps</a></td>
+        <td style="font-size:12px;"><a class="btn-link" href="https://www.instagram.com/restaurantelulafloripa/?igshid=596ukn0y9dr9" target="_blank">Acessar</a></td>
+      </tr>
+      <tr>
+        <td><b>#08</b></td>
+        <td style="font-weight:600; color:var(--text-bright);">Paraíso da Gula</td>
+        <td><span class="rating">⭐ 4.6</span> <span class="reviews">(610 revs)</span></td>
+        <td style="font-size:12px;">Av. Luiz Boiteux Piazza, 5076 - Sl 01 - Cachoeira do Bom Jesus, Florianópolis - SC, 88056-000, Brasil</td>
+        <td>(48) 98801-8857</td>
+        <td><a class="btn-link" href="https://maps.google.com/?cid=10245111084573752139&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank">Abrir Maps</a></td>
+        <td style="font-size:12px;"><a class="btn-link" href="http://www.paraisodagula.com.br/" target="_blank">Acessar</a></td>
+      </tr>
+      <tr>
+        <td><b>#09</b></td>
+        <td style="font-weight:600; color:var(--text-bright);">J S Nostra Pizza</td>
+        <td><span class="rating">⭐ 4.6</span> <span class="reviews">(493 revs)</span></td>
+        <td style="font-size:12px;">Av. Luiz Boiteux Piazza, 6647 - Casa A - Ponta das Canas, Florianópolis - SC, 88056-701, Brasil</td>
+        <td>(48) 98454-1594</td>
+        <td><a class="btn-link" href="https://maps.google.com/?cid=13829722537531015280&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank">Abrir Maps</a></td>
+        <td style="font-size:12px;"><span style="color:#6e7681;">-</span></td>
+      </tr>
+      <tr>
+        <td><b>#10</b></td>
+        <td style="font-weight:600; color:var(--text-bright);">Ocean House</td>
+        <td><span class="rating">⭐ 4.6</span> <span class="reviews">(475 revs)</span></td>
+        <td style="font-size:12px;">R. Dep. Fernando Viégas, 143 - Ponta das Canas, Florianópolis - SC, 88056-730, Brasil</td>
+        <td>(48) 3369-3102</td>
+        <td><a class="btn-link" href="https://maps.google.com/?cid=17442814814515615995&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank">Abrir Maps</a></td>
+        <td style="font-size:12px;"><span style="color:#6e7681;">-</span></td>
+      </tr>
+      <tr>
+        <td><b>#11</b></td>
+        <td style="font-weight:600; color:var(--text-bright);">Foodtruck do Dino</td>
+        <td><span class="rating">⭐ 4.7</span> <span class="reviews">(297 revs)</span></td>
+        <td style="font-size:12px;">Av. Luiz Boiteux Piazza, 6272 - Ponta das Canas, Florianópolis - SC, 88056-001, Brasil</td>
+        <td>(48) 98465-9534</td>
+        <td><a class="btn-link" href="https://maps.google.com/?cid=9999623177721415414&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank">Abrir Maps</a></td>
+        <td style="font-size:12px;"><a class="btn-link" href="http://whatsmenu.com.br/foodtruckdodino" target="_blank">Acessar</a></td>
+      </tr>
+      <tr>
+        <td><b>#12</b></td>
+        <td style="font-weight:600; color:var(--text-bright);">Chico Restaurante</td>
+        <td><span class="rating">⭐ 4.5</span> <span class="reviews">(183 revs)</span></td>
+        <td style="font-size:12px;">Estr. Jorn. Jaime de Arruda Ramos, 1294 - Ponta das Canas, Florianópolis - SC, 88056-750, Brasil</td>
+        <td>(48) 3284-2502</td>
+        <td><a class="btn-link" href="https://maps.google.com/?cid=4313055841568433205&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank">Abrir Maps</a></td>
+        <td style="font-size:12px;"><a class="btn-link" href="https://www.lojalocal.com/amstel/78607777000106" target="_blank">Acessar</a></td>
+      </tr>
+      <tr>
+        <td><b>#13</b></td>
+        <td style="font-weight:600; color:var(--text-bright);">Canto do Mar Ponta das Canas</td>
+        <td><span class="rating">⭐ 4.6</span> <span class="reviews">(178 revs)</span></td>
+        <td style="font-size:12px;">R. Dep. Fernando Viégas, 560 - Ponta das Canas, Florianópolis - SC, 88056-730, Brasil</td>
+        <td>(48) 3261-0872</td>
+        <td><a class="btn-link" href="https://maps.google.com/?cid=15711705142364968012&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank">Abrir Maps</a></td>
+        <td style="font-size:12px;"><a class="btn-link" href="http://www.restaurantescantodomar.com.br/" target="_blank">Acessar</a></td>
+      </tr>
+      <tr>
+        <td><b>#14</b></td>
+        <td style="font-weight:600; color:var(--text-bright);">A Toca Choperia e Petiscaria</td>
+        <td><span class="rating">⭐ 4.9</span> <span class="reviews">(168 revs)</span></td>
+        <td style="font-size:12px;">Av. Luiz Boiteux Piazza, 6611 - Ponta das Canas, Florianópolis - SC, 88056-701, Brasil</td>
+        <td>(48) 3023-8950</td>
+        <td><a class="btn-link" href="https://maps.google.com/?cid=1603470598837978221&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank">Abrir Maps</a></td>
+        <td style="font-size:12px;"><a class="btn-link" href="https://atocachoperia.vercel.app/" target="_blank">Acessar</a></td>
+      </tr>
+      <tr>
+        <td><b>#15</b></td>
+        <td style="font-weight:600; color:var(--text-bright);">Pizzaria Tradição</td>
+        <td><span class="rating">⭐ 4.8</span> <span class="reviews">(136 revs)</span></td>
+        <td style="font-size:12px;">Av. Luiz Boiteux Piazza, 6208 - Ponta das Canas, Florianópolis - SC, 88056-000, Brasil</td>
+        <td>(48) 99918-5419</td>
+        <td><a class="btn-link" href="https://maps.google.com/?cid=2014050108917420108&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank">Abrir Maps</a></td>
+        <td style="font-size:12px;"><span style="color:#6e7681;">-</span></td>
+      </tr>
+      <tr>
+        <td><b>#16</b></td>
+        <td style="font-weight:600; color:var(--text-bright);">Pátio Floriparadise</td>
+        <td><span class="rating">⭐ 4.8</span> <span class="reviews">(117 revs)</span></td>
+        <td style="font-size:12px;">Av. Luiz Boiteux Piazza, 5076 - Ponta das Canas, Florianópolis - SC, 88056-682, Brasil</td>
+        <td>(48) 99131-8686</td>
+        <td><a class="btn-link" href="https://maps.google.com/?cid=5548622239456844016&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank">Abrir Maps</a></td>
+        <td style="font-size:12px;"><a class="btn-link" href="http://www.floriparadise.com/" target="_blank">Acessar</a></td>
+      </tr>
+      <tr>
+        <td><b>#17</b></td>
+        <td style="font-weight:600; color:var(--text-bright);">Floresta Negra Café Bar & Chopperia</td>
+        <td><span class="rating">⭐ 4.9</span> <span class="reviews">(95 revs)</span></td>
+        <td style="font-size:12px;">Estr. Jorn. Jaime de Arruda Ramos, 37 - Ponta das Canas, Florianópolis - SC, 88056-750, Brasil</td>
+        <td>(48) 99695-8235</td>
+        <td><a class="btn-link" href="https://maps.google.com/?cid=12459034975224172096&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank">Abrir Maps</a></td>
+        <td style="font-size:12px;"><a class="btn-link" href="http://www.instagram.com/florestanegracafebar/" target="_blank">Acessar</a></td>
+      </tr>
+      <tr>
+        <td><b>#18</b></td>
+        <td style="font-weight:600; color:var(--text-bright);">Restaurante em Ponta das Canas | Baleia Branca Resto Bar</td>
+        <td><span class="rating">⭐ 4.3</span> <span class="reviews">(73 revs)</span></td>
+        <td style="font-size:12px;">R. Dep. Fernando Viégas, 10 - Ponta das Canas, Florianópolis - SC, 88056-730, Brasil</td>
+        <td>(48) 98471-0900</td>
+        <td><a class="btn-link" href="https://maps.google.com/?cid=7627777568782531941&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank">Abrir Maps</a></td>
+        <td style="font-size:12px;"><a class="btn-link" href="https://bio.link/baleiabrancarestobar" target="_blank">Acessar</a></td>
+      </tr>
+      <tr>
+        <td><b>#19</b></td>
+        <td style="font-weight:600; color:var(--text-bright);">Sabore</td>
+        <td><span class="rating">⭐ 4.7</span> <span class="reviews">(39 revs)</span></td>
+        <td style="font-size:12px;">Servidão Dona Joana, 19 - Ponta das Canas, Florianópolis - SC, 88056-680, Brasil</td>
+        <td>(48) 99903-9607</td>
+        <td><a class="btn-link" href="https://maps.google.com/?cid=14076666512586203424&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank">Abrir Maps</a></td>
+        <td style="font-size:12px;"><a class="btn-link" href="http://pedido.anota.ai/loja/sabore-marmitas" target="_blank">Acessar</a></td>
+      </tr>
+      <tr>
+        <td><b>#20</b></td>
+        <td style="font-weight:600; color:var(--text-bright);">Marquinho's Bar e Restaurante</td>
+        <td><span class="rating">⭐ 4.3</span> <span class="reviews">(39 revs)</span></td>
+        <td style="font-size:12px;">Próximo ao - Estr. Jorn. Jaime de Arruda Ramos, 1275 - Ponta das Canas, Florianópolis - SC, 88056-750, Brasil</td>
+        <td>(48) 99644-4709</td>
+        <td><a class="btn-link" href="https://maps.google.com/?cid=13749458991926950236&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank">Abrir Maps</a></td>
+        <td style="font-size:12px;"><a class="btn-link" href="http://instagram.com.br/marquinhosbarrestaurante" target="_blank">Acessar</a></td>
+      </tr>
+      <tr>
+        <td><b>#21</b></td>
+        <td style="font-weight:600; color:var(--text-bright);">Picadão do Bazar - Porções e Petiscos</td>
+        <td><span class="rating">⭐ 5</span> <span class="reviews">(15 revs)</span></td>
+        <td style="font-size:12px;">Av. Luiz Boiteux Piazza, 5146 - Ponta das Canas, Florianópolis - SC, 88056-682, Brasil</td>
+        <td>(48) 3365-4901</td>
+        <td><a class="btn-link" href="https://maps.google.com/?cid=5748201550074348073&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank">Abrir Maps</a></td>
+        <td style="font-size:12px;"><a class="btn-link" href="https://link.vocepede.online/picadaodobazar" target="_blank">Acessar</a></td>
+      </tr>
+      <tr>
+        <td><b>#22</b></td>
+        <td style="font-weight:600; color:var(--text-bright);">Frango assado da ponta</td>
+        <td><span class="rating">⭐ 4.7</span> <span class="reviews">(12 revs)</span></td>
+        <td style="font-size:12px;">Av. Luiz Boiteux Piazza, 6021 - Ponta das Canas, Florianópolis - SC, 88054-700, Brasil</td>
+        <td>(48) 99190-6464</td>
+        <td><a class="btn-link" href="https://maps.google.com/?cid=15097998487924368903&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank">Abrir Maps</a></td>
+        <td style="font-size:12px;"><span style="color:#6e7681;">-</span></td>
+      </tr>
+      <tr>
+        <td><b>#23</b></td>
+        <td style="font-weight:600; color:var(--text-bright);">Cantinho da marmita</td>
+        <td><span class="rating">⭐ 4.4</span> <span class="reviews">(9 revs)</span></td>
+        <td style="font-size:12px;">Rua recanto das pedras - Ponta das Canas, Florianópolis - SC, 88056-681, Brasil</td>
+        <td>(48) 99676-3781</td>
+        <td><a class="btn-link" href="https://maps.google.com/?cid=1288869833359624505&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank">Abrir Maps</a></td>
+        <td style="font-size:12px;"><span style="color:#6e7681;">-</span></td>
+      </tr>
+      <tr>
+        <td><b>#24</b></td>
+        <td style="font-weight:600; color:var(--text-bright);">Healthy Food Floripa Norte</td>
+        <td><span class="rating">⭐ -</span> <span class="reviews">(0 revs)</span></td>
+        <td style="font-size:12px;">88000000 - Ponta das Canas, Florianópolis - SC, 88000-000, Brasil</td>
+        <td>(48) 98481-1044</td>
+        <td><a class="btn-link" href="https://maps.google.com/?cid=2356970056540865027&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank">Abrir Maps</a></td>
+        <td style="font-size:12px;"><a class="btn-link" href="https://www.instagram.com/healthyfoodfloripa.norte/" target="_blank">Acessar</a></td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "nome": "Hotel Marazul",
+  "unidade": "Canasvieiras",
+  "categoria": "Hotel Econômico",
+  "regiao": "Canasvieiras",
+  "quartos": 44,
+  "diaria_media": 240,
+  "site": "https://www.hotelmarazul.com.br",
+  "ranking": 111,
+  "telefone": "",
+  "telefone_fixo": "",
+  "phone_clean": ""
+}

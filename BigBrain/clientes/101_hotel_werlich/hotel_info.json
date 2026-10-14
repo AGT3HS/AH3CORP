@@ -1,0 +1,13 @@
+{
+  "nome": "Hotel Werlich",
+  "unidade": "Continente (Campinas)",
+  "categoria": "Hotel Econômico",
+  "regiao": "Continente",
+  "quartos": 48,
+  "diaria_media": 220,
+  "site": "https://www.hotelwerlich.com.br",
+  "ranking": 101,
+  "telefone": "(48) 99100-9699",
+  "telefone_fixo": "+55 48 3269-1300",
+  "phone_clean": "5548991009699"
+}

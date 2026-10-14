@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Identidade Visual · IL Campanario Villaggio Resort</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --c-primary: #4A8DCC;
+            --c-gold: #856139;
+            --c-bg: #090D0E;
+            --c-card: #12181A;
+            --c-card-border: #1E282C;
+            --c-text: #E5EAE8;
+            --c-muted: #8E9E98;
+            --c-accent: #FFC6B7;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--c-bg);
+            color: var(--c-text);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .header {
+            background: linear-gradient(145deg, #131B1E, #0D1315);
+            border: 1px solid var(--c-card-border);
+            border-radius: 16px;
+            padding: 36px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            gap: 20px;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--c-gold), transparent);
+        }
+        .badge-rank {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--c-gold);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .hotel-title {
+            font-family: 'Cinzel', serif;
+            font-size: 30px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 6px;
+        }
+        .hotel-meta {
+            color: var(--c-muted);
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        .site-link-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            color: var(--c-gold);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .site-link-header:hover {
+            background: var(--c-gold);
+            color: #000000;
+            transform: translateY(-1px);
+        }
+        .logo-box {
+            background: #FFFFFF;
+            padding: 16px 24px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            min-width: 240px;
+            min-height: 100px;
+        }
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background-color: var(--c-card);
+            border: 1px solid var(--c-card-border);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--c-gold);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .palette-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .swatch {
+            flex: 1;
+            height: 64px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 6px;
+            font-size: 10px;
+            font-weight: 600;
+            color: #FFFFFF;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .data-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 13px;
+        }
+        .data-label { color: var(--c-muted); }
+        .data-val { font-weight: 600; color: #FFF; }
+        .btn-site-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 8px;
+            padding: 10px 18px;
+            background: linear-gradient(135deg, var(--c-gold), #b89020);
+            color: #090D0E;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 13px;
+            transition: all 0.2s ease;
+        }
+        .btn-site-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(212, 175, 55, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <span class="badge-rank">RANKING OFICIAL #03</span>
+                <h1 class="hotel-title">IL Campanario Villaggio Resort</h1>
+                <p class="hotel-meta">Jurerê Internacional · Jurerê Internacional · Resort de Luxo / 5 Estrelas</p>
+                <a href="https://www.ilcampanario.com.br" target="_blank" rel="noopener noreferrer" class="site-link-header">
+                    🌐 Visitar Website Oficial: https://www.ilcampanario.com.br ↗
+                </a>
+            </div>
+            <div class="logo-box">
+                <img src="data:image/png;base64,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" alt="Logo Oficial - IL Campanario Villaggio Resort" style="max-height: 85px; max-width: 260px; object-fit: contain;">
+            </div>
+        </div>
+
+        <div class="grid-cards">
+            <div class="card">
+                <div class="card-title">🎨 Identidade Visual & Cores</div>
+                <p style="font-size: 13px; color: var(--c-muted); margin-bottom: 12px;">Paleta institucional extraída dos ativos oficiais via Brandfetch.</p>
+                <div class="palette-row">
+                    <div class="swatch" style="background: #4A8DCC;">#4A8DCC</div>
+                    <div class="swatch" style="background: #856139; color: #000; text-shadow: none;">#856139</div>
+                    <div class="swatch" style="background: #FFC6B7;">#FFC6B7</div>
+                    <div class="swatch" style="background: #12181A;">#12181A</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">🔤 Tipografia & Fontes Homologadas</div>
+                <div class="data-row">
+                    <span class="data-label">Títulos & Destaque</span>
+                    <span class="data-val">var(--font-heading</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Corpo & Interface</span>
+                    <span class="data-val">Roboto</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Arquitetura de Marca</span>
+                    <span class="data-val">Resort de Luxo / 5 Estrelas</span>
+                </div>
+            </div>
+
+            <div class="card" style="grid-column: 1 / -1;">
+                <div class="card-title">📊 Métricas Operacionais & Acesso Oficial</div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; align-items: center;">
+                    <div>
+                        <div class="data-label">Capacidade Declarada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">242 Apartamentos</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Diária Média Estimada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px; color: var(--c-gold);">R$ 820.00</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Ativos de Marca</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">2 arquivo(s) homologado(s)</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Canal Digital Direto</div>
+                        <a href="https://www.ilcampanario.com.br" target="_blank" rel="noopener noreferrer" class="btn-site-action">
+                            Acessar Website do Hotel ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "nome": "Hotel Ingleses Park",
+  "unidade": "Praia dos Ingleses",
+  "categoria": "Hotel de Lazer",
+  "regiao": "Praia dos Ingleses",
+  "quartos": 78,
+  "diaria_media": 340,
+  "site": "https://www.hotelinglesespark.com.br",
+  "ranking": 46,
+  "telefone": "(48) 2106-0200",
+  "phone_clean": "554821060200",
+  "telefone_fixo": "+55 48 2106-0200"
+}

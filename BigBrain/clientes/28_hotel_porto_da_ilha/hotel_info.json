@@ -1,0 +1,13 @@
+{
+  "nome": "Hotel Porto da Ilha",
+  "unidade": "Centro",
+  "categoria": "Hotel Executivo / 4 Estrelas",
+  "regiao": "Centro",
+  "quartos": 112,
+  "diaria_media": 390,
+  "site": "https://www.hotelportodailha.com.br",
+  "ranking": 28,
+  "telefone": "(48) 99162-9807",
+  "telefone_fixo": "+55 48 99162-9807",
+  "phone_clean": "5548991629807"
+}

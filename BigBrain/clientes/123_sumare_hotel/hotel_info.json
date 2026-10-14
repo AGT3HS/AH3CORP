@@ -1,0 +1,13 @@
+{
+  "nome": "Sumaré Hotel",
+  "unidade": "Centro",
+  "categoria": "Hotel Tradicional",
+  "regiao": "Centro",
+  "quartos": 40,
+  "diaria_media": 200,
+  "site": "https://www.hotelsumare.com.br",
+  "ranking": 123,
+  "telefone": "(48) 3222-5359",
+  "phone_clean": "554832225359",
+  "telefone_fixo": "+55 48 3222-5359"
+}

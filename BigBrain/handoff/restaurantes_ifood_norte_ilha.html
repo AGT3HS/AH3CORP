@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Restaurantes com Perfil iFood - Polo Norte da Ilha (AH3)</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card-bg: #161b22;
+      --border: #30363d;
+      --text: #c9d1d9;
+      --text-bright: #f0f6fc;
+      --accent: #ea1d2c; /* iFood Red */
+      --amber: #f5a623;
+      --blue: #58a6ff;
+      --green: #3fb950;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 20px;
+    }
+    .header {
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--border);
+    }
+    h1 {
+      color: var(--text-bright);
+      margin: 0 0 8px 0;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .badge-ifood {
+      background: rgba(234, 29, 44, 0.15);
+      color: #ff5e6c;
+      border: 1px solid var(--accent);
+      font-size: 13px;
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-weight: bold;
+    }
+    .subtitle {
+      color: #8b949e;
+      font-size: 14px;
+      margin: 0;
+    }
+    .filters {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .search-box {
+      flex: 1;
+      min-width: 250px;
+      padding: 8px 12px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text-bright);
+      font-size: 14px;
+    }
+    .btn-filter {
+      padding: 6px 14px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 13px;
+      transition: all 0.2s;
+    }
+    .btn-filter.active, .btn-filter:hover {
+      background: var(--accent);
+      color: #fff;
+      font-weight: bold;
+      border-color: var(--accent);
+    }
+    .table-container {
+      overflow-x: auto;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      text-align: left;
+    }
+    th {
+      background: #21262d;
+      color: var(--text-bright);
+      padding: 10px 12px;
+      font-weight: 600;
+      border-bottom: 1px solid var(--border);
+    }
+    td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    tr:hover {
+      background: rgba(255, 255, 255, 0.03);
+    }
+    .name-cell {
+      font-weight: 600;
+      color: var(--text-bright);
+    }
+    .tag {
+      background: #21262d;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 11px;
+      color: #8b949e;
+    }
+    .btn-ifood {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(234, 29, 44, 0.15);
+      color: #ff7b87;
+      border: 1px solid #ea1d2c;
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    .btn-ifood:hover {
+      background: #ea1d2c;
+      color: #fff;
+    }
+    .btn-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(63, 185, 80, 0.15);
+      color: #56d364;
+      border: 1px solid #3fb950;
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .btn-wa:hover {
+      background: #3fb950;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>
+      <span>Restaurantes com Presença no iFood</span>
+      <span class="badge-ifood">101 Lojas Mapeadas</span>
+    </h1>
+    <p class="subtitle">Base qualificada para abordagem de redução de comissão (12% a 27%) e fortalecimento de canais próprios (Google + Cardápio WhatsApp).</p>
+  </div>
+
+  <div class="filters">
+    <input type="text" id="searchInput" class="search-box" placeholder="Buscar por restaurante, bairro ou palavra-chave..." onkeyup="filterTable()">
+    <button class="btn-filter active" onclick="setBairro('todos')">Todos (101)</button>
+    <button class="btn-filter" onclick="setBairro('Canasvieiras')">Canasvieiras</button>
+    <button class="btn-filter" onclick="setBairro('Ingleses')">Ingleses</button>
+    <button class="btn-filter" onclick="setBairro('Cachoeira do Bom Jesus')">Cachoeira</button>
+    <button class="btn-filter" onclick="setBairro('Ponta das Canas')">Ponta das Canas</button>
+  </div>
+
+  <div class="table-container">
+    <table id="leadsTable">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Restaurante</th>
+          <th>Bairro</th>
+          <th>Nota / Avaliações Google</th>
+          <th>Perfil no iFood</th>
+          <th>Contato / WhatsApp</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-bairro="Canasvieiras">
+          <td><b>#01</b></td>
+          <td class="name-cell">Restaurante Churrasco ao Vivo Canasvieiras</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.4★</b> (2,443 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/churrasco-ao-vivo-canasvieiras-canasvieiras/e6664045-8610-4a06-844c-dc2c6d3d6d1b" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/5548996651046" target="_blank">📱 (48) 99665-1046</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td><b>#02</b></td>
+          <td class="name-cell">Cantina Santa Maria</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.6★</b> (3,708 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/casa-de-praia-marmitas-e-lanches-canasvieiras/b1139c3e-af09-475d-b4a6-f59127b07fb1" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/554832662652" target="_blank">📱 (48) 3266-2652</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td><b>#03</b></td>
+          <td class="name-cell">Terra Santa</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.4★</b> (3,644 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/marmitas-do-canto-canasvieiras/fd47db57-40ea-4c77-af80-b678f372ada5" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><span class="tag">Não informado</span></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td><b>#04</b></td>
+          <td class="name-cell">Mano's Gastrobar</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.6★</b> (1,501 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/pizzaria-e-restaurante-ponto-da-ostra-canasvieiras/115994a1-60ad-44b0-b18b-de9f23d46c29" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/5548999684291" target="_blank">📱 (48) 99968-4291</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td><b>#05</b></td>
+          <td class="name-cell">Empório das Massas</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.8★</b> (228 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/cafe--prosa-canasvieiras-canasvieiras/614002a8-ce2c-4f3b-a839-db839798d965" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/5567991184611" target="_blank">📱 (67) 99118-4611</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td><b>#06</b></td>
+          <td class="name-cell">Bar e Restaurante do Quinha</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.5★</b> (1,257 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/in-burger-canasvieiras/8a5878dd-2adf-4526-b33c-68f157a13e82" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/554832661728" target="_blank">📱 (48) 3266-1728</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td><b>#07</b></td>
+          <td class="name-cell">Restaurante Malukus</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.4★</b> (967 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/arcturus-pizzaria-canasvieiras/243d18b6-d66f-4473-a4c1-0be6250b5bb1" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/5548999738253" target="_blank">📱 (48) 99973-8253</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td><b>#08</b></td>
+          <td class="name-cell">CANTO CHILENO</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.7★</b> (357 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/ponte-lanches--dog-centro/3758502a-39d3-4cbc-ab74-3d838c5de651" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/5548999441650" target="_blank">📱 (48) 99944-1650</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td><b>#09</b></td>
+          <td class="name-cell">Na Brasa Churrascaria Canasvieiras</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.4★</b> (142 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/cafe--prosa-canasvieiras-canasvieiras/614002a8-ce2c-4f3b-a839-db839798d965" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/554833647332" target="_blank">📱 (48) 3364-7332</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td><b>#10</b></td>
+          <td class="name-cell">Churrascaria Silvestre</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.5★</b> (1,611 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/lanches-silvinho-centro/544cda4b-1c72-4fde-b233-803aad08b5cd" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/554832665309" target="_blank">📱 (48) 3266-5309</a></td>
+        </tr>
+        <tr data-bairro="Cachoeira do Bom Jesus">
+          <td><b>#11</b></td>
+          <td class="name-cell">Buono Beach Restaurante Florianópolis</td>
+          <td><span class="tag">Cachoeira do Bom Jesus</span></td>
+          <td><b>4.7★</b> (1,295 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/dominos-pizza---florianopolis-centro-centro/eadec4f1-6a60-45e3-bb2f-2122721cec52" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/5548996155550" target="_blank">📱 (48) 99615-5550</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td><b>#12</b></td>
+          <td class="name-cell">Gigantes da Pizza Canasvieiras</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.1★</b> (186 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/di-roma-pizza---canasvieiras-canasvieiras/78652932-f3e5-4b1f-87b1-ad5f79f3c4b7" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/5548988373041" target="_blank">📱 (48) 98837-3041</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td><b>#13</b></td>
+          <td class="name-cell">Il cantuccio pizzaria</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.8★</b> (1,144 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/il-cantuccio-pizzeria-italiana-canasvieiras/a76516a1-69cd-48d9-9b65-98d662b74ec4" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/554833653652" target="_blank">📱 (48) 3365-3652</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td><b>#14</b></td>
+          <td class="name-cell">Canas Pizzaria - Forno a Lenha</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4★</b> (4,013 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/pizzaria-camarao-do-rafa-canasvieiras/fc49566c-e908-492e-a1a5-9537725f7a2f" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><span class="tag">Não informado</span></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td><b>#15</b></td>
+          <td class="name-cell">Suculenta Burger Resto Canasvieiras</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.8★</b> (877 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/dudu-lanches---entrega-rapida-ingleses-centro/adcecf05-0b7c-470b-99da-208c3f16d011" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/5547992484453" target="_blank">📱 (47) 99248-4453</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td><b>#16</b></td>
+          <td class="name-cell">Pizzaria Lomarin</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.8★</b> (572 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/pizzaria-lomarin-canasvieiras/fb89282a-96ca-4e75-9631-57f62303fed4" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/5548988281519" target="_blank">📱 (48) 98828-1519</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td><b>#17</b></td>
+          <td class="name-cell">Milton Pizzaria - Canasvieiras</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.4★</b> (323 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/in-burger-canasvieiras/8a5878dd-2adf-4526-b33c-68f157a13e82" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/5548996465044" target="_blank">📱 (48) 99646-5044</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td><b>#18</b></td>
+          <td class="name-cell">900 Pizza & Burguer.</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>5★</b> (35 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/pizzaria-ingleses---pizza-ingleses-do-rio-vermelho/f46889f1-f370-40f4-8734-a2a925dd1a0a" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/5548991273223" target="_blank">📱 (48) 99127-3223</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td><b>#19</b></td>
+          <td class="name-cell">Vila Gastronômica Canasvieiras Food Park - Canasvieiras - Florianópolis - SC</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.6★</b> (2,402 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/empanadas-caminito---florianopolis-santa-monica/771a550b-1557-4b8e-ab65-a08b9b1bb3e1" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/5548984712345" target="_blank">📱 (48) 98471-2345</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td><b>#20</b></td>
+          <td class="name-cell">Camarão do Rafa</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.3★</b> (2,171 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/pizzaria-camarao-do-rafa-canasvieiras/fc49566c-e908-492e-a1a5-9537725f7a2f" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/5548998656566" target="_blank">📱 (48) 99865-6566</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td><b>#21</b></td>
+          <td class="name-cell">Tropical Beach</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.6★</b> (906 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/parrilla-beach-burger-canasvieiras/acd0fd87-56a9-4552-8d92-7c126de90df6" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/554830307957" target="_blank">📱 (48) 3030-7957</a></td>
+        </tr>
+        <tr data-bairro="Cachoeira do Bom Jesus">
+          <td><b>#22</b></td>
+          <td class="name-cell">Antonio's Restaurante</td>
+          <td><span class="tag">Cachoeira do Bom Jesus</span></td>
+          <td><b>4.7★</b> (3,920 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/pizzaria-e-restaurante-ponto-da-ostra-canasvieiras/115994a1-60ad-44b0-b18b-de9f23d46c29" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/554832845736" target="_blank">📱 (48) 3284-5736</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td><b>#23</b></td>
+          <td class="name-cell">PETISCARIA ÂNCORA</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.9★</b> (42 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/pizzaria-camarao-do-rafa-canasvieiras/fc49566c-e908-492e-a1a5-9537725f7a2f" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/5548999668527" target="_blank">📱 (48) 99966-8527</a></td>
+        </tr>
+        <tr data-bairro="Cachoeira do Bom Jesus">
+          <td><b>#24</b></td>
+          <td class="name-cell">Boka's Beach</td>
+          <td><span class="tag">Cachoeira do Bom Jesus</span></td>
+          <td><b>4.5★</b> (10,564 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/parrilla-beach-burger-canasvieiras/acd0fd87-56a9-4552-8d92-7c126de90df6" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/554832843434" target="_blank">📱 (48) 3284-3434</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td><b>#25</b></td>
+          <td class="name-cell">Restaurante e Pizzaria Espetinho de Ouro Canasvieiras</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.1★</b> (3,105 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/lanches-silvinho-centro/544cda4b-1c72-4fde-b233-803aad08b5cd" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/554832661498" target="_blank">📱 (48) 3266-1498</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td><b>#26</b></td>
+          <td class="name-cell">Direto do Mar - Peixaria em Canasvieiras</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.2★</b> (378 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/di-roma-pizza---ingleses-ingleses-do-rio-vermelho/f33629a9-0227-4059-9c73-2c41220123bc" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/5548999343505" target="_blank">📱 (48) 99934-3505</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td><b>#27</b></td>
+          <td class="name-cell">Tomat`s Grill</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.3★</b> (2,559 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/pizzaria-lomarin-canasvieiras/fb89282a-96ca-4e75-9631-57f62303fed4" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/5548996091779" target="_blank">📱 (48) 99609-1779</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td><b>#28</b></td>
+          <td class="name-cell">Boteco O Mané - Bar</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.7★</b> (2,493 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/pizzaria-e-restaurante-ponto-da-ostra-canasvieiras/115994a1-60ad-44b0-b18b-de9f23d46c29" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/5548991659282" target="_blank">📱 (48) 99165-9282</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td><b>#29</b></td>
+          <td class="name-cell">Canto do Mar</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.6★</b> (2,239 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/pizzaria-lomarin-canasvieiras/fb89282a-96ca-4e75-9631-57f62303fed4" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/5548988029229" target="_blank">📱 (48) 98802-9229</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td><b>#30</b></td>
+          <td class="name-cell">Restaurante Petisqueira | Gastronomia, Frutos do Mar e Porções, - Ingleses.</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.8★</b> (688 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/petisqueira-delivery-ingleses-do-rio-vermelho/53014382-64de-45a6-9594-09a4b211e3ec?UTM_Medium=share" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/554830305990" target="_blank">📱 (48) 3030-5990</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td><b>#31</b></td>
+          <td class="name-cell">Restaurante Bombordo Floripa</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.8★</b> (237 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/beer-burger-floripa-canasvieiras/f214d5e2-bbae-4dff-a60d-d5baed6ce588" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/5548996286525" target="_blank">📱 (48) 99628-6525</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td><b>#32</b></td>
+          <td class="name-cell">Restaurante Estaleiro</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.3★</b> (1,942 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/saimon-lanches-canasvieiras/bf0d7e3a-e614-42db-93fd-80b289b30f4f" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/554833698538" target="_blank">📱 (48) 3369-8538</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td><b>#33</b></td>
+          <td class="name-cell">Camarão Chef Seghetto</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.6★</b> (3,857 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/camarao-dourado-beach-ingleses-ingleses-do-rio-vermelho/eb793a46-507f-47c3-9024-4c95ec30cfc0" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/5548996240845" target="_blank">📱 (48) 99624-0845</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td><b>#34</b></td>
+          <td class="name-cell">Restaurante Nonna Maria</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.4★</b> (238 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/pizzaria-lomarin-canasvieiras/fb89282a-96ca-4e75-9631-57f62303fed4" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/5548998082204" target="_blank">📱 (48) 99808-2204</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td><b>#35</b></td>
+          <td class="name-cell">Restaurante O Pescador</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.5★</b> (1,577 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/restaurante-imperador-canasvieiras/9235d99b-bc29-43a1-9f15-099b8ed51cee" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/554838790335" target="_blank">📱 (48) 3879-0335</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td><b>#36</b></td>
+          <td class="name-cell">Restaurante Cabral Ingleses</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.7★</b> (393 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/cafe--prosa-canasvieiras-canasvieiras/614002a8-ce2c-4f3b-a839-db839798d965" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/5548984602590" target="_blank">📱 (48) 98460-2590</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td><b>#37</b></td>
+          <td class="name-cell">Paixão Restaurante & Pizzaria</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.5★</b> (5,385 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/saimon-lanches-canasvieiras/bf0d7e3a-e614-42db-93fd-80b289b30f4f" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/554832691355" target="_blank">📱 (48) 3269-1355</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td><b>#38</b></td>
+          <td class="name-cell">Doca's Restaurante</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.4★</b> (2,641 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/dicao-lanches-canasvieiras-canasvieiras/995fb1b9-ad75-4ffb-b133-de9cff706997" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/554832076808" target="_blank">📱 (48) 3207-6808</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td><b>#39</b></td>
+          <td class="name-cell">Restaurante Schiavon</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.6★</b> (1,298 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/saimon-lanches-canasvieiras/bf0d7e3a-e614-42db-93fd-80b289b30f4f" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/554832094789" target="_blank">📱 (48) 3209-4789</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td><b>#40</b></td>
+          <td class="name-cell">Restaurante Arriba - Ingleses</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.7★</b> (2,557 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/parrilla-beach-burger-canasvieiras/acd0fd87-56a9-4552-8d92-7c126de90df6" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/5548988244601" target="_blank">📱 (48) 98824-4601</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td><b>#41</b></td>
+          <td class="name-cell">Marisqueira Sintra</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.6★</b> (2,928 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/marmitas-do-canto-canasvieiras/fd47db57-40ea-4c77-af80-b678f372ada5" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/554832344219" target="_blank">📱 (48) 3234-4219</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td><b>#42</b></td>
+          <td class="name-cell">Rancho do Pescador</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.7★</b> (263 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/restaurante-imperador-canasvieiras/9235d99b-bc29-43a1-9f15-099b8ed51cee" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/5548996028948" target="_blank">📱 (48) 99602-8948</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td><b>#43</b></td>
+          <td class="name-cell">Restaurante & Petiscaria Porto Da Ilha</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.3★</b> (266 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/choripan-da-ilha-canasvieiras/7ac66a85-71a7-4e2f-a084-060fa878dd66" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/5548984323178" target="_blank">📱 (48) 98432-3178</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td><b>#44</b></td>
+          <td class="name-cell">Marisqueira Sintra</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.6★</b> (91 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/marmitas-do-canto-canasvieiras/fd47db57-40ea-4c77-af80-b678f372ada5" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/554832344219" target="_blank">📱 (48) 3234-4219</a></td>
+        </tr>
+        <tr data-bairro="Ponta das Canas">
+          <td><b>#45</b></td>
+          <td class="name-cell">Canto do Mar Ponta das Canas</td>
+          <td><span class="tag">Ponta das Canas</span></td>
+          <td><b>4.6★</b> (178 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/farmacia-farmaconti-ponta-das-canas/6bff40ac-a081-4c7e-ac97-6ee9305c18c9" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/554832610872" target="_blank">📱 (48) 3261-0872</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td><b>#46</b></td>
+          <td class="name-cell">Restaurante Garapuvu</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.7★</b> (992 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/arcturus-pizzaria-canasvieiras/243d18b6-d66f-4473-a4c1-0be6250b5bb1" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/5548996774013" target="_blank">📱 (48) 99677-4013</a></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td><b>#47</b></td>
+          <td class="name-cell">Restaurante Panela Açoriana</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.6★</b> (485 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/pizzaria-camarao-do-rafa-canasvieiras/fc49566c-e908-492e-a1a5-9537725f7a2f" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/5548984653839" target="_blank">📱 (48) 98465-3839</a></td>
+        </tr>
+        <tr data-bairro="Ponta das Canas">
+          <td><b>#48</b></td>
+          <td class="name-cell">Restaurante Mira Maré</td>
+          <td><span class="tag">Ponta das Canas</span></td>
+          <td><b>4.5★</b> (1,446 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/restaurante-imperador-canasvieiras/9235d99b-bc29-43a1-9f15-099b8ed51cee" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/5548991396523" target="_blank">📱 (48) 99139-6523</a></td>
+        </tr>
+        <tr data-bairro="Ponta das Canas">
+          <td><b>#49</b></td>
+          <td class="name-cell">Restaurante Lula Floripa</td>
+          <td><span class="tag">Ponta das Canas</span></td>
+          <td><b>4.6★</b> (626 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/beer-burger-floripa-canasvieiras/f214d5e2-bbae-4dff-a60d-d5baed6ce588" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/5548988185649" target="_blank">📱 (48) 98818-5649</a></td>
+        </tr>
+        <tr data-bairro="Cachoeira do Bom Jesus">
+          <td><b>#50</b></td>
+          <td class="name-cell">Ponta da Praia</td>
+          <td><span class="tag">Cachoeira do Bom Jesus</span></td>
+          <td><b>4.7★</b> (217 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/pizzaria-e-restaurante-ponto-da-ostra-canasvieiras/115994a1-60ad-44b0-b18b-de9f23d46c29" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/554832096417" target="_blank">📱 (48) 3209-6417</a></td>
+        </tr>
+        <tr data-bairro="Ponta das Canas">
+          <td><b>#51</b></td>
+          <td class="name-cell">Restaurante Garra Azul</td>
+          <td><span class="tag">Ponta das Canas</span></td>
+          <td><b>4.3★</b> (1,363 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/pizzaria-camarao-do-rafa-canasvieiras/fc49566c-e908-492e-a1a5-9537725f7a2f" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/554830302382" target="_blank">📱 (48) 3030-2382</a></td>
+        </tr>
+        <tr data-bairro="Ponta das Canas">
+          <td><b>#52</b></td>
+          <td class="name-cell">Chico Restaurante</td>
+          <td><span class="tag">Ponta das Canas</span></td>
+          <td><b>4.5★</b> (183 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/dicao-lanches-canasvieiras-canasvieiras/995fb1b9-ad75-4ffb-b133-de9cff706997" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/554832842502" target="_blank">📱 (48) 3284-2502</a></td>
+        </tr>
+        <tr data-bairro="Ponta das Canas">
+          <td><b>#53</b></td>
+          <td class="name-cell">Ocean House</td>
+          <td><span class="tag">Ponta das Canas</span></td>
+          <td><b>4.6★</b> (475 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/restaurante-rofran-cachoeira-do-bom-jesus/20fedb49-cec1-4078-a946-a05d417e0269" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/554833693102" target="_blank">📱 (48) 3369-3102</a></td>
+        </tr>
+        <tr data-bairro="Ponta das Canas">
+          <td><b>#54</b></td>
+          <td class="name-cell">Restaurante Rancho de Canoa</td>
+          <td><span class="tag">Ponta das Canas</span></td>
+          <td><b>4.9★</b> (10,962 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/choripan-da-ilha-canasvieiras/7ac66a85-71a7-4e2f-a084-060fa878dd66" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/554832323639" target="_blank">📱 (48) 3232-3639</a></td>
+        </tr>
+        <tr data-bairro="Ponta das Canas">
+          <td><b>#55</b></td>
+          <td class="name-cell">Ponta das Caranhas</td>
+          <td><span class="tag">Ponta das Canas</span></td>
+          <td><b>4.6★</b> (3,105 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/farmacia-farmaconti-ponta-das-canas/6bff40ac-a081-4c7e-ac97-6ee9305c18c9" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/554832323076" target="_blank">📱 (48) 3232-3076</a></td>
+        </tr>
+        <tr data-bairro="Ponta das Canas">
+          <td><b>#56</b></td>
+          <td class="name-cell">A Toca Choperia e Petiscaria</td>
+          <td><span class="tag">Ponta das Canas</span></td>
+          <td><b>4.9★</b> (168 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/il-cantuccio-pizzeria-italiana-canasvieiras/a76516a1-69cd-48d9-9b65-98d662b74ec4" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/554830238950" target="_blank">📱 (48) 3023-8950</a></td>
+        </tr>
+        <tr data-bairro="Cachoeira do Bom Jesus">
+          <td><b>#57</b></td>
+          <td class="name-cell">Il Caravaggio - Restaurante Italiano</td>
+          <td><span class="tag">Cachoeira do Bom Jesus</span></td>
+          <td><b>4.4★</b> (700 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/il-cantuccio-pizzeria-italiana-canasvieiras/a76516a1-69cd-48d9-9b65-98d662b74ec4" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/5548985005714" target="_blank">📱 (48) 98500-5714</a></td>
+        </tr>
+        <tr data-bairro="Ponta das Canas">
+          <td><b>#58</b></td>
+          <td class="name-cell">Sabore</td>
+          <td><span class="tag">Ponta das Canas</span></td>
+          <td><b>4.7★</b> (39 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/pizzaria-da-ilha---ingleses-ingleses-norte/48af968a-c866-4177-99fd-6715a151788f" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/5548999039607" target="_blank">📱 (48) 99903-9607</a></td>
+        </tr>
+        <tr data-bairro="Ponta das Canas">
+          <td><b>#59</b></td>
+          <td class="name-cell">Restaurante Tradição Campeira</td>
+          <td><span class="tag">Ponta das Canas</span></td>
+          <td><b>4.4★</b> (998 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/di-roma-pizza---canasvieiras-canasvieiras/78652932-f3e5-4b1f-87b1-ad5f79f3c4b7" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/5548999185419" target="_blank">📱 (48) 99918-5419</a></td>
+        </tr>
+        <tr data-bairro="Cachoeira do Bom Jesus">
+          <td><b>#60</b></td>
+          <td class="name-cell">Gaivota</td>
+          <td><span class="tag">Cachoeira do Bom Jesus</span></td>
+          <td><b>4.4★</b> (335 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/baita-lanches-canasvieiras-canasvieiras/c1852ed2-1a3b-4609-a548-a84c4437be2a" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/554838792495" target="_blank">📱 (48) 3879-2495</a></td>
+        </tr>
+        <tr data-bairro="Cachoeira do Bom Jesus">
+          <td><b>#61</b></td>
+          <td class="name-cell">Confiance Restaurante</td>
+          <td><span class="tag">Cachoeira do Bom Jesus</span></td>
+          <td><b>4.6★</b> (675 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/on-time-burger-canasvieiras/2a740eab-c5e1-4578-9d22-48bc1bacb0b1" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/554832118077" target="_blank">📱 (48) 3211-8077</a></td>
+        </tr>
+        <tr data-bairro="Cachoeira do Bom Jesus">
+          <td><b>#62</b></td>
+          <td class="name-cell">Osteria Carbone | Florianopolis</td>
+          <td><span class="tag">Cachoeira do Bom Jesus</span></td>
+          <td><b>4.7★</b> (39 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/dominos-pizza---florianopolis-centro-centro/eadec4f1-6a60-45e3-bb2f-2122721cec52" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/5548998378200" target="_blank">📱 (48) 99837-8200</a></td>
+        </tr>
+        <tr data-bairro="Cachoeira do Bom Jesus">
+          <td><b>#63</b></td>
+          <td class="name-cell">Restaurante e Cafeteria Barió</td>
+          <td><span class="tag">Cachoeira do Bom Jesus</span></td>
+          <td><b>4.5★</b> (1,066 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/cafe--prosa-canasvieiras-canasvieiras/614002a8-ce2c-4f3b-a839-db839798d965" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/5548988387231" target="_blank">📱 (48) 98838-7231</a></td>
+        </tr>
+        <tr data-bairro="Cachoeira do Bom Jesus">
+          <td><b>#64</b></td>
+          <td class="name-cell">Cravo e Canela</td>
+          <td><span class="tag">Cachoeira do Bom Jesus</span></td>
+          <td><b>4.6★</b> (289 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/pizzaria-camarao-do-rafa-canasvieiras/fc49566c-e908-492e-a1a5-9537725f7a2f" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/5548999151951" target="_blank">📱 (48) 99915-1951</a></td>
+        </tr>
+        <tr data-bairro="Cachoeira do Bom Jesus">
+          <td><b>#65</b></td>
+          <td class="name-cell">La Rotiseria - Casa de Comidas</td>
+          <td><span class="tag">Cachoeira do Bom Jesus</span></td>
+          <td><b>4.4★</b> (139 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/di-minas-restaurante-comida-caseira-canasvieiras/95ba05b8-bf69-4a99-9877-cdca4cf39787" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/5548999143538" target="_blank">📱 (48) 99914-3538</a></td>
+        </tr>
+        <tr data-bairro="Cachoeira do Bom Jesus">
+          <td><b>#66</b></td>
+          <td class="name-cell">Top Lanches Restaurante - Florianópolis</td>
+          <td><span class="tag">Cachoeira do Bom Jesus</span></td>
+          <td><b>5★</b> (40 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/dominos-pizza---florianopolis-centro-centro/eadec4f1-6a60-45e3-bb2f-2122721cec52" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/5548999529626" target="_blank">📱 (48) 99952-9626</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td><b>#67</b></td>
+          <td class="name-cell">MERCADOTECA</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><b>4.3★</b> (24 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/restaurante-imperador-canasvieiras/9235d99b-bc29-43a1-9f15-099b8ed51cee" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><span class="tag">Não informado</span></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td><b>#68</b></td>
+          <td class="name-cell">Bere Birra Forneria</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><b>4.9★</b> (1,854 revs)</td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/beer-burger-floripa-canasvieiras/f214d5e2-bbae-4dff-a60d-d5baed6ce588" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><a class="btn-wa" href="https://wa.me/5548984061242" target="_blank">📱 (48) 98406-1242</a></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td><b>#69</b></td>
+          <td class="name-cell">Hambugueria Panamericana Canasvieiras</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><span style="color:#8b949e;">Via Catálogo iFood</span></td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/hambugueria-panamericana-canasvieiras/3ef664ed-4137-452e-b0fa-477551fa1b52" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><span class="tag">WhatsApp via Varredura</span></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td><b>#70</b></td>
+          <td class="name-cell">Top Da Ilha Supermercados   Canasvieiras Canasvieiras</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><span style="color:#8b949e;">Via Catálogo iFood</span></td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/top-da-ilha-supermercados---canasvieiras-canasvieiras/f6726193-0381-46d3-9884-cf292922982b" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><span class="tag">WhatsApp via Varredura</span></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td><b>#71</b></td>
+          <td class="name-cell">Supreme Comida Caseira Canasvieiras</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><span style="color:#8b949e;">Via Catálogo iFood</span></td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/supreme-comida-caseira-canasvieiras/fcd2e622-d5d5-42cf-84c5-afcd50f8cd6e" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><span class="tag">WhatsApp via Varredura</span></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td><b>#72</b></td>
+          <td class="name-cell">Que Tu Queix   Canasvieiras Canasvieiras</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><span style="color:#8b949e;">Via Catálogo iFood</span></td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/que-tu-queix---canasvieiras-canasvieiras/da6b8540-675c-435e-8e89-7ed0153ac3c6" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><span class="tag">WhatsApp via Varredura</span></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td><b>#73</b></td>
+          <td class="name-cell">Burgers Fire Canasvieiras</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><span style="color:#8b949e;">Via Catálogo iFood</span></td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/burgers-fire-canasvieiras/4d3b1fc9-a4a5-496a-a0bf-0d0ac0d53421" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><span class="tag">WhatsApp via Varredura</span></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td><b>#74</b></td>
+          <td class="name-cell">Malliburger Lanches Artesanais Canasvieiras</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><span style="color:#8b949e;">Via Catálogo iFood</span></td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/malliburger-lanches-artesanais-canasvieiras/ada43d2f-80ce-4761-8e5e-f3835d3b899c" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><span class="tag">WhatsApp via Varredura</span></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td><b>#75</b></td>
+          <td class="name-cell">Johnny Rockets Ingleses Norte Ingleses Norte</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><span style="color:#8b949e;">Via Catálogo iFood</span></td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/johnny-rockets-ingleses-norte-ingleses-norte/2052c83b-14c6-4321-accc-0364ac74e2a2" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><span class="tag">WhatsApp via Varredura</span></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td><b>#76</b></td>
+          <td class="name-cell">Villa Romana Pizzaria   Ingleses Ingleses Do Rio Vermelho</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><span style="color:#8b949e;">Via Catálogo iFood</span></td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/villa-romana-pizzaria---ingleses-ingleses-do-rio-vermelho/bc5f56f9-45e2-4df0-a73f-5d7d6b5a19e9" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><span class="tag">WhatsApp via Varredura</span></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td><b>#77</b></td>
+          <td class="name-cell">Pizza Em Casa   Pizzaria Ingleses Do Rio Vermelho</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><span style="color:#8b949e;">Via Catálogo iFood</span></td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/pizza-em-casa---pizzaria-ingleses-do-rio-vermelho/edd2cbfd-7e0f-4942-8ddd-512a39fa0427" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><span class="tag">WhatsApp via Varredura</span></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td><b>#78</b></td>
+          <td class="name-cell">Di Roma Express   Ingleses Ingleses Do Rio Vermelho</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><span style="color:#8b949e;">Via Catálogo iFood</span></td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/di-roma-express---ingleses-ingleses-do-rio-vermelho/19dc9252-9162-4f77-aa01-fd8f05f8d9c6" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><span class="tag">WhatsApp via Varredura</span></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td><b>#79</b></td>
+          <td class="name-cell">Pizza Nonna Floripa Ingleses Norte</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><span style="color:#8b949e;">Via Catálogo iFood</span></td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/pizza-nonna-floripa-ingleses-norte/cd39fb03-ea1b-4c51-9c27-9bfcabf65a94" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><span class="tag">WhatsApp via Varredura</span></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td><b>#80</b></td>
+          <td class="name-cell">Neros Pizzaria Ingleses Do Rio Vermelho</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><span style="color:#8b949e;">Via Catálogo iFood</span></td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/neros-pizzaria-ingleses-do-rio-vermelho/119356f1-9c5c-4d8d-9ced-8a1bf55652f0" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><span class="tag">WhatsApp via Varredura</span></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td><b>#81</b></td>
+          <td class="name-cell">Villa Acoriana   Ingleses Ingleses Do Rio Vermelho</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><span style="color:#8b949e;">Via Catálogo iFood</span></td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/villa-acoriana---ingleses-ingleses-do-rio-vermelho/4890a6c4-b803-4f76-923a-3ea85f9fd4f3" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><span class="tag">WhatsApp via Varredura</span></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td><b>#82</b></td>
+          <td class="name-cell">Massa Viva   Ingleses Ingleses Do Rio Vermelho</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><span style="color:#8b949e;">Via Catálogo iFood</span></td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/massa-viva---ingleses-ingleses-do-rio-vermelho/9682e69b-c267-43e6-932a-4c22be55f82b" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><span class="tag">WhatsApp via Varredura</span></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td><b>#83</b></td>
+          <td class="name-cell">Tanabata Sushi Delivery Ingleses Do Rio Vermelho</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><span style="color:#8b949e;">Via Catálogo iFood</span></td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/tanabata-sushi-delivery-ingleses-do-rio-vermelho/533404c6-85b0-464e-9f4a-42f3a61b96ce" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><span class="tag">WhatsApp via Varredura</span></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td><b>#84</b></td>
+          <td class="name-cell">Doda Sushi Ingleses Do Rio Vermelho</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><span style="color:#8b949e;">Via Catálogo iFood</span></td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/doda-sushi-ingleses-do-rio-vermelho/28ffeba6-df9b-405d-a954-ba48577dd998" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><span class="tag">WhatsApp via Varredura</span></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td><b>#85</b></td>
+          <td class="name-cell">The Good Hot Dog   Ingleses Ingleses Do Rio Vermelho</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><span style="color:#8b949e;">Via Catálogo iFood</span></td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/the-good-hot-dog---ingleses-ingleses-do-rio-vermelho/e8e3e443-c586-41d1-b910-2ad28e7cdc88" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><span class="tag">WhatsApp via Varredura</span></td>
+        </tr>
+        <tr data-bairro="Cachoeira do Bom Jesus">
+          <td><b>#86</b></td>
+          <td class="name-cell">Bokas Cachoeira Do Bom Jesus Cachoeira Do Bom Jesus</td>
+          <td><span class="tag">Cachoeira do Bom Jesus</span></td>
+          <td><span style="color:#8b949e;">Via Catálogo iFood</span></td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/bokas-cachoeira-do-bom-jesus-cachoeira-do-bom-jesus/7c6485a3-68fe-49f8-b292-ba18757d131e" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><span class="tag">WhatsApp via Varredura</span></td>
+        </tr>
+        <tr data-bairro="Cachoeira do Bom Jesus">
+          <td><b>#87</b></td>
+          <td class="name-cell">Pizzaria Atalaia Cachoeira Do Bom Jesus</td>
+          <td><span class="tag">Cachoeira do Bom Jesus</span></td>
+          <td><span style="color:#8b949e;">Via Catálogo iFood</span></td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/pizzaria-atalaia-cachoeira-do-bom-jesus/10e3cd8e-f128-48bc-b6fc-1f6aee8ffbae" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><span class="tag">WhatsApp via Varredura</span></td>
+        </tr>
+        <tr data-bairro="Cachoeira do Bom Jesus">
+          <td><b>#88</b></td>
+          <td class="name-cell">Padaria  Cafe Franchis Cachoeira Do Bom Jesus</td>
+          <td><span class="tag">Cachoeira do Bom Jesus</span></td>
+          <td><span style="color:#8b949e;">Via Catálogo iFood</span></td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/padaria--cafe-franchis-cachoeira-do-bom-jesus/49e2b2b6-f42b-4e64-b2f1-f8e808a22291" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><span class="tag">WhatsApp via Varredura</span></td>
+        </tr>
+        <tr data-bairro="Cachoeira do Bom Jesus">
+          <td><b>#89</b></td>
+          <td class="name-cell">Dacie Acai Cachoeira Do Bom Jesus</td>
+          <td><span class="tag">Cachoeira do Bom Jesus</span></td>
+          <td><span style="color:#8b949e;">Via Catálogo iFood</span></td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/dacie-acai-cachoeira-do-bom-jesus/8f58dbb0-5936-4593-9b93-030d57e1b8ad" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><span class="tag">WhatsApp via Varredura</span></td>
+        </tr>
+        <tr data-bairro="Cachoeira do Bom Jesus">
+          <td><b>#90</b></td>
+          <td class="name-cell">Di Pietre Pizzaria Cachoeira Do Bom Jesus</td>
+          <td><span class="tag">Cachoeira do Bom Jesus</span></td>
+          <td><span style="color:#8b949e;">Via Catálogo iFood</span></td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/di-pietre-pizzaria-cachoeira-do-bom-jesus/c26f4c74-1742-488f-ad23-b9cd48870af6" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><span class="tag">WhatsApp via Varredura</span></td>
+        </tr>
+        <tr data-bairro="Cachoeira do Bom Jesus">
+          <td><b>#91</b></td>
+          <td class="name-cell">Farmacia Preco Popular   Bom Jesus 660 Cachoeira Bjesus</td>
+          <td><span class="tag">Cachoeira do Bom Jesus</span></td>
+          <td><span style="color:#8b949e;">Via Catálogo iFood</span></td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/farmacia-preco-popular---bom-jesus-660-cachoeira-bjesus/6f4a6431-9151-4580-aff4-0a079e9fbbed" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><span class="tag">WhatsApp via Varredura</span></td>
+        </tr>
+        <tr data-bairro="Desconhecido">
+          <td><b>#92</b></td>
+          <td class="name-cell">Cia Marmita Delivery Floripa Vargem Do Bom Jesus</td>
+          <td><span class="tag">Desconhecido</span></td>
+          <td><span style="color:#8b949e;">Via Catálogo iFood</span></td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/cia-marmita-delivery-floripa-vargem-do-bom-jesus/e4d77683-1c0b-4ed9-92c8-152f8b12c2bf" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><span class="tag">WhatsApp via Varredura</span></td>
+        </tr>
+        <tr data-bairro="Desconhecido">
+          <td><b>#93</b></td>
+          <td class="name-cell">Cozinha Delivery Express Saco Grande</td>
+          <td><span class="tag">Desconhecido</span></td>
+          <td><span style="color:#8b949e;">Via Catálogo iFood</span></td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/cozinha-delivery-express-saco-grande/6dd9132f-2583-4e37-9b23-7bc9bba6a976" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><span class="tag">WhatsApp via Varredura</span></td>
+        </tr>
+        <tr data-bairro="Cachoeira do Bom Jesus">
+          <td><b>#94</b></td>
+          <td class="name-cell">Ristorante Il Caravaggio Cachoeira Do Bom Jesus</td>
+          <td><span class="tag">Cachoeira do Bom Jesus</span></td>
+          <td><span style="color:#8b949e;">Via Catálogo iFood</span></td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/ristorante-il-caravaggio-cachoeira-do-bom-jesus/7cfbaa34-74d4-48a8-a09f-14ae16dad89d" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><span class="tag">WhatsApp via Varredura</span></td>
+        </tr>
+        <tr data-bairro="Cachoeira do Bom Jesus">
+          <td><b>#95</b></td>
+          <td class="name-cell">Dogao Da Ilha Cachoeira Do Bom Jesus</td>
+          <td><span class="tag">Cachoeira do Bom Jesus</span></td>
+          <td><span style="color:#8b949e;">Via Catálogo iFood</span></td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/dogao-da-ilha-cachoeira-do-bom-jesus/6a451b48-4a5e-4307-932c-c33a0bfb2e9b" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><span class="tag">WhatsApp via Varredura</span></td>
+        </tr>
+        <tr data-bairro="Desconhecido">
+          <td><b>#96</b></td>
+          <td class="name-cell">Costelaria Ponta Dagulha Rio Tavares Rio Tavares</td>
+          <td><span class="tag">Desconhecido</span></td>
+          <td><span style="color:#8b949e;">Via Catálogo iFood</span></td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/costelaria-ponta-dagulha-rio-tavares-rio-tavares/86bcf2dc-f4f0-4dda-8063-9ec127b2d72e" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><span class="tag">WhatsApp via Varredura</span></td>
+        </tr>
+        <tr data-bairro="Desconhecido">
+          <td><b>#97</b></td>
+          <td class="name-cell">Ponta Dagulha Costelaria Santo Antonio De Lisboa</td>
+          <td><span class="tag">Desconhecido</span></td>
+          <td><span style="color:#8b949e;">Via Catálogo iFood</span></td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/ponta-dagulha-costelaria-santo-antonio-de-lisboa/30dcc1ba-59d3-4e34-9189-5c02984ef6bb" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><span class="tag">WhatsApp via Varredura</span></td>
+        </tr>
+        <tr data-bairro="Desconhecido">
+          <td><b>#98</b></td>
+          <td class="name-cell">Farmacia Preco Popular Fpolis Ceisa Center 901 Centro</td>
+          <td><span class="tag">Desconhecido</span></td>
+          <td><span style="color:#8b949e;">Via Catálogo iFood</span></td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/farmacia-preco-popular-fpolis-ceisa-center-901-centro/ebea5bcb-e64b-4962-8575-bf003b14fb6b" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><span class="tag">WhatsApp via Varredura</span></td>
+        </tr>
+        <tr data-bairro="Canasvieiras">
+          <td><b>#99</b></td>
+          <td class="name-cell">Di Roma Express   Canasvieiras Canasvieiras</td>
+          <td><span class="tag">Canasvieiras</span></td>
+          <td><span style="color:#8b949e;">Via Catálogo iFood</span></td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/di-roma-express---canasvieiras-canasvieiras/059d2c91-7730-441f-8cb7-ea1ef096d891" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><span class="tag">WhatsApp via Varredura</span></td>
+        </tr>
+        <tr data-bairro="Ingleses">
+          <td><b>#100</b></td>
+          <td class="name-cell">Degraus Lanches Ingleses Do Rio Vermelho</td>
+          <td><span class="tag">Ingleses</span></td>
+          <td><span style="color:#8b949e;">Via Catálogo iFood</span></td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/degraus-lanches-ingleses-do-rio-vermelho/baa2cf3b-15a8-4c32-9603-42c96ceab5f2" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><span class="tag">WhatsApp via Varredura</span></td>
+        </tr>
+        <tr data-bairro="Desconhecido">
+          <td><b>#101</b></td>
+          <td class="name-cell">Lanchonete Corujitos Ponta Das Canas</td>
+          <td><span class="tag">Desconhecido</span></td>
+          <td><span style="color:#8b949e;">Via Catálogo iFood</span></td>
+          <td><a class="btn-ifood" href="https://www.ifood.com.br/delivery/florianopolis-sc/lanchonete-corujitos-ponta-das-canas/a1c41ce6-08bc-45a6-bb5e-c40b648542bb" target="_blank">🔗 Ver Loja no iFood</a></td>
+          <td><span class="tag">WhatsApp via Varredura</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    let currentBairro = 'todos';
+
+    function setBairro(bairro) {
+      currentBairro = bairro;
+      const btns = document.querySelectorAll('.btn-filter');
+      btns.forEach(btn => {
+        if ((bairro === 'todos' && btn.textContent.startsWith('Todos')) || btn.textContent.includes(bairro)) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+      filterTable();
+    }
+
+    function filterTable() {
+      const search = document.getElementById('searchInput').value.toLowerCase();
+      const rows = document.querySelectorAll('#leadsTable tbody tr');
+
+      rows.forEach(row => {
+        const bairro = row.getAttribute('data-bairro');
+        const text = row.innerText.toLowerCase();
+
+        const matchBairro = (currentBairro === 'todos' || (bairro && bairro.includes(currentBairro)));
+        const matchSearch = text.includes(search);
+
+        if (matchBairro && matchSearch) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

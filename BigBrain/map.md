@@ -20,8 +20,9 @@ Operação da Agência AH3. Cérebro privado e isolado. Dados de clientes nunca 
 | Agente | Pode escrever em |
 |---|---|
 | Maestro | funil, handoff, ledger, clientes |
-| Radar | funil (só novo→auditado), handoff, ledger |
-| Souls | handoff (via Maestro) |
+| Comercial | funil (só novo→auditado), handoff, ledger |
+| Marketing | handoff (via Maestro) |
+| Designer | handoff (via Maestro) |
 | Skills e souls | NUNCA editadas por agente. Só o Augusto. |
 
 ## Regras

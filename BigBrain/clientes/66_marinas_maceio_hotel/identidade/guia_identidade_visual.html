@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Identidade Visual · Residencial Vivendas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --c-primary: #313131;
+            --c-gold: #F2F2F2;
+            --c-bg: #090D0E;
+            --c-card: #12181A;
+            --c-card-border: #1E282C;
+            --c-text: #E5EAE8;
+            --c-muted: #8E9E98;
+            --c-accent: #BF1831;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--c-bg);
+            color: var(--c-text);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .header {
+            background: linear-gradient(145deg, #131B1E, #0D1315);
+            border: 1px solid var(--c-card-border);
+            border-radius: 16px;
+            padding: 36px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            gap: 20px;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--c-gold), transparent);
+        }
+        .badge-rank {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--c-gold);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .hotel-title {
+            font-family: 'Cinzel', serif;
+            font-size: 30px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 6px;
+        }
+        .hotel-meta {
+            color: var(--c-muted);
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        .site-link-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            color: var(--c-gold);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .site-link-header:hover {
+            background: var(--c-gold);
+            color: #000000;
+            transform: translateY(-1px);
+        }
+        .logo-box {
+            background: #FFFFFF;
+            padding: 16px 24px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            min-width: 240px;
+            min-height: 100px;
+        }
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background-color: var(--c-card);
+            border: 1px solid var(--c-card-border);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--c-gold);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .palette-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .swatch {
+            flex: 1;
+            height: 64px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 6px;
+            font-size: 10px;
+            font-weight: 600;
+            color: #FFFFFF;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .data-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 13px;
+        }
+        .data-label { color: var(--c-muted); }
+        .data-val { font-weight: 600; color: #FFF; }
+        .btn-site-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 8px;
+            padding: 10px 18px;
+            background: linear-gradient(135deg, var(--c-gold), #b89020);
+            color: #090D0E;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 13px;
+            transition: all 0.2s ease;
+        }
+        .btn-site-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(212, 175, 55, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <span class="badge-rank">RANKING OFICIAL #66</span>
+                <h1 class="hotel-title">Residencial Vivendas</h1>
+                <p class="hotel-meta">Trindade (UFSC) · Trindade · Flat / Apart-Hotel</p>
+                <a href="https://www.residencialvivendas.com.br" target="_blank" rel="noopener noreferrer" class="site-link-header">
+                    🌐 Visitar Website Oficial: https://www.residencialvivendas.com.br ↗
+                </a>
+            </div>
+            <div class="logo-box">
+                <img src="data:image/svg+xml;base64,PHN2ZyBpZD0iaWNvbmUtbWFyY2Etcm9zc2ktcmVkIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMjYiIGhlaWdodD0iMTAyIiB2aWV3Qm94PSIwIDAgMjI2IDEwMiIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogPGcgaWQ9Imljb25lLW1hcmNhLXJvc3NpLXdoaXRlIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjE3MC4wOSA0OC43MzUpIj4KICA8cmVjdCBpZD0iUmV0w6JuZ3Vsb18yODYiIGRhdGEtbmFtZT0iUmV0w6JuZ3VsbyAyODYiIHdpZHRoPSIyMjAuMTgiIGhlaWdodD0iNjUuNTMiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDIxNzMgLTMwKSIgZmlsbD0ibm9uZSI+CiAgPC9yZWN0PgogIDxwYXRoIGlkPSJDYW1pbmhvXzc0NSIgZGF0YS1uYW1lPSJDYW1pbmhvIDc0NSIgZD0iTTE4NS4yMjQuMTE2aDkuMDkzdjM3LjNoLTkuMDkzWk0xMy42MywxNy4wMkgyOS41NDFhNi43Niw2Ljc2LDAsMCwwLDQuNDg3LTEuMzM5LDQuNTE2LDQuNTE2LDAsMCwwLDEuNTczLTMuNjcsNC4xMzEsNC4xMzEsMCwwLDAtMS41NzMtMy40MzksNi45MzMsNi45MzMsMCwwLDAtNC41NDUtMS4zMzlIOS4wOTNWMzcuMzc3SDBWLjA1OUgzMC41MzlhMTcuNjUxLDE3LjY1MSwwLDAsMSw1Ljc2Ny44NzUsMTIuMiwxMi4yLDAsMCwxLDQuNDMsMi41MDYsMTEuMDc1LDExLjA3NSwwLDAsMSwyLjg1NywzLjg0OCwxMS40MjgsMTEuNDI4LDAsMCwxLDEuMDQ4LDQuOTU0LDEwLjYxOCwxMC42MTgsMCwwLDEtOC41MDgsMTEuMjQ4bDkuNSwxMy44NzFIMzUuMzg2TDI2LjIzNSwyNC4yNTVIMTMuNjNabTQwLjQtMTIuMjQxYTI0LjgyLDI0LjgyLDAsMCwxLDcuNTItMy41QTMzLjQ3OCwzMy40NzgsMCwwLDEsNzAuNzU2LDBhMzEuMDA5LDMxLjAwOSwwLDAsMSw5LjE1MSwxLjI4MiwyNC44MiwyNC44MiwwLDAsMSw3LjUxOCwzLjUsMTYuNjYsMTYuNjYsMCwwLDEsLjA1OCwyOC4yNjcsMjUuNSwyNS41LDAsMCwxLTcuNTE4LDMuNDM5LDMzLjQ5MSwzMy40OTEsMCwwLDEtOS4yMDgsMS4yMjQsMzIuMiwzMi4yLDAsMCwxLTkuMzI2LTEuMjgyLDI2LjIxMiwyNi4yMTIsMCwwLDEtNy41MTgtMy40MzksMTYuNTc2LDE2LjU3NiwwLDAsMSwuMTE1LTI4LjIwOVptMjguMzI1LDIyLjVhMTEuNzU2LDExLjc1NiwwLDAsMCwzLjE0NS0zLjY3QTEwLjEyOCwxMC4xMjgsMCwwLDAsODYuNiwxOC44MjlhMTAuMywxMC4zLDAsMCwwLTUuMDA2LTguOCwxNi4wMzEsMTYuMDMxLDAsMCwwLTQuODM5LTIuMTYsMjIuMTM4LDIyLjEzOCwwLDAsMC02LjA2LS43NTgsMjEuNDE4LDIxLjQxOCwwLDAsMC02LjU4Ny45MzNBMTYuMDc5LDE2LjA3OSwwLDAsMCw1OS4xLDEwLjQ4NmExMS43MDksMTEuNzA5LDAsMCwwLTMuMjY5LDMuNzM1LDkuNyw5LjcsMCwwLDAtMS4xNjEsNC42NTMsMTAuMTI4LDEwLjEyOCwwLDAsMCwxLjEwNiw0Ljc3OCwxMS43NTYsMTEuNzU2LDAsMCwwLDMuMTQ1LDMuNjcsMTUuNzI3LDE1LjcyNywwLDAsMCw1LjA2OSwyLjM5MSwyMy42NDgsMjMuNjQ4LDAsMCwwLDYuNy44NzUsMjIuOTQ2LDIyLjk0NiwwLDAsMCw2LjY0NS0uODc1LDE2LjA4NCwxNi4wODQsMCwwLDAsNS4wMTctMi40MzVaTTExNi44NTgsNi42NDZjLTguNjg0LDAtMTEuMzY1LDMuMDg4LTExLjMwOCw1LjAxMiwwLDIuMzMsMi4xLDMuMjA2LDExLjM2NSwzLjQzOSwxMS42LjE3NiwyMi4zOCwxLjc0OCwyMi4zMjIsMTEuMTlzLTExLjQyMywxMS4zMDgtMjIuMzMzLDExLjJhNTEuNDgzLDUxLjQ4MywwLDAsMS0xOC43MS0zLjk2M1YyNWE0NS42MDksNDUuNjA5LDAsMCwwLDE4Ljg3Myw1LjNjMTEuOTQ3LjExNSwxMy40LTIuOTcyLDEzLjQtNC42NjMsMC0zLjYxNS05LjczMi0zLjE0NS0xMy41OC0zLjMyMS0xOC4yNDMtLjIzMy0yMC4yMjUtNy43NTEtMjAuMTY1LTEwLjY2NkM5Ni44MDgsNi4xNzksMTAzLjE2MiwwLDExNi45LjA1OWE1MC40MTEsNTAuNDExLDAsMCwxLDE5LjQ2OCwzLjIwNnY3Ljk4NGEzOC42NzYsMzguNjc2LDAsMCwwLTE5LjUxNS00LjZabTQzLjc3NCwwYy04LjY4NCwwLTExLjM2NSwzLjA4OC0xMS4zMDgsNS4wMTIsMCwyLjMzLDIuMSwzLjIwNiwxMS4zNjUsMy40MzksMTEuNi4xNzYsMjIuMzgsMS43NDgsMjIuMzIyLDExLjE5cy0xMS40MjYsMTEuMzA4LTIyLjMzMywxMS4yYTUxLjQ4Myw1MS40ODMsMCwwLDEtMTguNzEtMy45NjNWMjVhNDUuNjA5LDQ1LjYwOSwwLDAsMCwxOC44NzMsNS4zYzExLjk0Ny4xMTUsMTMuNC0yLjk3MiwxMy40LTQuNjYzLDAtMy42MTUtOS43MzItMy4xNDUtMTMuNTgtMy4zMjEtMTguMjQzLS4yMzMtMjAuMjI1LTcuNzUxLTIwLjE2NS0xMC42NjYuMDc5LTUuNDc4LDYuNDMtMTEuNjU2LDIwLjE3OC0xMS42YTUwLjQxMSw1MC40MTEsMCwwLDEsMTkuNDc1LDMuMjA2djcuOTg0YTM4LjY3NiwzOC42NzYsMCwwLDAtMTkuNTI1LTQuNloiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDIxODYuMTA2IC0xNi44OTUpIiBmaWxsPSIjZTMyMDNkIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogIDwvcGF0aD4KIDwvZz4KIDxyZWN0IGlkPSJSZXTDom5ndWxvXzIiIGRhdGEtbmFtZT0iUmV0w6JuZ3VsbyAyIiB3aWR0aD0iMjI2IiBoZWlnaHQ9IjEwMiIgZmlsbD0ibm9uZSI+CiA8L3JlY3Q+Cjwvc3ZnPg==" alt="Logo Oficial - Residencial Vivendas" style="max-height: 85px; max-width: 260px; object-fit: contain;">
+            </div>
+        </div>
+
+        <div class="grid-cards">
+            <div class="card">
+                <div class="card-title">🎨 Identidade Visual & Cores</div>
+                <p style="font-size: 13px; color: var(--c-muted); margin-bottom: 12px;">Paleta institucional extraída dos ativos oficiais via Brandfetch.</p>
+                <div class="palette-row">
+                    <div class="swatch" style="background: #313131;">#313131</div>
+                    <div class="swatch" style="background: #F2F2F2; color: #000; text-shadow: none;">#F2F2F2</div>
+                    <div class="swatch" style="background: #BF1831;">#BF1831</div>
+                    <div class="swatch" style="background: #12181A;">#12181A</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">🔤 Tipografia & Fontes Homologadas</div>
+                <div class="data-row">
+                    <span class="data-label">Títulos & Destaque</span>
+                    <span class="data-val">cairobold</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Corpo & Interface</span>
+                    <span class="data-val">cairoregular</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Arquitetura de Marca</span>
+                    <span class="data-val">Flat / Apart-Hotel</span>
+                </div>
+            </div>
+
+            <div class="card" style="grid-column: 1 / -1;">
+                <div class="card-title">📊 Métricas Operacionais & Acesso Oficial</div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; align-items: center;">
+                    <div>
+                        <div class="data-label">Capacidade Declarada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">64 Apartamentos</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Diária Média Estimada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px; color: var(--c-gold);">R$ 260.00</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Ativos de Marca</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">3 arquivo(s) homologado(s)</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Canal Digital Direto</div>
+                        <a href="https://www.residencialvivendas.com.br" target="_blank" rel="noopener noreferrer" class="btn-site-action">
+                            Acessar Website do Hotel ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

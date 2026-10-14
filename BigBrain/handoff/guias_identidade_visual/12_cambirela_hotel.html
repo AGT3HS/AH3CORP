@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Identidade Visual · Cambirela Hotel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --c-primary: #AF0606;
+            --c-gold: #F1F1F1;
+            --c-bg: #090D0E;
+            --c-card: #12181A;
+            --c-card-border: #1E282C;
+            --c-text: #E5EAE8;
+            --c-muted: #8E9E98;
+            --c-accent: #A8883B;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--c-bg);
+            color: var(--c-text);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .header {
+            background: linear-gradient(145deg, #131B1E, #0D1315);
+            border: 1px solid var(--c-card-border);
+            border-radius: 16px;
+            padding: 36px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            gap: 20px;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--c-gold), transparent);
+        }
+        .badge-rank {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--c-gold);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .hotel-title {
+            font-family: 'Cinzel', serif;
+            font-size: 30px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 6px;
+        }
+        .hotel-meta {
+            color: var(--c-muted);
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        .site-link-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            color: var(--c-gold);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .site-link-header:hover {
+            background: var(--c-gold);
+            color: #000000;
+            transform: translateY(-1px);
+        }
+        .logo-box {
+            background: #FFFFFF;
+            padding: 16px 24px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            min-width: 240px;
+            min-height: 100px;
+        }
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background-color: var(--c-card);
+            border: 1px solid var(--c-card-border);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--c-gold);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .palette-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .swatch {
+            flex: 1;
+            height: 64px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 6px;
+            font-size: 10px;
+            font-weight: 600;
+            color: #FFFFFF;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .data-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 13px;
+        }
+        .data-label { color: var(--c-muted); }
+        .data-val { font-weight: 600; color: #FFF; }
+        .btn-site-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 8px;
+            padding: 10px 18px;
+            background: linear-gradient(135deg, var(--c-gold), #b89020);
+            color: #090D0E;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 13px;
+            transition: all 0.2s ease;
+        }
+        .btn-site-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(212, 175, 55, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <span class="badge-rank">RANKING OFICIAL #12</span>
+                <h1 class="hotel-title">Cambirela Hotel</h1>
+                <p class="hotel-meta">Canto / Estreito · Continente · Hotel Executivo & Eventos</p>
+                <a href="https://www.cambirela.com.br" target="_blank" rel="noopener noreferrer" class="site-link-header">
+                    🌐 Visitar Website Oficial: https://www.cambirela.com.br ↗
+                </a>
+            </div>
+            <div class="logo-box">
+                <img src="data:image/png;base64,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" alt="Logo Oficial - Cambirela Hotel" style="max-height: 85px; max-width: 260px; object-fit: contain;">
+            </div>
+        </div>
+
+        <div class="grid-cards">
+            <div class="card">
+                <div class="card-title">🎨 Identidade Visual & Cores</div>
+                <p style="font-size: 13px; color: var(--c-muted); margin-bottom: 12px;">Paleta institucional extraída dos ativos oficiais via Brandfetch.</p>
+                <div class="palette-row">
+                    <div class="swatch" style="background: #AF0606;">#AF0606</div>
+                    <div class="swatch" style="background: #F1F1F1; color: #000; text-shadow: none;">#F1F1F1</div>
+                    <div class="swatch" style="background: #A8883B;">#A8883B</div>
+                    <div class="swatch" style="background: #12181A;">#12181A</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">🔤 Tipografia & Fontes Homologadas</div>
+                <div class="data-row">
+                    <span class="data-label">Títulos & Destaque</span>
+                    <span class="data-val">Gilda Display</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Corpo & Interface</span>
+                    <span class="data-val">Roboto</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Arquitetura de Marca</span>
+                    <span class="data-val">Hotel Executivo & Eventos</span>
+                </div>
+            </div>
+
+            <div class="card" style="grid-column: 1 / -1;">
+                <div class="card-title">📊 Métricas Operacionais & Acesso Oficial</div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; align-items: center;">
+                    <div>
+                        <div class="data-label">Capacidade Declarada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">156 Apartamentos</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Diária Média Estimada</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px; color: var(--c-gold);">R$ 310.00</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Ativos de Marca</div>
+                        <div class="data-val" style="font-size: 18px; margin-top: 4px;">2 arquivo(s) homologado(s)</div>
+                    </div>
+                    <div>
+                        <div class="data-label">Canal Digital Direto</div>
+                        <a href="https://www.cambirela.com.br" target="_blank" rel="noopener noreferrer" class="btn-site-action">
+                            Acessar Website do Hotel ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

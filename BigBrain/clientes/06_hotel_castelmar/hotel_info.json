@@ -1,0 +1,13 @@
+{
+  "nome": "Hotel Castelmar",
+  "unidade": "Centro",
+  "categoria": "Hotel Executivo & Eventos",
+  "regiao": "Centro",
+  "quartos": 192,
+  "diaria_media": 340,
+  "site": "https://www.castelmarhotel.com.br",
+  "ranking": 6,
+  "telefone": "(48) 98843-1276",
+  "telefone_fixo": "(48) 3261-6000",
+  "phone_clean": "5548988431276"
+}

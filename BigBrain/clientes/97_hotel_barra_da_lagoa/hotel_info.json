@@ -1,0 +1,13 @@
+{
+  "nome": "Hotel Barra da Lagoa",
+  "unidade": "Barra da Lagoa",
+  "categoria": "Hotel de Praia",
+  "regiao": "Barra da Lagoa",
+  "quartos": 48,
+  "diaria_media": 280,
+  "site": "https://www.hotelbarradalagoa.com.br",
+  "ranking": 97,
+  "telefone": "",
+  "phone_clean": "",
+  "telefone_fixo": ""
+}

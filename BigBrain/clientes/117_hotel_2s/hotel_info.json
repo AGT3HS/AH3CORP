@@ -1,0 +1,13 @@
+{
+  "nome": "Hotel 2S",
+  "unidade": "Centro",
+  "categoria": "Hotel Econômico",
+  "regiao": "Centro",
+  "quartos": 42,
+  "diaria_media": 210,
+  "site": "https://www.hotel2s.com.br",
+  "ranking": 117,
+  "telefone": "",
+  "phone_clean": "",
+  "telefone_fixo": ""
+}

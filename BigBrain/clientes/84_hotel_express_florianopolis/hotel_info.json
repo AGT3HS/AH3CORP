@@ -1,0 +1,13 @@
+{
+  "nome": "Hotel Express Florianópolis",
+  "unidade": "Centro",
+  "categoria": "Hotel Econômico",
+  "regiao": "Centro",
+  "quartos": 55,
+  "diaria_media": 210,
+  "site": "https://www.hotelexpressfloripa.com.br",
+  "ranking": 84,
+  "telefone": "",
+  "phone_clean": "",
+  "telefone_fixo": ""
+}
